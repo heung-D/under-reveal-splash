@@ -80,10 +80,10 @@ const SubsidiaryDetailsSection = () => {
                     : "opacity-0 -translate-x-8"
                 }`}
               >
-                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2 font-rift">
+                <h2 className="text-[50px] font-bold text-foreground mb-[14px] font-rift">
                   PANORAMA
                 </h2>
-                <div className="h-1 w-32 md:w-48 bg-foreground"></div>
+                <div className="h-1 w-[300px] bg-foreground"></div>
               </div>
 
               <div
@@ -148,10 +148,10 @@ const SubsidiaryDetailsSection = () => {
                     : "opacity-0 -translate-x-8"
                 }`}
               >
-                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2 font-rift">
+                <h2 className="text-[50px] font-bold text-foreground mb-[14px] font-rift">
                   URBANLINK
                 </h2>
-                <div className="h-1 w-32 md:w-48 bg-foreground"></div>
+                <div className="h-1 w-[300px] bg-foreground"></div>
               </div>
 
               <div
@@ -200,10 +200,10 @@ const SubsidiaryDetailsSection = () => {
                     : "opacity-0 -translate-x-8"
                 }`}
               >
-                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2 font-rift">
+                <h2 className="text-[50px] font-bold text-foreground mb-[14px] font-rift">
                   ARADNAS
                 </h2>
-                <div className="h-1 w-32 md:w-48 bg-foreground"></div>
+                <div className="h-1 w-[300px] bg-foreground"></div>
               </div>
 
               <div
@@ -238,10 +238,10 @@ const SubsidiaryDetailsSection = () => {
                     : "opacity-0 -translate-x-8"
                 }`}
               >
-                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2 font-rift">
+                <h2 className="text-[50px] font-bold text-foreground mb-[14px] font-rift">
                   MAR/S
                 </h2>
-                <div className="h-1 w-32 md:w-48 bg-foreground"></div>
+                <div className="h-1 w-[300px] bg-foreground"></div>
               </div>
 
               <div
