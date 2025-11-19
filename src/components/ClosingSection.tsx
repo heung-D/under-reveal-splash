@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import closingText1 from "@/assets/closing-text-1.png";
-import closingText2 from "@/assets/closing-text-2.png";
 
 const ClosingSection = () => {
   const [lineWidth, setLineWidth] = useState(0);
@@ -80,24 +78,24 @@ const ClosingSection = () => {
         {/* Text Content */}
         <div className="relative min-h-[100px] flex items-center justify-center">
           {/* First Text: "BEYOND THE LINE, BEHIND THE SHINE" */}
-          <img
-            src={closingText1}
-            alt="BEYOND THE LINE, BEHIND THE SHINE"
-            className="absolute max-w-[50%] h-auto transition-opacity duration-700"
+          <h2
+            className="absolute text-3xl md:text-5xl font-bold text-foreground font-rift text-center transition-opacity duration-700"
             style={{
               opacity: textPhase === 1 ? 1 : textPhase === 2 ? 0 : 0,
             }}
-          />
+          >
+            BEYOND THE LINE, BEHIND THE SHINE
+          </h2>
 
           {/* Second Text: "UNDERTHELINE" */}
-          <img
-            src={closingText2}
-            alt="UNDERTHELINE"
-            className="absolute max-w-[50%] h-auto transition-opacity duration-700"
+          <h2
+            className="absolute text-4xl md:text-6xl font-bold text-foreground font-rift transition-opacity duration-700"
             style={{
               opacity: textPhase === 3 ? 1 : 0,
             }}
-          />
+          >
+            UNDERTHELINE
+          </h2>
         </div>
       </div>
     </section>
