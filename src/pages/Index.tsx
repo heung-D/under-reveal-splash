@@ -1,5 +1,6 @@
 import Logo from "@/components/Logo";
 import HeroSection from "@/components/HeroSection";
+import SubsidiariesSection from "@/components/SubsidiariesSection";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,6 +34,7 @@ const Index = () => {
       {/* Main content */}
       <main>
         <HeroSection />
+        <SubsidiariesSection />
       </main>
     </div>
   );
