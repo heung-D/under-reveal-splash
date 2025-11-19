@@ -71,7 +71,7 @@ const ClosingSection = () => {
         {/* Line Animation */}
         <div className="mb-12 flex justify-center">
           <div
-            className="h-1 bg-foreground transition-all duration-1000 ease-out"
+            className="h-1 bg-foreground transition-all duration-1000 ease-out max-w-[50%]"
             style={{
               width: `${lineWidth}%`,
             }}
