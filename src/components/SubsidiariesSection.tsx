@@ -156,7 +156,7 @@ const SubsidiariesSection = () => {
             x1="50%"
             y1="48%"
             x2="50%"
-            y2="calc(88% - 15px)"
+            y2="calc(95% - 60px)"
             stroke="currentColor"
             strokeWidth="1"
             className="text-foreground/30"
@@ -249,7 +249,7 @@ const SubsidiariesSection = () => {
 
         {/* Bottom Center - UNDERTHELINE */}
         <div
-          className={`absolute bottom-[12%] left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ${
+          className={`absolute bottom-[5%] left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
           style={{ transitionDelay: "300ms" }}
