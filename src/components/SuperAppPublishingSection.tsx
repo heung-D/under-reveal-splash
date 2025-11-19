@@ -99,16 +99,16 @@ const SuperAppPublishingSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
             >
-              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
+              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
                 UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region,
                 enabling artists and creators to own, design, and operate their own
                 independent platforms through DOCE-powered publishing.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
+              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
                 Each app becomes a personal community and ecosystem where the artist is the true owner
                 -operating fandom, commerce, and content directly under their own control.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto flex items-center justify-center gap-2">
+              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto flex items-center justify-center gap-2">
                 <span>→</span>
                 <span>An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.</span>
               </p>
