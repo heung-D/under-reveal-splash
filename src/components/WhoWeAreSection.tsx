@@ -34,9 +34,9 @@ const WhoWeAreSection = () => {
       <div className="max-w-7xl w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
           {/* Left side - Logo with line */}
-          <div className="flex flex-col items-start space-y-8">
+          <div className="flex flex-col items-start">
             {/* Horizontal line */}
-            <div className="w-full overflow-hidden">
+            <div className="w-full max-w-[500px] overflow-hidden mb-[14px]">
               <div
                 className={`h-[2px] bg-foreground origin-left transition-all duration-1000 ${
                   isVisible ? "animate-draw-line" : "w-0"
@@ -51,7 +51,7 @@ const WhoWeAreSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "500ms" : "0ms" }}
             >
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground font-rift">
+              <h2 className="text-[50px] font-bold text-foreground font-rift">
                 WHO WE ARE
               </h2>
             </div>
