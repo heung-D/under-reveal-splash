@@ -113,7 +113,7 @@ const OurTeamSection = () => {
       className="py-20 bg-background"
     >
       {/* Title */}
-      <div className="px-6 md:px-12 mb-16 text-center">
+      <div className="px-6 md:px-12 mb-[50px] text-center">
         <img 
           src={ourTeamTitle} 
           alt="OUR TEAM" 
