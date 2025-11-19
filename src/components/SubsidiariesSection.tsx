@@ -76,8 +76,8 @@ const SubsidiariesSection = () => {
               <line
                 x1="50%"
                 y1="40%"
-                x2={isLeft ? "15%" : "85%"}
-                y2={isTop ? "20%" : "60%"}
+                x2={isLeft ? "18%" : "82%"}
+                y2={isTop ? "22%" : "57%"}
                 stroke="currentColor"
                 strokeWidth="0.5"
                 className="text-foreground/30"
