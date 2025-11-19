@@ -113,7 +113,7 @@ const OurTeamSection = () => {
       className="py-20 bg-background"
     >
       {/* Title */}
-      <div className="px-6 md:px-12 mb-[50px] text-center">
+      <div className="px-6 md:px-12 mb-[40px] text-center">
         <img 
           src={ourTeamTitle} 
           alt="OUR TEAM" 
@@ -139,7 +139,7 @@ const OurTeamSection = () => {
                 transitionDelay: `${index * 100}ms`
               }}
             >
-              <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
+              <div className="max-w-[1880px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-[40px]">
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 h-[500px] border-b border-foreground/20">
                   <img
