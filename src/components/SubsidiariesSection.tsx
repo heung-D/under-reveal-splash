@@ -54,6 +54,22 @@ const SubsidiariesSection = () => {
           const isLeft = subsidiary.position.includes("left");
           const isTop = subsidiary.position.includes("top");
           
+          // Calculate line end positions to match text line ends (300px)
+          let x2, y2;
+          if (subsidiary.name === "PANORAMA") {
+            x2 = "5%"; // Start of PANORAMA text
+            y2 = "15%";
+          } else if (subsidiary.name === "URBANLINK") {
+            x2 = "5%"; // Start of URBANLINK text
+            y2 = "55%";
+          } else if (subsidiary.name === "ARADNAS") {
+            x2 = "calc(98% - 40px)"; // Start of ARADNAS text (right aligned)
+            y2 = "15%";
+          } else if (subsidiary.name === "MAR/S") {
+            x2 = "calc(98% - 40px)"; // Start of MAR/S text (right aligned)
+            y2 = "55%";
+          }
+          
           return (
             <svg
               key={`line-${subsidiary.name}`}
@@ -71,8 +87,8 @@ const SubsidiariesSection = () => {
               <line
                 x1="50%"
                 y1="40%"
-                x2={isLeft ? "18%" : "82%"}
-                y2={isTop ? "22%" : "57%"}
+                x2={x2}
+                y2={y2}
                 stroke="currentColor"
                 strokeWidth="0.5"
                 className="text-foreground/30"
@@ -154,7 +170,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1200ms" }}
         >
-          <button className="group hover:scale-110 transition-all duration-300 relative text-left">
+          <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
             {/* Line above text */}
             <div
               className={`absolute -top-[8px] left-0 h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
@@ -162,7 +178,7 @@ const SubsidiariesSection = () => {
               }`}
               style={{ transitionDelay: "1300ms" }}
             />
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
               ARADNAS
             </span>
           </button>
@@ -175,7 +191,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1400ms" }}
         >
-          <button className="group hover:scale-110 transition-all duration-300 relative text-left">
+          <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
             {/* Line above text */}
             <div
               className={`absolute -top-[8px] left-0 h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
@@ -183,7 +199,7 @@ const SubsidiariesSection = () => {
               }`}
               style={{ transitionDelay: "1500ms" }}
             />
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
               MAR/S
             </span>
           </button>
