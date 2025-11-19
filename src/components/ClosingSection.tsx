@@ -5,6 +5,7 @@ import closingText2 from "@/assets/closing-text-2.png";
 const ClosingSection = () => {
   const [lineWidth, setLineWidth] = useState(0);
   const [textPhase, setTextPhase] = useState(0);
+  const [contentOpacity, setContentOpacity] = useState(1);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -38,6 +39,14 @@ const ClosingSection = () => {
       } else {
         setTextPhase(3); // Second text stays
       }
+
+      // Fade out entire content when approaching the end
+      if (scrollProgress >= 0.8) {
+        const fadeProgress = (scrollProgress - 0.8) / 0.2; // 0.8 to 1.0
+        setContentOpacity(Math.max(0, 1 - fadeProgress));
+      } else {
+        setContentOpacity(1);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -57,7 +66,7 @@ const ClosingSection = () => {
       ref={sectionRef}
       className="min-h-[200vh] bg-background flex items-start justify-center pt-40"
     >
-      <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6">
+      <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6 transition-opacity duration-500" style={{ opacity: contentOpacity }}>
         {/* Line Animation */}
         <div className="mb-[20px] flex justify-center">
           <div
