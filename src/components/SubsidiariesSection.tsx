@@ -91,8 +91,8 @@ const SubsidiariesSection = () => {
           <button className="group hover:scale-110 transition-all duration-300 relative">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
-                isVisible ? "w-full" : "w-0"
+              className={`absolute -top-[8px] left-0 h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
+                isVisible ? "w-[300px]" : "w-0"
               }`}
               style={{ transitionDelay: "900ms" }}
             />
@@ -112,8 +112,8 @@ const SubsidiariesSection = () => {
           <button className="group hover:scale-110 transition-all duration-300 relative">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
-                isVisible ? "w-full" : "w-0"
+              className={`absolute -top-[8px] left-0 h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
+                isVisible ? "w-[300px]" : "w-0"
               }`}
               style={{ transitionDelay: "1100ms" }}
             />
@@ -133,8 +133,8 @@ const SubsidiariesSection = () => {
           <button className="group hover:scale-110 transition-all duration-300 relative">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
-                isVisible ? "w-full" : "w-0"
+              className={`absolute -top-[8px] left-0 h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
+                isVisible ? "w-[300px]" : "w-0"
               }`}
               style={{ transitionDelay: "1300ms" }}
             />
@@ -154,8 +154,8 @@ const SubsidiariesSection = () => {
           <button className="group hover:scale-110 transition-all duration-300 relative">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
-                isVisible ? "w-full" : "w-0"
+              className={`absolute -top-[8px] left-0 h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
+                isVisible ? "w-[300px]" : "w-0"
               }`}
               style={{ transitionDelay: "1500ms" }}
             />
@@ -175,8 +175,8 @@ const SubsidiariesSection = () => {
           <div className="group relative inline-block cursor-pointer hover:scale-110 transition-all duration-300">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
-                isVisible ? "w-full" : "w-0"
+              className={`absolute -top-[8px] left-0 h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
+                isVisible ? "w-[300px]" : "w-0"
               }`}
               style={{ transitionDelay: "400ms" }}
             />
