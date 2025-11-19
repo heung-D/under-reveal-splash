@@ -82,7 +82,7 @@ const SuperAppPublishingSection = () => {
           </div>
 
           {/* Tab Content */}
-          <TabsContent value="tab1" className="mt-0 w-full max-w-[856px] mx-auto">
+          <TabsContent value="tab1" className="mt-0 w-full max-w-[856px] mx-auto min-h-[600px]">
             {/* Title Image */}
             <div
               className={`mb-8 flex justify-center transition-all duration-1000 ${
@@ -115,7 +115,7 @@ const SuperAppPublishingSection = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="tab2" className="mt-0 w-full max-w-[856px] mx-auto">
+          <TabsContent value="tab2" className="mt-0 w-full max-w-[856px] mx-auto min-h-[600px]">
             {/* Title Image */}
             <div
               className={`mb-8 flex justify-center transition-all duration-1000 ${
