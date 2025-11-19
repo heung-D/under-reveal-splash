@@ -45,7 +45,7 @@ const SuperAppPublishingSection = () => {
       }}
     >
 
-      <div className="max-w-5xl w-full relative z-10">
+      <div className="w-full relative z-10 flex flex-col items-center">
         <Tabs defaultValue="tab1" className="w-full" onValueChange={setActiveTab}>
           {/* Tab Title Images */}
           <div
@@ -62,7 +62,7 @@ const SuperAppPublishingSection = () => {
                 <img 
                   src={activeTab === "tab1" ? tab1SelectImage : tab1DefaultImage} 
                   alt="Super App Publishing" 
-                  className="h-12 md:h-16 transition-opacity duration-300" 
+                  className="h-auto w-[280px] md:w-[400px] transition-opacity duration-300" 
                 />
               </TabsTrigger>
               <TabsTrigger 
@@ -72,53 +72,53 @@ const SuperAppPublishingSection = () => {
                 <img 
                   src={activeTab === "tab2" ? tab2SelectImage : tab2DefaultImage} 
                   alt="ENT. Infra & Management" 
-                  className="h-12 md:h-16 transition-opacity duration-300" 
+                  className="h-auto w-[280px] md:w-[400px] transition-opacity duration-300" 
                 />
               </TabsTrigger>
             </TabsList>
           </div>
 
           {/* Tab Content */}
-          <TabsContent value="tab1" className="mt-0">
+          <TabsContent value="tab1" className="mt-0 w-full max-w-[856px]">
             <div
               className={`text-center space-y-8 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
             >
-              <p className="text-base md:text-lg leading-relaxed text-foreground max-w-3xl mx-auto">
+              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
                 UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region,
                 enabling artists and creators to own, design, and operate their own
                 independent platforms through DOCE-powered publishing.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground max-w-3xl mx-auto">
+              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
                 Each app becomes a personal community and ecosystem where the artist is the true owner
                 -operating fandom, commerce, and content directly under their own control.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground max-w-3xl mx-auto flex items-center justify-center gap-2">
+              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto flex items-center justify-center gap-2">
                 <span>→</span>
                 <span>An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.</span>
               </p>
             </div>
           </TabsContent>
 
-          <TabsContent value="tab2" className="mt-0">
+          <TabsContent value="tab2" className="mt-0 w-full max-w-[856px]">
             <div
               className={`text-center space-y-8 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
             >
-              <p className="text-base md:text-lg leading-relaxed text-foreground max-w-3xl mx-auto">
+              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
                 UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region,
                 enabling artists and creators to own, design, and operate their own
                 independent platforms through DOCE-powered publishing.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground max-w-3xl mx-auto">
+              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
                 Each app becomes a personal community and ecosystem where the artist is the true owner
                 -operating fandom, commerce, and content directly under their own control.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground max-w-3xl mx-auto flex items-center justify-center gap-2">
+              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto flex items-center justify-center gap-2">
                 <span>→</span>
                 <span>An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.</span>
               </p>
@@ -133,7 +133,7 @@ const SuperAppPublishingSection = () => {
           }`}
           style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
         >
-          <img src={doceOsLineImage} alt="DOCE OS" className="w-full max-w-4xl" />
+          <img src={doceOsLineImage} alt="DOCE OS" className="w-full max-w-[856px]" />
         </div>
       </div>
     </div>
