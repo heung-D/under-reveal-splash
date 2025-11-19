@@ -54,7 +54,7 @@ const SuperAppPublishingSection = () => {
             }`}
             style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
           >
-            <TabsList className="bg-transparent p-0 h-auto gap-8 mb-16 justify-center border-none">
+            <TabsList className="bg-transparent p-0 h-auto gap-8 mb-16 flex justify-center items-center border-none w-full">
               <TabsTrigger 
                 value="tab1" 
                 className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer"
