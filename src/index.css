@@ -116,6 +116,7 @@ All colors MUST be HSL.
 
   .animate-draw-line {
     animation: drawLine var(--duration-line) ease-out var(--delay-line) forwards;
+    width: 0 !important;
   }
 
   .animate-fade-slide-up {
