@@ -1,11 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import tab1Image from "@/assets/tab1.png";
-import tab2Image from "@/assets/tab2.png";
+import tab1DefaultImage from "@/assets/tab1-default.png";
+import tab1SelectImage from "@/assets/tab1-select.png";
+import tab2DefaultImage from "@/assets/tab2-default.png";
+import tab2SelectImage from "@/assets/tab2-select.png";
 import doceOsLineImage from "@/assets/doce-os-line.png";
 
 const SuperAppPublishingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeTab, setActiveTab] = useState("tab1");
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,7 +46,7 @@ const SuperAppPublishingSection = () => {
     >
 
       <div className="max-w-5xl w-full relative z-10">
-        <Tabs defaultValue="tab1" className="w-full">
+        <Tabs defaultValue="tab1" className="w-full" onValueChange={setActiveTab}>
           {/* Tab Title Images */}
           <div
             className={`transition-all duration-1000 mb-12 ${
@@ -54,15 +57,23 @@ const SuperAppPublishingSection = () => {
             <TabsList className="bg-transparent p-0 h-auto gap-8 mb-16 justify-center border-none">
               <TabsTrigger 
                 value="tab1" 
-                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none"
+                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer"
               >
-                <img src={tab1Image} alt="Tab 1" className="h-12 md:h-16" />
+                <img 
+                  src={activeTab === "tab1" ? tab1SelectImage : tab1DefaultImage} 
+                  alt="Super App Publishing" 
+                  className="h-12 md:h-16 transition-opacity duration-300" 
+                />
               </TabsTrigger>
               <TabsTrigger 
                 value="tab2"
-                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none"
+                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer"
               >
-                <img src={tab2Image} alt="Tab 2" className="h-12 md:h-16" />
+                <img 
+                  src={activeTab === "tab2" ? tab2SelectImage : tab2DefaultImage} 
+                  alt="ENT. Infra & Management" 
+                  className="h-12 md:h-16 transition-opacity duration-300" 
+                />
               </TabsTrigger>
             </TabsList>
           </div>
