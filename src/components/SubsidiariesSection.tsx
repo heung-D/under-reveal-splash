@@ -1,9 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import undertheline from "@/assets/undertheline-text.png";
-import aradnas from "@/assets/aradnas.png";
-import mars from "@/assets/mars.png";
-import panorama from "@/assets/panorama.png";
-import urbanlink from "@/assets/urbanlink.png";
 
 const SubsidiariesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,10 +30,10 @@ const SubsidiariesSection = () => {
   }, []);
 
   const subsidiaries = [
-    { name: "PANORAMA", logo: panorama, position: "top-left" },
-    { name: "URBANLINK", logo: urbanlink, position: "bottom-left" },
-    { name: "ARADNAS", logo: aradnas, position: "top-right" },
-    { name: "MAR/S", logo: mars, position: "bottom-right" },
+    { name: "PANORAMA", position: "top-left" },
+    { name: "URBANLINK", position: "bottom-left" },
+    { name: "ARADNAS", position: "top-right" },
+    { name: "MAR/S", position: "bottom-right" },
   ];
 
   return (
@@ -94,11 +89,9 @@ const SubsidiariesSection = () => {
           style={{ transitionDelay: "800ms" }}
         >
           <button className="hover:scale-105 transition-transform">
-            <img
-              src={panorama}
-              alt="PANORAMA"
-              className="h-8 md:h-10"
-            />
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
+              PANORAMA
+            </span>
           </button>
         </div>
 
@@ -110,11 +103,9 @@ const SubsidiariesSection = () => {
           style={{ transitionDelay: "1000ms" }}
         >
           <button className="hover:scale-105 transition-transform">
-            <img
-              src={urbanlink}
-              alt="URBANLINK"
-              className="h-8 md:h-10"
-            />
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
+              URBANLINK
+            </span>
           </button>
         </div>
 
@@ -126,11 +117,9 @@ const SubsidiariesSection = () => {
           style={{ transitionDelay: "1200ms" }}
         >
           <button className="hover:scale-105 transition-transform">
-            <img
-              src={aradnas}
-              alt="ARADNAS"
-              className="h-8 md:h-10"
-            />
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
+              ARADNAS
+            </span>
           </button>
         </div>
 
@@ -142,26 +131,22 @@ const SubsidiariesSection = () => {
           style={{ transitionDelay: "1400ms" }}
         >
           <button className="hover:scale-105 transition-transform">
-            <img
-              src={mars}
-              alt="MAR/S"
-              className="h-8 md:h-10"
-            />
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
+              MAR/S
+            </span>
           </button>
         </div>
 
-        {/* Bottom Center - UNDERTHELINE Logo */}
+        {/* Bottom Center - UNDERTHELINE */}
         <div
           className={`absolute bottom-[10%] left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <img
-            src={undertheline}
-            alt="UNDERTHELINE"
-            className="h-10 md:h-12"
-          />
+          <span className="text-3xl md:text-4xl font-bold text-foreground font-rift">
+            UNDERTHELINE
+          </span>
         </div>
       </div>
     </section>

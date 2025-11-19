@@ -1,12 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import tab1DefaultImage from "@/assets/tab1-default.png";
-import tab1SelectImage from "@/assets/tab1-select.png";
-import tab2DefaultImage from "@/assets/tab2-default.png";
-import tab2SelectImage from "@/assets/tab2-select.png";
 import doceOsLineImage from "@/assets/doce-os-line.png";
-import superAppTitleImage from "@/assets/super-app-title.png";
-import globalEntInfraTitleImage from "@/assets/global-ent-infra-title.png";
 import entLogosImage from "@/assets/ent-logos.png";
 
 const SuperAppPublishingSection = () => {
@@ -60,37 +54,31 @@ const SuperAppPublishingSection = () => {
             <TabsList className="bg-transparent p-0 h-auto gap-8 mb-16 flex justify-center items-center border-none w-full">
               <TabsTrigger 
                 value="tab1" 
-                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer"
+                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer font-rift text-2xl md:text-3xl font-bold transition-colors data-[state=inactive]:text-muted-foreground"
               >
-                <img 
-                  src={activeTab === "tab1" ? tab1SelectImage : tab1DefaultImage} 
-                  alt="Super App Publishing" 
-                  className="h-auto w-[280px] md:w-[400px] transition-opacity duration-300" 
-                />
+                SUPER APP PUBLISHING
               </TabsTrigger>
               <TabsTrigger 
                 value="tab2"
-                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer"
+                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer font-rift text-2xl md:text-3xl font-bold transition-colors data-[state=inactive]:text-muted-foreground"
               >
-                <img 
-                  src={activeTab === "tab2" ? tab2SelectImage : tab2DefaultImage} 
-                  alt="ENT. Infra & Management" 
-                  className="h-auto w-[280px] md:w-[400px] transition-opacity duration-300" 
-                />
+                ENT. INFRA & MANAGEMENT
               </TabsTrigger>
             </TabsList>
           </div>
 
           {/* Tab Content */}
           <TabsContent value="tab1" className="mt-0 w-full max-w-[856px] mx-auto min-h-[600px]">
-            {/* Title Image */}
+            {/* Title */}
             <div
               className={`mb-8 flex justify-center transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
             >
-              <img src={superAppTitleImage} alt="SUPER APP PUBLISHING" className="h-auto w-full max-w-[300px]" />
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground font-rift">
+                SUPER APP PUBLISHING
+              </h2>
             </div>
             
             <div
@@ -126,14 +114,16 @@ const SuperAppPublishingSection = () => {
           </TabsContent>
 
           <TabsContent value="tab2" className="mt-0 w-full max-w-[856px] mx-auto min-h-[600px]">
-            {/* Title Image */}
+            {/* Title */}
             <div
               className={`mb-8 flex justify-center transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
             >
-              <img src={globalEntInfraTitleImage} alt="GLOBAL ENTERTAINMENT INFRASTRUCTURE" className="h-auto w-full max-w-[600px]" />
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground font-rift text-center">
+                GLOBAL ENTERTAINMENT INFRASTRUCTURE
+              </h2>
             </div>
             
             <div
