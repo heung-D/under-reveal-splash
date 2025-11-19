@@ -94,7 +94,7 @@ const SubsidiaryDetailsSection = () => {
                 }`}
               >
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
                     Record Distribution Network
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -105,7 +105,7 @@ const SubsidiaryDetailsSection = () => {
                 <div className="h-px bg-border"></div>
 
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
                     Publishing Network
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -116,7 +116,7 @@ const SubsidiaryDetailsSection = () => {
                 <div className="h-px bg-border"></div>
 
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
                     Touring Network
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -162,7 +162,7 @@ const SubsidiaryDetailsSection = () => {
                 }`}
               >
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
                     URBANLINK XYZ
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
@@ -176,7 +176,7 @@ const SubsidiaryDetailsSection = () => {
                 <div className="h-px bg-border"></div>
 
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
                     URBANLINK 360
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
@@ -214,7 +214,7 @@ const SubsidiaryDetailsSection = () => {
                 }`}
               >
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
                     ARADNAS
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
@@ -252,7 +252,7 @@ const SubsidiaryDetailsSection = () => {
                 }`}
               >
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
                     MAR/S
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
