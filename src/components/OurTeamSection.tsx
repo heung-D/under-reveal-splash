@@ -55,6 +55,7 @@ const teamMembers = [
 const OurTeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,6 +72,39 @@ const OurTeamSection = () => {
     }
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (!scrollContainerRef.current) return;
+      
+      const container = scrollContainerRef.current;
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      
+      // Check if we're at the boundaries
+      const atStart = container.scrollLeft === 0;
+      const atEnd = container.scrollLeft >= maxScrollLeft - 1;
+      
+      // Only hijack scroll if we're scrolling horizontally or within the section
+      if (e.deltaY !== 0) {
+        // If scrolling down and not at end, or scrolling up and not at start
+        if ((e.deltaY > 0 && !atEnd) || (e.deltaY < 0 && !atStart)) {
+          e.preventDefault();
+          container.scrollLeft += e.deltaY;
+        }
+      }
+    };
+
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
+    };
   }, []);
 
   return (
@@ -90,12 +124,15 @@ const OurTeamSection = () => {
       </div>
 
       {/* Horizontal Scrollable Team Members */}
-      <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex gap-8 px-6 md:px-12 pb-8 min-w-max">
+      <div 
+        ref={scrollContainerRef}
+        className="overflow-x-auto overflow-y-hidden"
+      >
+        <div className="flex gap-4 px-6 md:px-12 pb-8 min-w-max">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className={`flex-shrink-0 w-[800px] transition-all duration-700 delay-${index * 100}`}
+              className={`flex-shrink-0 w-[400px] transition-all duration-700 delay-${index * 100}`}
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(50px)",
@@ -103,7 +140,7 @@ const OurTeamSection = () => {
               }}
             >
               {/* Image Section */}
-              <div className="w-full h-[400px] mb-8 border-b border-foreground/20">
+              <div className="w-full h-[200px] mb-4 border-b border-foreground/20">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -112,19 +149,19 @@ const OurTeamSection = () => {
               </div>
 
               {/* Info Section */}
-              <div className="grid grid-cols-[200px_1fr] gap-8">
+              <div className="space-y-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                  <h3 className="text-xl font-bold text-foreground mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-foreground/70">{member.role}</p>
+                  <p className="text-sm text-foreground/70">{member.role}</p>
                 </div>
 
                 <div>
-                  <h4 className="text-xl font-semibold text-foreground mb-4">
+                  <h4 className="text-base font-semibold text-foreground mb-2">
                     {member.title}
                   </h4>
-                  <p className="text-foreground/80 leading-relaxed">
+                  <p className="text-sm text-foreground/80 leading-relaxed">
                     {member.description}
                   </p>
                 </div>
@@ -133,16 +170,6 @@ const OurTeamSection = () => {
           ))}
         </div>
       </div>
-
-      <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </section>
   );
 };
