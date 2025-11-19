@@ -79,7 +79,7 @@ const SuperAppPublishingSection = () => {
           </div>
 
           {/* Tab Content */}
-          <TabsContent value="tab1" className="mt-0 w-full max-w-[856px]">
+          <TabsContent value="tab1" className="mt-0 w-full max-w-[856px] mx-auto">
             <div
               className={`text-center space-y-8 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -102,7 +102,7 @@ const SuperAppPublishingSection = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="tab2" className="mt-0 w-full max-w-[856px]">
+          <TabsContent value="tab2" className="mt-0 w-full max-w-[856px] mx-auto">
             <div
               className={`text-center space-y-8 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
