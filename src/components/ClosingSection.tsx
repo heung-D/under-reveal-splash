@@ -66,7 +66,7 @@ const ClosingSection = () => {
     >
       <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6 transition-opacity duration-500" style={{ opacity: contentOpacity }}>
         {/* Line Animation */}
-        <div className="mb-[20px] flex justify-end">
+        <div className="mb-[20px] flex justify-center">
           <div
             className="h-1 bg-foreground transition-all duration-1000 ease-out max-w-[50%]"
             style={{
@@ -79,7 +79,7 @@ const ClosingSection = () => {
         <div className="relative min-h-[100px] flex items-center justify-center">
           {/* First Text: "BEYOND THE LINE, BEHIND THE SHINE" */}
           <h2
-            className="absolute text-[40px] font-bold text-foreground font-rift text-center transition-opacity duration-700"
+            className="absolute text-3xl md:text-5xl font-bold text-foreground font-rift text-center transition-opacity duration-700"
             style={{
               opacity: textPhase === 1 ? 1 : textPhase === 2 ? 0 : 0,
             }}
@@ -89,7 +89,7 @@ const ClosingSection = () => {
 
           {/* Second Text: "UNDERTHELINE" */}
           <h2
-            className="absolute text-[40px] font-bold text-foreground font-rift transition-opacity duration-700 text-right w-full"
+            className="absolute text-4xl md:text-6xl font-bold text-foreground font-rift transition-opacity duration-700"
             style={{
               opacity: textPhase === 3 ? 1 : 0,
             }}
