@@ -36,9 +36,9 @@ const SubsidiariesSection = () => {
 
   const subsidiaries = [
     { name: "PANORAMA", logo: panorama, position: "top-left" },
-    { name: "URBANLINK", logo: urbanlink, position: "middle-left" },
+    { name: "URBANLINK", logo: urbanlink, position: "bottom-left" },
     { name: "ARADNAS", logo: aradnas, position: "top-right" },
-    { name: "MAR/S", logo: mars, position: "middle-right" },
+    { name: "MAR/S", logo: mars, position: "bottom-right" },
   ];
 
   return (
@@ -46,93 +46,122 @@ const SubsidiariesSection = () => {
       ref={sectionRef}
       className="min-h-screen flex items-center justify-center px-6 md:px-12 relative"
     >
-      <div className="relative w-full max-w-6xl mx-auto">
-        {/* Center - Undertheline Logo */}
-        <div className="flex justify-center mb-20">
-          <div
-            className={`transition-opacity duration-1000 ${
-              isVisible ? "opacity-100" : "opacity-0"
-            }`}
-          >
+      <div className="relative w-full max-w-[1200px] mx-auto h-[600px]">
+        {/* Center dot */}
+        <div
+          className={`absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-foreground rounded-full transition-opacity duration-500 delay-300 z-10 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        />
+
+        {/* Lines from center to each subsidiary */}
+        {subsidiaries.map((subsidiary, index) => {
+          const isLeft = subsidiary.position.includes("left");
+          const isTop = subsidiary.position.includes("top");
+          
+          return (
+            <svg
+              key={`line-${subsidiary.name}`}
+              className={`absolute transition-all duration-1000 pointer-events-none ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+              style={{
+                transitionDelay: `${500 + index * 200}ms`,
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <line
+                x1="50%"
+                y1="40%"
+                x2={isLeft ? "15%" : "85%"}
+                y2={isTop ? "20%" : "60%"}
+                stroke="currentColor"
+                strokeWidth="0.5"
+                className="text-foreground/30"
+              />
+            </svg>
+          );
+        })}
+
+        {/* Top Left - PANORAMA */}
+        <div
+          className={`absolute top-[15%] left-[5%] transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "800ms" }}
+        >
+          <button className="hover:scale-105 transition-transform">
             <img
-              src={undertheline}
-              alt="UNDERTHELINE"
-              className="h-12 md:h-16"
+              src={panorama}
+              alt="PANORAMA"
+              className="h-8 md:h-10"
             />
-          </div>
+          </button>
         </div>
 
-        {/* Subsidiaries Grid */}
-        <div className="relative">
-          {/* Center dot */}
-          <div
-            className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-foreground rounded-full transition-opacity duration-500 delay-300 ${
-              isVisible ? "opacity-100" : "opacity-0"
-            }`}
+        {/* Bottom Left - URBANLINK */}
+        <div
+          className={`absolute top-[55%] left-[5%] transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "1000ms" }}
+        >
+          <button className="hover:scale-105 transition-transform">
+            <img
+              src={urbanlink}
+              alt="URBANLINK"
+              className="h-8 md:h-10"
+            />
+          </button>
+        </div>
+
+        {/* Top Right - ARADNAS */}
+        <div
+          className={`absolute top-[15%] right-[5%] transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "1200ms" }}
+        >
+          <button className="hover:scale-105 transition-transform">
+            <img
+              src={aradnas}
+              alt="ARADNAS"
+              className="h-8 md:h-10"
+            />
+          </button>
+        </div>
+
+        {/* Bottom Right - MAR/S */}
+        <div
+          className={`absolute top-[55%] right-[5%] transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "1400ms" }}
+        >
+          <button className="hover:scale-105 transition-transform">
+            <img
+              src={mars}
+              alt="MAR/S"
+              className="h-8 md:h-10"
+            />
+          </button>
+        </div>
+
+        {/* Bottom Center - UNDERTHELINE Logo */}
+        <div
+          className={`absolute bottom-[10%] left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          <img
+            src={undertheline}
+            alt="UNDERTHELINE"
+            className="h-10 md:h-12"
           />
-
-          {/* Lines and Logos */}
-          <div className="grid grid-cols-2 gap-x-32 gap-y-20 max-w-4xl mx-auto relative">
-            {subsidiaries.map((subsidiary, index) => (
-              <div
-                key={subsidiary.name}
-                className={`relative ${
-                  subsidiary.position === "top-left" ||
-                  subsidiary.position === "middle-left"
-                    ? "text-right pr-8"
-                    : "text-left pl-8"
-                }`}
-              >
-                {/* Line from center */}
-                <svg
-                  className={`absolute transition-all duration-1000 ${
-                    isVisible ? "opacity-100" : "opacity-0"
-                  }`}
-                  style={{
-                    transitionDelay: `${500 + index * 200}ms`,
-                    top: "50%",
-                    [subsidiary.position.includes("left") ? "right" : "left"]:
-                      "100%",
-                    width: subsidiary.position.includes("left")
-                      ? "calc(50vw - 50%)"
-                      : "calc(50vw - 50%)",
-                    height: "2px",
-                  }}
-                >
-                  <line
-                    x1={subsidiary.position.includes("left") ? "100%" : "0"}
-                    y1="1"
-                    x2={subsidiary.position.includes("left") ? "0" : "100%"}
-                    y2="1"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    className={`transition-all duration-1000 ${
-                      isVisible ? "opacity-100" : "opacity-0"
-                    }`}
-                    style={{
-                      transitionDelay: `${500 + index * 200}ms`,
-                    }}
-                  />
-                </svg>
-
-                {/* Logo */}
-                <button
-                  className={`transition-all duration-1000 hover:scale-105 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  }`}
-                  style={{
-                    transitionDelay: `${800 + index * 200}ms`,
-                  }}
-                >
-                  <img
-                    src={subsidiary.logo}
-                    alt={subsidiary.name}
-                    className="h-8 md:h-10 inline-block"
-                  />
-                </button>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
