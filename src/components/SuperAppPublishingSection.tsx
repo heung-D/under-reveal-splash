@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import tab1Image from "@/assets/tab1.png";
 import tab2Image from "@/assets/tab2.png";
+import doceOsLineImage from "@/assets/doce-os-line.png";
 
 const SuperAppPublishingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,47 +41,6 @@ const SuperAppPublishingSection = () => {
         background: 'linear-gradient(180deg, #FFFFFF 0%, #E6E6E6 100%)'
       }}
     >
-      {/* Decorative lines */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg className="w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="none">
-          {/* Left curves */}
-          {[...Array(8)].map((_, i) => (
-            <path
-              key={`left-${i}`}
-              d={`M 0,${400 + i * 20} Q 360,${400 + i * 20 + 50} 720,${600 + i * 10}`}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              className={`text-gray-300 transition-all duration-1000 ${
-                isVisible ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ 
-                transitionDelay: isVisible ? `${i * 100}ms` : "0ms",
-                strokeDasharray: "2000",
-                strokeDashoffset: isVisible ? "0" : "2000",
-              }}
-            />
-          ))}
-          {/* Right curves */}
-          {[...Array(8)].map((_, i) => (
-            <path
-              key={`right-${i}`}
-              d={`M 1440,${400 + i * 20} Q 1080,${400 + i * 20 + 50} 720,${600 + i * 10}`}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              className={`text-gray-300 transition-all duration-1000 ${
-                isVisible ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ 
-                transitionDelay: isVisible ? `${i * 100}ms` : "0ms",
-                strokeDasharray: "2000",
-                strokeDashoffset: isVisible ? "0" : "2000",
-              }}
-            />
-          ))}
-        </svg>
-      </div>
 
       <div className="max-w-5xl w-full relative z-10">
         <Tabs defaultValue="tab1" className="w-full">
@@ -155,16 +115,14 @@ const SuperAppPublishingSection = () => {
           </TabsContent>
         </Tabs>
 
-        {/* DOCE OS Badge */}
+        {/* DOCE OS Line Image */}
         <div
           className={`mt-16 flex justify-center transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
         >
-          <div className="bg-black text-white px-8 py-4 font-bold text-lg md:text-xl">
-            DOCE OS
-          </div>
+          <img src={doceOsLineImage} alt="DOCE OS" className="w-full max-w-4xl" />
         </div>
       </div>
     </div>
