@@ -149,12 +149,12 @@ const SuperAppPublishingSection = () => {
 
         {/* DOCE OS Line Image */}
         <div
-          className={`mt-16 flex justify-center transition-all duration-1000 ${
+          className={`mt-16 w-screen relative left-1/2 right-1/2 -mx-[50vw] transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
         >
-          <img src={doceOsLineImage} alt="DOCE OS" className="w-full max-w-[856px]" />
+          <img src={doceOsLineImage} alt="DOCE OS" className="w-full" />
         </div>
       </div>
     </div>
