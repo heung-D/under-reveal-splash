@@ -84,7 +84,7 @@ const ClosingSection = () => {
           <img
             src={closingText1}
             alt="BEYOND THE LINE, BEHIND THE SHINE"
-            className="absolute max-w-full h-auto transition-opacity duration-700 px-6"
+            className="absolute max-w-[50%] h-auto transition-opacity duration-700"
             style={{
               opacity: textPhase === 1 ? 1 : textPhase === 2 ? 0 : 0,
             }}
@@ -94,7 +94,7 @@ const ClosingSection = () => {
           <img
             src={closingText2}
             alt="UNDERTHELINE"
-            className="absolute max-w-full h-auto transition-opacity duration-700 px-6"
+            className="absolute max-w-[50%] h-auto transition-opacity duration-700"
             style={{
               opacity: textPhase === 3 ? 1 : 0,
             }}
