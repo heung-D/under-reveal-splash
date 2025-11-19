@@ -1,0 +1,150 @@
+import { useEffect, useRef, useState } from "react";
+import teamSanghyun from "@/assets/team-sanghyun.png";
+import teamRobert from "@/assets/team-robert.png";
+import teamHan from "@/assets/team-han.png";
+import teamRyan from "@/assets/team-ryan.png";
+import teamMaurizio from "@/assets/team-maurizio.png";
+import teamStavros from "@/assets/team-stavros.png";
+import ourTeamTitle from "@/assets/our-team-title.png";
+
+const teamMembers = [
+  {
+    name: "Sanghyun Shin",
+    role: "Founder",
+    title: "Visionary Founder & Innovator",
+    description: "As the Founder & CEO of Undertheline Holdings, he lead the global expansion of a next-generation entertainment ecosystem. Powered by proprietary DOCE technology, he unify networks across industries and nations, designing infrastructure where artists, fans, and brands can thrive together.",
+    image: teamSanghyun
+  },
+  {
+    name: "Robert W. Lewis III",
+    role: "Co-Founder",
+    title: "Strategic Leader & Innovator",
+    description: "As Co-Founder, he brings decades of experience in building global entertainment ecosystems and driving strategic partnerships across industries.",
+    image: teamRobert
+  },
+  {
+    name: "Han Kim",
+    role: "Chief Technology Officer",
+    title: "Technology Pioneer",
+    description: "Leading our technology vision and implementing cutting-edge solutions that power our global entertainment infrastructure.",
+    image: teamHan
+  },
+  {
+    name: "Ryan Jang",
+    role: "Chief Operating Officer",
+    title: "Operations Excellence",
+    description: "Driving operational excellence and ensuring seamless execution of our global expansion strategy.",
+    image: teamRyan
+  },
+  {
+    name: "Maurizio Romiti",
+    role: "Senior Advisor",
+    title: "Industry Veteran",
+    description: "Providing strategic guidance with decades of experience in international business and entertainment industries.",
+    image: teamMaurizio
+  },
+  {
+    name: "Stavros Pirounis",
+    role: "Strategic Advisor",
+    title: "Global Strategy Expert",
+    description: "Advising on global market strategies and international expansion opportunities.",
+    image: teamStavros
+  }
+];
+
+const OurTeamSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="py-20 bg-background"
+    >
+      {/* Title */}
+      <div className="px-6 md:px-12 mb-16 text-center">
+        <img 
+          src={ourTeamTitle} 
+          alt="OUR TEAM" 
+          className={`mx-auto transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        />
+      </div>
+
+      {/* Horizontal Scrollable Team Members */}
+      <div className="overflow-x-auto scrollbar-hide">
+        <div className="flex gap-8 px-6 md:px-12 pb-8 min-w-max">
+          {teamMembers.map((member, index) => (
+            <div
+              key={member.name}
+              className={`flex-shrink-0 w-[800px] transition-all duration-700 delay-${index * 100}`}
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateX(0)" : "translateX(50px)",
+                transitionDelay: `${index * 100}ms`
+              }}
+            >
+              {/* Image Section */}
+              <div className="w-full h-[400px] mb-8 border-b border-foreground/20">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Info Section */}
+              <div className="grid grid-cols-[200px_1fr] gap-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-foreground/70">{member.role}</p>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-semibold text-foreground mb-4">
+                    {member.title}
+                  </h4>
+                  <p className="text-foreground/80 leading-relaxed">
+                    {member.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default OurTeamSection;

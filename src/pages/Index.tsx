@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import SubsidiariesSection from "@/components/SubsidiariesSection";
 import WhoWeAreSection from "@/components/WhoWeAreSection";
 import SuperAppPublishingSection from "@/components/SuperAppPublishingSection";
+import OurTeamSection from "@/components/OurTeamSection";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -39,6 +40,7 @@ const Index = () => {
         <SubsidiariesSection />
         <WhoWeAreSection />
         <SuperAppPublishingSection />
+        <OurTeamSection />
       </main>
     </div>
   );
