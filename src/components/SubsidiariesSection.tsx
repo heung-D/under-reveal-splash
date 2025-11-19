@@ -32,9 +32,10 @@ const SubsidiariesSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center px-6 md:px-12 relative"
+      className="min-h-screen flex items-center justify-center px-6 md:px-12 relative py-20"
     >
-      <div className="relative w-full max-w-[1400px] mx-auto h-[600px]">
+      {/* Desktop Layout */}
+      <div className="hidden md:block relative w-full max-w-[1400px] mx-auto h-[600px]">
         {/* Center dot */}
         <div
           className={`absolute top-[48%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-foreground rounded-full transition-opacity duration-500 delay-300 z-10 ${
@@ -171,7 +172,7 @@ const SubsidiariesSection = () => {
           style={{ transitionDelay: "600ms" }}
         >
           <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+            <span className="text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
               PANORAMA
             </span>
             {/* Line below text */}
@@ -192,7 +193,7 @@ const SubsidiariesSection = () => {
           style={{ transitionDelay: "800ms" }}
         >
           <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+            <span className="text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
               URBANLINK
             </span>
             {/* Line below text */}
@@ -213,7 +214,7 @@ const SubsidiariesSection = () => {
           style={{ transitionDelay: "1000ms" }}
         >
           <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+            <span className="text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
               ARADNAS
             </span>
             {/* Line below text */}
@@ -234,7 +235,7 @@ const SubsidiariesSection = () => {
           style={{ transitionDelay: "1200ms" }}
         >
           <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+            <span className="text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
               MAR/S
             </span>
             {/* Line below text */}
@@ -262,7 +263,110 @@ const SubsidiariesSection = () => {
               }`}
               style={{ transitionDelay: "400ms" }}
             />
-            <span className="text-3xl md:text-4xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
+            <span className="text-4xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
+              UNDERTHELINE
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="md:hidden flex flex-col items-center justify-center space-y-12 w-full max-w-[400px] mx-auto">
+        {/* PANORAMA */}
+        <div
+          className={`transition-all duration-1000 w-full ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
+          <button className="group hover:scale-105 transition-all duration-300 relative block w-full text-center">
+            <span className="text-2xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+              PANORAMA
+            </span>
+            <div
+              className={`mt-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary mx-auto ${
+                isVisible ? "w-[200px]" : "w-0"
+              }`}
+              style={{ transitionDelay: "400ms" }}
+            />
+          </button>
+        </div>
+
+        {/* URBANLINK */}
+        <div
+          className={`transition-all duration-1000 w-full ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "500ms" }}
+        >
+          <button className="group hover:scale-105 transition-all duration-300 relative block w-full text-center">
+            <span className="text-2xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+              URBANLINK
+            </span>
+            <div
+              className={`mt-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary mx-auto ${
+                isVisible ? "w-[200px]" : "w-0"
+              }`}
+              style={{ transitionDelay: "600ms" }}
+            />
+          </button>
+        </div>
+
+        {/* ARADNAS */}
+        <div
+          className={`transition-all duration-1000 w-full ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "700ms" }}
+        >
+          <button className="group hover:scale-105 transition-all duration-300 relative block w-full text-center">
+            <span className="text-2xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+              ARADNAS
+            </span>
+            <div
+              className={`mt-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary mx-auto ${
+                isVisible ? "w-[200px]" : "w-0"
+              }`}
+              style={{ transitionDelay: "800ms" }}
+            />
+          </button>
+        </div>
+
+        {/* MAR/S */}
+        <div
+          className={`transition-all duration-1000 w-full ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "900ms" }}
+        >
+          <button className="group hover:scale-105 transition-all duration-300 relative block w-full text-center">
+            <span className="text-2xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+              MAR/S
+            </span>
+            <div
+              className={`mt-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary mx-auto ${
+                isVisible ? "w-[200px]" : "w-0"
+              }`}
+              style={{ transitionDelay: "1000ms" }}
+            />
+          </button>
+        </div>
+
+        {/* UNDERTHELINE */}
+        <div
+          className={`transition-all duration-1000 w-full pt-8 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "1100ms" }}
+        >
+          <div className="group relative inline-block cursor-pointer hover:scale-105 transition-all duration-300 w-full text-center">
+            <div
+              className={`mb-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary mx-auto ${
+                isVisible ? "w-[200px]" : "w-0"
+              }`}
+              style={{ transitionDelay: "1200ms" }}
+            />
+            <span className="text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
               UNDERTHELINE
             </span>
           </div>
