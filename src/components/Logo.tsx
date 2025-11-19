@@ -1,8 +1,8 @@
+import logo from "@/assets/logo.png";
+
 const Logo = () => {
   return (
-    <div className="text-foreground font-display font-bold text-base tracking-wide">
-      UNDERTHELINE HOLDINGS
-    </div>
+    <img src={logo} alt="Undertheline Holdings" className="h-4" />
   );
 };
 

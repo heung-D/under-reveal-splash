@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.png";
 
 const HeroSection = () => {
   const [startAnimation, setStartAnimation] = useState(false);
@@ -26,16 +27,14 @@ const HeroSection = () => {
               />
             </div>
             
-            {/* Logo text */}
+            {/* Logo image */}
             <div
               className={`opacity-0 ${
                 startAnimation ? "animate-fade-slide-up" : ""
               }`}
               style={{ animationDelay: "var(--delay-logo)" }}
             >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-wide leading-tight">
-                UNDERTHELINE<br />HOLDINGS
-              </h1>
+              <img src={logo} alt="Undertheline Holdings" className="w-full max-w-md" />
             </div>
           </div>
 
