@@ -4,6 +4,7 @@ const ClosingSection = () => {
   const [lineWidth, setLineWidth] = useState(0);
   const [textPhase, setTextPhase] = useState(0);
   const [contentOpacity, setContentOpacity] = useState(1);
+  const [gradientOpacity, setGradientOpacity] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -23,6 +24,15 @@ const ClosingSection = () => {
         setLineWidth(100);
       } else {
         setLineWidth(0);
+      }
+
+      // Gradient opacity - gradually appears as you scroll
+      if (scrollProgress >= 0 && scrollProgress <= 0.5) {
+        setGradientOpacity(scrollProgress * 0.6); // Max 0.3 opacity
+      } else if (scrollProgress > 0.5) {
+        setGradientOpacity(Math.min(0.3, (scrollProgress - 0.5) * 0.4 + 0.3));
+      } else {
+        setGradientOpacity(0);
       }
 
       // Text phases - much slower transitions
@@ -62,9 +72,37 @@ const ClosingSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[250vh] bg-background flex items-start justify-center pt-40"
+      className="min-h-[250vh] bg-background flex items-start justify-center pt-40 relative overflow-hidden"
     >
-      <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6 transition-opacity duration-1000" style={{ opacity: contentOpacity }}>
+      {/* Animated gradient backgrounds */}
+      <div 
+        className="absolute inset-0 pointer-events-none transition-opacity duration-1000"
+        style={{ opacity: gradientOpacity }}
+      >
+        {/* Radial gradient from center */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%)',
+          }}
+        />
+        {/* Top gradient */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(180deg, hsl(var(--primary) / 0.08) 0%, transparent 30%)',
+          }}
+        />
+        {/* Bottom gradient */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(0deg, hsl(var(--primary) / 0.08) 0%, transparent 30%)',
+          }}
+        />
+      </div>
+
+      <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6 transition-opacity duration-1000 relative z-10" style={{ opacity: contentOpacity }}>
         {/* Line Animation */}
         <div className="mb-[20px] flex justify-center">
           <div
