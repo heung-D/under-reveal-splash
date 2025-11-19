@@ -55,7 +55,7 @@ const ClosingSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[300vh] bg-background flex items-start justify-center pt-40"
+      className="min-h-[200vh] bg-background flex items-start justify-center pt-40"
     >
       <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6">
         {/* Line Animation */}
