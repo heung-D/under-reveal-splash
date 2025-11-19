@@ -79,9 +79,10 @@ const ClosingSection = () => {
         <div className="relative min-h-[100px] flex items-center justify-center">
           {/* First Text: "BEYOND THE LINE, BEHIND THE SHINE" */}
           <h2
-            className="absolute text-3xl md:text-5xl font-bold text-foreground font-rift text-center transition-opacity duration-700"
+            className="absolute font-bold text-foreground font-rift text-center transition-opacity duration-700"
             style={{
               opacity: textPhase === 1 ? 1 : textPhase === 2 ? 0 : 0,
+              fontSize: '40px',
             }}
           >
             BEYOND THE LINE, BEHIND THE SHINE
@@ -89,9 +90,10 @@ const ClosingSection = () => {
 
           {/* Second Text: "UNDERTHELINE" */}
           <h2
-            className="absolute text-4xl md:text-6xl font-bold text-foreground font-rift transition-opacity duration-700"
+            className="absolute font-bold text-foreground font-rift transition-opacity duration-700"
             style={{
               opacity: textPhase === 3 ? 1 : 0,
+              fontSize: '40px',
             }}
           >
             UNDERTHELINE
