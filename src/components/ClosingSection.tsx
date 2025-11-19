@@ -15,32 +15,32 @@ const ClosingSection = () => {
       const sectionHeight = rect.height;
       const scrollProgress = -rect.top / (sectionHeight - window.innerHeight);
 
-      // Line drawing progress (0-0.2)
-      if (scrollProgress >= 0 && scrollProgress <= 0.2) {
-        const lineProgress = (scrollProgress / 0.2) * 100;
+      // Line drawing progress (0-0.15) - slower
+      if (scrollProgress >= 0 && scrollProgress <= 0.15) {
+        const lineProgress = (scrollProgress / 0.15) * 100;
         setLineWidth(lineProgress);
-      } else if (scrollProgress > 0.2) {
+      } else if (scrollProgress > 0.15) {
         setLineWidth(100);
       } else {
         setLineWidth(0);
       }
 
-      // Text phases
-      if (scrollProgress < 0.3) {
+      // Text phases - much slower transitions
+      if (scrollProgress < 0.25) {
         setTextPhase(0); // No text
-      } else if (scrollProgress < 0.5) {
+      } else if (scrollProgress < 0.45) {
         setTextPhase(1); // First text appears
-      } else if (scrollProgress < 0.7) {
+      } else if (scrollProgress < 0.6) {
         setTextPhase(2); // First text fades out
-      } else if (scrollProgress < 0.9) {
+      } else if (scrollProgress < 0.85) {
         setTextPhase(3); // Second text appears
       } else {
         setTextPhase(3); // Second text stays
       }
 
-      // Fade out entire content when approaching the end
-      if (scrollProgress >= 0.8) {
-        const fadeProgress = (scrollProgress - 0.8) / 0.2; // 0.8 to 1.0
+      // Fade out entire content when approaching the end - slower and later
+      if (scrollProgress >= 0.9) {
+        const fadeProgress = (scrollProgress - 0.9) / 0.1; // 0.9 to 1.0
         setContentOpacity(Math.max(0, 1 - fadeProgress));
       } else {
         setContentOpacity(1);
@@ -62,9 +62,9 @@ const ClosingSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[200vh] bg-background flex items-start justify-center pt-40"
+      className="min-h-[250vh] bg-background flex items-start justify-center pt-40"
     >
-      <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6 transition-opacity duration-500" style={{ opacity: contentOpacity }}>
+      <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6 transition-opacity duration-1000" style={{ opacity: contentOpacity }}>
         {/* Line Animation */}
         <div className="mb-[20px] flex justify-center">
           <div
@@ -79,7 +79,7 @@ const ClosingSection = () => {
         <div className="relative min-h-[100px] flex items-center justify-center">
           {/* First Text: "BEYOND THE LINE, BEHIND THE SHINE" */}
           <h2
-            className="absolute font-bold text-foreground font-rift text-center transition-opacity duration-700"
+            className="absolute font-bold text-foreground font-rift text-center transition-opacity duration-1000"
             style={{
               opacity: textPhase === 1 ? 1 : textPhase === 2 ? 0 : 0,
               fontSize: '40px',
@@ -90,7 +90,7 @@ const ClosingSection = () => {
 
           {/* Second Text: "UNDERTHELINE" */}
           <h2
-            className="absolute font-bold text-foreground font-rift transition-opacity duration-700"
+            className="absolute font-bold text-foreground font-rift transition-opacity duration-1000"
             style={{
               opacity: textPhase === 3 ? 1 : 0,
               fontSize: '40px',
