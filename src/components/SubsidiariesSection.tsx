@@ -81,6 +81,30 @@ const SubsidiariesSection = () => {
           );
         })}
 
+        {/* Vertical line from center dot to UNDERTHELINE */}
+        <svg
+          className={`absolute transition-all duration-1000 pointer-events-none ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+          style={{
+            transitionDelay: "1600ms",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <line
+            x1="50%"
+            y1="40%"
+            x2="50%"
+            y2="90%"
+            stroke="currentColor"
+            strokeWidth="0.5"
+            className="text-foreground/30"
+          />
+        </svg>
+
         {/* Top Left - PANORAMA */}
         <div
           className={`absolute top-[15%] left-[5%] transition-all duration-1000 ${
@@ -125,12 +149,12 @@ const SubsidiariesSection = () => {
 
         {/* Top Right - ARADNAS */}
         <div
-          className={`absolute top-[15%] right-[2%] transition-all duration-1000 ${
+          className={`absolute top-[15%] right-[calc(2%+40px)] transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "1200ms" }}
         >
-          <button className="group hover:scale-110 transition-all duration-300 relative">
+          <button className="group hover:scale-110 transition-all duration-300 relative text-left">
             {/* Line above text */}
             <div
               className={`absolute -top-[8px] left-0 h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
@@ -146,12 +170,12 @@ const SubsidiariesSection = () => {
 
         {/* Bottom Right - MAR/S */}
         <div
-          className={`absolute top-[55%] right-[2%] transition-all duration-1000 ${
+          className={`absolute top-[55%] right-[calc(2%+40px)] transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "1400ms" }}
         >
-          <button className="group hover:scale-110 transition-all duration-300 relative">
+          <button className="group hover:scale-110 transition-all duration-300 relative text-left">
             {/* Line above text */}
             <div
               className={`absolute -top-[8px] left-0 h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
