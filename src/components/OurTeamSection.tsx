@@ -117,7 +117,7 @@ const OurTeamSection = () => {
         <img 
           src={ourTeamTitle} 
           alt="OUR TEAM" 
-          className={`mx-auto transition-all duration-700 ${
+          className={`mx-auto transition-all duration-700 scale-50 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         />
