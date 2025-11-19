@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 
 const SubsidiariesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,21 +37,36 @@ const SubsidiariesSection = () => {
     >
       {/* Desktop Layout */}
       <div className="hidden md:block relative w-full max-w-[1400px] mx-auto h-[600px]">
-        {/* Center dot */}
+        {/* CSS for line drawing animation */}
+        <style>{`
+          @keyframes drawLine {
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+          .line-animated {
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            animation: drawLine 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+          }
+        `}</style>
+
+        {/* Center dot - appears first with bounce */}
         <div
-          className={`absolute top-[48%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-foreground rounded-full transition-opacity duration-500 delay-300 z-10 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute top-[48%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full transition-all duration-700 z-10 ${
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"
+          } ${hoveredItem ? "bg-primary scale-125" : "bg-foreground"}`}
+          style={{ 
+            transitionDelay: "200ms",
+            transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+          }}
         />
 
         {/* Diagonal lines from each text line end to center dot */}
         {/* PANORAMA line to center */}
         <svg
-          className={`absolute transition-all duration-1000 pointer-events-none ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute pointer-events-none"
           style={{
-            transitionDelay: "800ms",
             top: 0,
             left: 0,
             width: "100%",
@@ -64,17 +80,17 @@ const SubsidiariesSection = () => {
             y2="48%"
             stroke="currentColor"
             strokeWidth="1"
-            className="text-foreground/30"
+            className={`transition-colors duration-300 ${
+              hoveredItem === "PANORAMA" ? "text-primary/60" : "text-foreground/30"
+            } ${isVisible ? "line-animated" : "opacity-0"}`}
+            style={{ animationDelay: "500ms" }}
           />
         </svg>
 
         {/* URBANLINK line to center */}
         <svg
-          className={`absolute transition-all duration-1000 pointer-events-none ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute pointer-events-none"
           style={{
-            transitionDelay: "1000ms",
             top: 0,
             left: 0,
             width: "100%",
@@ -88,17 +104,17 @@ const SubsidiariesSection = () => {
             y2="48%"
             stroke="currentColor"
             strokeWidth="1"
-            className="text-foreground/30"
+            className={`transition-colors duration-300 ${
+              hoveredItem === "URBANLINK" ? "text-primary/60" : "text-foreground/30"
+            } ${isVisible ? "line-animated" : "opacity-0"}`}
+            style={{ animationDelay: "600ms" }}
           />
         </svg>
 
         {/* ARADNAS line to center */}
         <svg
-          className={`absolute transition-all duration-1000 pointer-events-none ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute pointer-events-none"
           style={{
-            transitionDelay: "1200ms",
             top: 0,
             left: 0,
             width: "100%",
@@ -112,17 +128,17 @@ const SubsidiariesSection = () => {
             y2="48%"
             stroke="currentColor"
             strokeWidth="1"
-            className="text-foreground/30"
+            className={`transition-colors duration-300 ${
+              hoveredItem === "ARADNAS" ? "text-primary/60" : "text-foreground/30"
+            } ${isVisible ? "line-animated" : "opacity-0"}`}
+            style={{ animationDelay: "700ms" }}
           />
         </svg>
 
         {/* MAR/S line to center */}
         <svg
-          className={`absolute transition-all duration-1000 pointer-events-none ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute pointer-events-none"
           style={{
-            transitionDelay: "1400ms",
             top: 0,
             left: 0,
             width: "100%",
@@ -136,17 +152,17 @@ const SubsidiariesSection = () => {
             y2="48%"
             stroke="currentColor"
             strokeWidth="1"
-            className="text-foreground/30"
+            className={`transition-colors duration-300 ${
+              hoveredItem === "MAR/S" ? "text-primary/60" : "text-foreground/30"
+            } ${isVisible ? "line-animated" : "opacity-0"}`}
+            style={{ animationDelay: "800ms" }}
           />
         </svg>
 
         {/* Vertical line from center dot to UNDERTHELINE */}
         <svg
-          className={`absolute transition-all duration-1000 pointer-events-none ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute pointer-events-none"
           style={{
-            transitionDelay: "1600ms",
             top: 0,
             left: 0,
             width: "100%",
@@ -160,110 +176,159 @@ const SubsidiariesSection = () => {
             y2="calc(95% - 60px)"
             stroke="currentColor"
             strokeWidth="1"
-            className="text-foreground/30"
+            className={`transition-colors duration-300 ${
+              hoveredItem === "UNDERTHELINE" ? "text-primary/60" : "text-foreground/30"
+            } ${isVisible ? "line-animated" : "opacity-0"}`}
+            style={{ animationDelay: "900ms" }}
           />
         </svg>
 
         {/* Top Left - PANORAMA */}
         <div
           className={`absolute top-[12%] left-[5%] transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
-          style={{ transitionDelay: "600ms" }}
+          style={{ 
+            transitionDelay: "1000ms",
+            transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+          }}
+          onMouseEnter={() => setHoveredItem("PANORAMA")}
+          onMouseLeave={() => setHoveredItem(null)}
         >
-          <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
-            <span className="text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+          <button className="group hover:scale-110 transition-all duration-500 ease-out relative block text-left">
+            <span className="text-3xl font-bold text-foreground font-rift transition-all duration-500 group-hover:text-primary block">
               PANORAMA
             </span>
             {/* Line below text */}
-            <div
-              className={`mt-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "700ms" }}
-            />
+            <div className="mt-[8px] h-[3px] bg-foreground overflow-hidden">
+              <div
+                className={`h-full bg-foreground transition-all duration-1000 group-hover:bg-primary ${
+                  isVisible ? "w-[300px]" : "w-0"
+                }`}
+                style={{ 
+                  transitionDelay: "1100ms",
+                  transitionTimingFunction: "cubic-bezier(0.65, 0, 0.35, 1)"
+                }}
+              />
+            </div>
           </button>
         </div>
 
         {/* Bottom Left - URBANLINK */}
         <div
           className={`absolute top-[42%] left-[5%] transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
-          style={{ transitionDelay: "800ms" }}
+          style={{ 
+            transitionDelay: "1100ms",
+            transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+          }}
+          onMouseEnter={() => setHoveredItem("URBANLINK")}
+          onMouseLeave={() => setHoveredItem(null)}
         >
-          <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
-            <span className="text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+          <button className="group hover:scale-110 transition-all duration-500 ease-out relative block text-left">
+            <span className="text-3xl font-bold text-foreground font-rift transition-all duration-500 group-hover:text-primary block">
               URBANLINK
             </span>
-            {/* Line below text */}
-            <div
-              className={`mt-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "900ms" }}
-            />
+            <div className="mt-[8px] h-[3px] bg-foreground overflow-hidden">
+              <div
+                className={`h-full bg-foreground transition-all duration-1000 group-hover:bg-primary ${
+                  isVisible ? "w-[300px]" : "w-0"
+                }`}
+                style={{ 
+                  transitionDelay: "1200ms",
+                  transitionTimingFunction: "cubic-bezier(0.65, 0, 0.35, 1)"
+                }}
+              />
+            </div>
           </button>
         </div>
 
         {/* Top Right - ARADNAS */}
         <div
           className={`absolute top-[12%] right-[5%] transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
-          style={{ transitionDelay: "1000ms" }}
+          style={{ 
+            transitionDelay: "1200ms",
+            transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+          }}
+          onMouseEnter={() => setHoveredItem("ARADNAS")}
+          onMouseLeave={() => setHoveredItem(null)}
         >
-          <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
-            <span className="text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+          <button className="group hover:scale-110 transition-all duration-500 ease-out relative block text-left">
+            <span className="text-3xl font-bold text-foreground font-rift transition-all duration-500 group-hover:text-primary block">
               ARADNAS
             </span>
-            {/* Line below text */}
-            <div
-              className={`mt-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "1100ms" }}
-            />
+            <div className="mt-[8px] h-[3px] bg-foreground overflow-hidden">
+              <div
+                className={`h-full bg-foreground transition-all duration-1000 group-hover:bg-primary ${
+                  isVisible ? "w-[300px]" : "w-0"
+                }`}
+                style={{ 
+                  transitionDelay: "1300ms",
+                  transitionTimingFunction: "cubic-bezier(0.65, 0, 0.35, 1)"
+                }}
+              />
+            </div>
           </button>
         </div>
 
         {/* Bottom Right - MAR/S */}
         <div
           className={`absolute top-[42%] right-[5%] transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
-          style={{ transitionDelay: "1200ms" }}
+          style={{ 
+            transitionDelay: "1300ms",
+            transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+          }}
+          onMouseEnter={() => setHoveredItem("MAR/S")}
+          onMouseLeave={() => setHoveredItem(null)}
         >
-          <button className="group hover:scale-110 transition-all duration-300 relative block text-left">
-            <span className="text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary block">
+          <button className="group hover:scale-110 transition-all duration-500 ease-out relative block text-left">
+            <span className="text-3xl font-bold text-foreground font-rift transition-all duration-500 group-hover:text-primary block">
               MAR/S
             </span>
-            {/* Line below text */}
-            <div
-              className={`mt-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "1300ms" }}
-            />
+            <div className="mt-[8px] h-[3px] bg-foreground overflow-hidden">
+              <div
+                className={`h-full bg-foreground transition-all duration-1000 group-hover:bg-primary ${
+                  isVisible ? "w-[300px]" : "w-0"
+                }`}
+                style={{ 
+                  transitionDelay: "1400ms",
+                  transitionTimingFunction: "cubic-bezier(0.65, 0, 0.35, 1)"
+                }}
+              />
+            </div>
           </button>
         </div>
 
         {/* Bottom Center - UNDERTHELINE */}
         <div
-          className={`absolute bottom-[5%] left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ${
-            isVisible ? "opacity-100" : "opacity-0"
+          className={`absolute bottom-[5%] left-1/2 transform -translate-x-1/2 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
-          style={{ transitionDelay: "300ms" }}
+          style={{ 
+            transitionDelay: "1400ms",
+            transitionTimingFunction: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+          }}
+          onMouseEnter={() => setHoveredItem("UNDERTHELINE")}
+          onMouseLeave={() => setHoveredItem(null)}
         >
-          <div className="group relative inline-block cursor-pointer hover:scale-110 transition-all duration-300">
-            {/* Line above text */}
-            <div
-              className={`mb-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary mx-auto ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "400ms" }}
-            />
-            <span className="text-4xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
+          <div className="group relative inline-block cursor-pointer hover:scale-110 transition-all duration-500 ease-out">
+            <div className="mb-[8px] h-[3px] bg-foreground overflow-hidden mx-auto">
+              <div
+                className={`h-full bg-foreground transition-all duration-1000 group-hover:bg-primary ${
+                  isVisible ? "w-[300px]" : "w-0"
+                }`}
+                style={{ 
+                  transitionDelay: "1500ms",
+                  transitionTimingFunction: "cubic-bezier(0.65, 0, 0.35, 1)"
+                }}
+              />
+            </div>
+            <span className="text-4xl font-bold text-foreground font-rift transition-all duration-500 group-hover:text-primary">
               UNDERTHELINE
             </span>
           </div>
