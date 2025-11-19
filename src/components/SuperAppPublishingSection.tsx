@@ -132,18 +132,20 @@ const SuperAppPublishingSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
             >
-              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
+              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto">
                 UNDERTHELINE collaborates with global record labels, management companies, publishing networks,
+              </p>
+              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto">
                 and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
-                <strong>Record Distribution:</strong> Collaborates with major global labels including Columbia, Warner, Universal, and Sony.
+              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto mt-8">
+                Record Distribution: Collaborates with major global labels including Columbia, Warner, Universal, and Sony.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
-                <strong>Publishing Network:</strong> Connected with global publishers such as Warner Chappell, BMG, and Kobalt.
+              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto">
+                Publishing Network: Connected with global publishers such as Warner Chappell, BMG, and Kobalt.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
-                <strong>Touring Network:</strong> Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
+              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto">
+                Touring Network: Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
               </p>
             </div>
 
