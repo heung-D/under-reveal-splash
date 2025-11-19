@@ -5,10 +5,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     // Trigger animations on mount
-    const timer = setTimeout(() => {
-      setStartAnimation(true);
-    }, 100);
-    return () => clearTimeout(timer);
+    setStartAnimation(true);
   }, []);
 
   return (

@@ -44,8 +44,9 @@ All colors MUST be HSL.
     --duration-text: 0.6s;
     
     /* Delays */
-    --delay-logo: 0.4s;
-    --delay-text: 1s;
+    --delay-line: 0.3s;
+    --delay-logo: 1.8s;
+    --delay-text: 2.2s;
   }
 
   .dark {
@@ -114,7 +115,7 @@ All colors MUST be HSL.
   }
 
   .animate-draw-line {
-    animation: drawLine var(--duration-line) ease-out forwards;
+    animation: drawLine var(--duration-line) ease-out var(--delay-line) forwards;
   }
 
   .animate-fade-slide-up {
