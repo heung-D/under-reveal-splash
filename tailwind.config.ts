@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Pretendard', 'system-ui', 'sans-serif'],
+        display: ['Anton', 'Pretendard', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

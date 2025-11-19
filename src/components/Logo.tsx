@@ -1,6 +1,6 @@
 const Logo = () => {
   return (
-    <div className="text-foreground font-medium text-base tracking-wide">
+    <div className="text-foreground font-display font-bold text-base tracking-wide">
       UNDERTHELINE HOLDINGS
     </div>
   );
