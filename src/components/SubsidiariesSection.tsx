@@ -29,9 +29,13 @@ const SubsidiariesSection = () => {
 
       tl.fromTo(
         contentRef.current,
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 0.3 }
-      ).to(contentRef.current, { opacity: 0, y: -50, duration: 0.3 });
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.2 }
+      ).to(contentRef.current, { 
+        opacity: 0, 
+        y: -30,
+        duration: 0.5 
+      });
     }, sectionRef);
 
     return () => ctx.revert();

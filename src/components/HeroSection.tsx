@@ -37,7 +37,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-[200vh]">
+    <section ref={sectionRef} className="relative h-[300vh]">
       <div
         ref={contentRef}
         className="sticky top-0 flex items-center justify-center h-screen px-6"
