@@ -5,6 +5,7 @@ import WhoWeAreSection from "@/components/WhoWeAreSection";
 import SuperAppPublishingSection from "@/components/SuperAppPublishingSection";
 import OurTeamSection from "@/components/OurTeamSection";
 import ClosingSection from "@/components/ClosingSection";
+import Footer from "@/components/Footer";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -44,6 +45,8 @@ const Index = () => {
         <OurTeamSection />
         <ClosingSection />
       </main>
+
+      <Footer />
     </div>
   );
 };
