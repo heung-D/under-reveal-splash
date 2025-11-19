@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import whoWeAre from "@/assets/who-we-are.png";
 
 const WhoWeAreSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,14 +44,16 @@ const WhoWeAreSection = () => {
               />
             </div>
             
-            {/* WHO WE ARE image */}
+            {/* WHO WE ARE text */}
             <div
               className={`transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0 animate-fade-slide-up" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: isVisible ? "500ms" : "0ms" }}
             >
-              <img src={whoWeAre} alt="Who We Are" className="w-full max-w-md" />
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground font-rift">
+                WHO WE ARE
+              </h2>
             </div>
           </div>
 
