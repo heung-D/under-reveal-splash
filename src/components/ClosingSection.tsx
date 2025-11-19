@@ -14,46 +14,55 @@ const ClosingSection = () => {
 
       const rect = sectionRef.current.getBoundingClientRect();
       const sectionHeight = rect.height;
-      const scrollProgress = -rect.top / (sectionHeight - window.innerHeight);
+      const windowHeight = window.innerHeight;
+      
+      // Calculate scroll progress within the section
+      // Only animate when section is in viewport
+      const scrollProgress = Math.max(0, Math.min(1, -rect.top / (sectionHeight - windowHeight)));
 
-      // Line drawing progress (0-0.15) - slower
-      if (scrollProgress >= 0 && scrollProgress <= 0.15) {
-        const lineProgress = (scrollProgress / 0.15) * 100;
+      // Line drawing progress (0.1-0.25) - starts later and slower
+      if (scrollProgress >= 0.1 && scrollProgress <= 0.25) {
+        const lineProgress = ((scrollProgress - 0.1) / 0.15) * 100;
         setLineWidth(lineProgress);
-      } else if (scrollProgress > 0.15) {
+      } else if (scrollProgress > 0.25) {
         setLineWidth(100);
       } else {
         setLineWidth(0);
       }
 
-      // Gradient opacity - gradually appears as you scroll
-      if (scrollProgress >= 0 && scrollProgress <= 0.5) {
-        setGradientOpacity(scrollProgress * 0.6); // Max 0.3 opacity
-      } else if (scrollProgress > 0.5) {
-        setGradientOpacity(Math.min(0.3, (scrollProgress - 0.5) * 0.4 + 0.3));
+      // Gradient opacity - gradually appears as you scroll (0.15-0.5)
+      if (scrollProgress >= 0.15 && scrollProgress <= 0.5) {
+        setGradientOpacity((scrollProgress - 0.15) * 0.8); // Max 0.28 opacity
+      } else if (scrollProgress > 0.5 && scrollProgress < 0.8) {
+        setGradientOpacity(0.28);
+      } else if (scrollProgress >= 0.8) {
+        setGradientOpacity(Math.max(0, 0.28 - (scrollProgress - 0.8) * 1.4));
       } else {
         setGradientOpacity(0);
       }
 
-      // Text phases - much slower transitions
-      if (scrollProgress < 0.25) {
+      // Text phases - much slower transitions with longer hold times
+      if (scrollProgress < 0.2) {
         setTextPhase(0); // No text
-      } else if (scrollProgress < 0.45) {
-        setTextPhase(1); // First text appears
-      } else if (scrollProgress < 0.6) {
+      } else if (scrollProgress < 0.4) {
+        setTextPhase(1); // First text appears and holds
+      } else if (scrollProgress < 0.55) {
         setTextPhase(2); // First text fades out
-      } else if (scrollProgress < 0.85) {
-        setTextPhase(3); // Second text appears
+      } else if (scrollProgress < 0.8) {
+        setTextPhase(3); // Second text appears and holds longer
       } else {
         setTextPhase(3); // Second text stays
       }
 
-      // Fade out entire content when approaching the end - slower and later
-      if (scrollProgress >= 0.9) {
-        const fadeProgress = (scrollProgress - 0.9) / 0.1; // 0.9 to 1.0
+      // Fade out entire content when approaching the end (0.85-1.0)
+      if (scrollProgress >= 0.85) {
+        const fadeProgress = (scrollProgress - 0.85) / 0.15;
         setContentOpacity(Math.max(0, 1 - fadeProgress));
-      } else {
+      } else if (scrollProgress >= 0.1) {
         setContentOpacity(1);
+      } else {
+        // Fade in at the beginning (0-0.1)
+        setContentOpacity(scrollProgress * 10);
       }
     };
 
@@ -72,7 +81,7 @@ const ClosingSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[250vh] bg-background flex items-start justify-center pt-40 relative overflow-hidden"
+      className="min-h-[300vh] bg-background flex items-start justify-center relative overflow-hidden"
     >
       {/* Animated gradient backgrounds */}
       <div 
@@ -102,6 +111,7 @@ const ClosingSection = () => {
         />
       </div>
 
+      {/* Fixed content in center of viewport */}
       <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6 transition-opacity duration-1000 relative z-10" style={{ opacity: contentOpacity }}>
         {/* Line Animation */}
         <div className="mb-[20px] flex justify-center">
@@ -117,7 +127,7 @@ const ClosingSection = () => {
         <div className="relative min-h-[100px] flex items-center justify-center">
           {/* First Text: "BEYOND THE LINE, BEHIND THE SHINE" */}
           <h2
-            className="absolute font-bold text-foreground font-rift text-center transition-opacity duration-1000"
+            className="absolute font-bold text-foreground font-rift text-center transition-opacity duration-1500 ease-in-out"
             style={{
               opacity: textPhase === 1 ? 1 : textPhase === 2 ? 0 : 0,
               fontSize: '40px',
@@ -128,7 +138,7 @@ const ClosingSection = () => {
 
           {/* Second Text: "UNDERTHELINE" */}
           <h2
-            className="absolute font-bold text-foreground font-rift transition-opacity duration-1000"
+            className="absolute font-bold text-foreground font-rift transition-opacity duration-1500 ease-in-out"
             style={{
               opacity: textPhase === 3 ? 1 : 0,
               fontSize: '40px',
