@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Pretendard', 'system-ui', 'sans-serif'],
+        rift: ['Oswald', 'Impact', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

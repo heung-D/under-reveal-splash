@@ -12,36 +12,33 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-120px)] px-6">
-      <div className="max-w-7xl w-full">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-          {/* Left side - Logo with line */}
-          <div className="flex flex-col items-start space-y-8">
-            {/* Horizontal line */}
-            <div className="w-full overflow-hidden">
-              <div
-                className={`h-[2px] bg-foreground origin-left ${
-                  startAnimation ? "animate-draw-line" : "w-0"
-                }`}
-              />
-            </div>
-            
-            {/* Logo text */}
-            <div
-              className={`opacity-0 ${
-                startAnimation ? "animate-fade-slide-up" : ""
-              }`}
-              style={{ animationDelay: "var(--delay-logo)" }}
-            >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-wide leading-tight">
-                UNDERTHELINE<br />HOLDINGS
-              </h1>
-            </div>
-          </div>
-
-          {/* Right side - Description text */}
+    <div className="flex items-center justify-center min-h-screen px-6">
+      <div className="max-w-4xl w-full">
+        <div className="flex flex-col items-center text-center space-y-8">
+          {/* Logo text */}
           <div
             className={`opacity-0 ${
+              startAnimation ? "animate-fade-slide-up" : ""
+            }`}
+            style={{ animationDelay: "var(--delay-logo)" }}
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-rift tracking-wider leading-tight">
+              UNDERTHELINE<br />HOLDINGS
+            </h1>
+          </div>
+
+          {/* Horizontal line aligned right */}
+          <div className="w-full overflow-hidden flex justify-end">
+            <div
+              className={`h-[2px] bg-foreground origin-right ${
+                startAnimation ? "animate-draw-line" : "w-0"
+              }`}
+            />
+          </div>
+          
+          {/* Description text */}
+          <div
+            className={`opacity-0 max-w-2xl ${
               startAnimation ? "animate-fade-slide-up-delayed" : ""
             }`}
           >
