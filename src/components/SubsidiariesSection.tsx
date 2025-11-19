@@ -88,15 +88,15 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "800ms" }}
         >
-          <button className="hover:scale-105 transition-transform relative">
+          <button className="group hover:scale-110 transition-all duration-300 relative">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
                 isVisible ? "w-full" : "w-0"
               }`}
               style={{ transitionDelay: "900ms" }}
             />
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
               PANORAMA
             </span>
           </button>
@@ -109,15 +109,15 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1000ms" }}
         >
-          <button className="hover:scale-105 transition-transform relative">
+          <button className="group hover:scale-110 transition-all duration-300 relative">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
                 isVisible ? "w-full" : "w-0"
               }`}
               style={{ transitionDelay: "1100ms" }}
             />
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
               URBANLINK
             </span>
           </button>
@@ -130,15 +130,15 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1200ms" }}
         >
-          <button className="hover:scale-105 transition-transform relative">
+          <button className="group hover:scale-110 transition-all duration-300 relative">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
                 isVisible ? "w-full" : "w-0"
               }`}
               style={{ transitionDelay: "1300ms" }}
             />
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
               ARADNAS
             </span>
           </button>
@@ -151,15 +151,15 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1400ms" }}
         >
-          <button className="hover:scale-105 transition-transform relative">
+          <button className="group hover:scale-110 transition-all duration-300 relative">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
                 isVisible ? "w-full" : "w-0"
               }`}
               style={{ transitionDelay: "1500ms" }}
             />
-            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
+            <span className="text-2xl md:text-3xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
               MAR/S
             </span>
           </button>
@@ -172,15 +172,15 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <div className="relative inline-block">
+          <div className="group relative inline-block cursor-pointer hover:scale-110 transition-all duration-300">
             {/* Line above text */}
             <div
-              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 group-hover:bg-primary group-hover:h-[2px] ${
                 isVisible ? "w-full" : "w-0"
               }`}
               style={{ transitionDelay: "400ms" }}
             />
-            <span className="text-3xl md:text-4xl font-bold text-foreground font-rift">
+            <span className="text-3xl md:text-4xl font-bold text-foreground font-rift transition-colors duration-300 group-hover:text-primary">
               UNDERTHELINE
             </span>
           </div>
