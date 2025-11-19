@@ -113,6 +113,16 @@ const SuperAppPublishingSection = () => {
                 <span>An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.</span>
               </p>
             </div>
+
+            {/* DOCE OS Line Image */}
+            <div
+              className={`mt-[40px] flex justify-center transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
+            >
+              <img src={doceOsLineImage} alt="DOCE OS" className="w-full max-w-[856px]" />
+            </div>
           </TabsContent>
 
           <TabsContent value="tab2" className="mt-0 w-full max-w-[856px] mx-auto min-h-[600px]">
@@ -132,19 +142,19 @@ const SuperAppPublishingSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
             >
-              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto">
+              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
                 UNDERTHELINE collaborates with global record labels, management companies, publishing networks,
               </p>
-              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto">
+              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
                 and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure.
               </p>
-              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto mt-8">
+              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto mt-8">
                 Record Distribution: Collaborates with major global labels including Columbia, Warner, Universal, and Sony.
               </p>
-              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto">
+              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
                 Publishing Network: Connected with global publishers such as Warner Chappell, BMG, and Kobalt.
               </p>
-              <p className="text-[20px] font-light leading-[1.4] text-foreground w-full mx-auto">
+              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
                 Touring Network: Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
               </p>
             </div>
@@ -160,16 +170,6 @@ const SuperAppPublishingSection = () => {
             </div>
           </TabsContent>
         </Tabs>
-
-        {/* DOCE OS Line Image */}
-        <div
-          className={`mt-16 flex justify-center transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
-        >
-          <img src={doceOsLineImage} alt="DOCE OS" className="w-full max-w-[856px]" />
-        </div>
       </div>
     </div>
   );
