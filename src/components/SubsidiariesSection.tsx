@@ -88,7 +88,14 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "800ms" }}
         >
-          <button className="hover:scale-105 transition-transform">
+          <button className="hover:scale-105 transition-transform relative">
+            {/* Line above text */}
+            <div
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+                isVisible ? "w-full" : "w-0"
+              }`}
+              style={{ transitionDelay: "900ms" }}
+            />
             <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
               PANORAMA
             </span>
@@ -102,7 +109,14 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1000ms" }}
         >
-          <button className="hover:scale-105 transition-transform">
+          <button className="hover:scale-105 transition-transform relative">
+            {/* Line above text */}
+            <div
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+                isVisible ? "w-full" : "w-0"
+              }`}
+              style={{ transitionDelay: "1100ms" }}
+            />
             <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
               URBANLINK
             </span>
@@ -116,7 +130,14 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1200ms" }}
         >
-          <button className="hover:scale-105 transition-transform">
+          <button className="hover:scale-105 transition-transform relative">
+            {/* Line above text */}
+            <div
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+                isVisible ? "w-full" : "w-0"
+              }`}
+              style={{ transitionDelay: "1300ms" }}
+            />
             <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
               ARADNAS
             </span>
@@ -130,7 +151,14 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1400ms" }}
         >
-          <button className="hover:scale-105 transition-transform">
+          <button className="hover:scale-105 transition-transform relative">
+            {/* Line above text */}
+            <div
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+                isVisible ? "w-full" : "w-0"
+              }`}
+              style={{ transitionDelay: "1500ms" }}
+            />
             <span className="text-2xl md:text-3xl font-bold text-foreground font-rift">
               MAR/S
             </span>
@@ -144,9 +172,18 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <span className="text-3xl md:text-4xl font-bold text-foreground font-rift">
-            UNDERTHELINE
-          </span>
+          <div className="relative inline-block">
+            {/* Line above text */}
+            <div
+              className={`absolute -top-[8px] left-0 h-[1px] bg-foreground transition-all duration-700 ${
+                isVisible ? "w-full" : "w-0"
+              }`}
+              style={{ transitionDelay: "400ms" }}
+            />
+            <span className="text-3xl md:text-4xl font-bold text-foreground font-rift">
+              UNDERTHELINE
+            </span>
+          </div>
         </div>
       </div>
     </section>
