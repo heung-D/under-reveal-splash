@@ -132,7 +132,7 @@ const OurTeamSection = () => {
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className={`flex-shrink-0 w-screen h-screen flex items-center justify-center transition-all duration-700 delay-${index * 100}`}
+              className={`flex-shrink-0 w-screen min-h-[600px] flex items-center justify-center transition-all duration-700 delay-${index * 100}`}
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(50px)",
