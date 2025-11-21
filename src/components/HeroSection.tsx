@@ -45,7 +45,7 @@ const HeroSection = () => {
               startAnimation ? "animate-fade-slide-up-delayed" : ""
             }`}
           >
-            <p className="text-lg md:text-xl font-light leading-[1.4] text-foreground">
+            <p className="text-lg md:text-xl leading-[1.4] text-foreground">
               As the hidden engine of the entertainment industry, we deliver strategic business solutions that enable our labels and partners to achieve their brightest success.
             </p>
           </div>
