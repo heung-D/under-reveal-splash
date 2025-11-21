@@ -49,7 +49,7 @@ const SubsidiariesSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center px-6 md:px-12 relative py-20"
+      className="min-h-screen flex items-center justify-center px-[260px] relative py-20"
     >
       {/* Desktop Layout */}
       <div className="hidden md:block relative w-full max-w-[1400px] mx-auto h-[600px]">
@@ -136,13 +136,13 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "700ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110">
+          <div className="relative block text-left">
             <img 
               src={underthelineText} 
               alt="UNDERTHELINE" 
               className="h-10 object-contain"
             />
-          </button>
+          </div>
         </div>
       </div>
 
@@ -193,13 +193,13 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "700ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110">
+          <div className="relative block w-full">
             <img 
               src={underthelineText} 
               alt="UNDERTHELINE" 
               className="h-10 object-contain"
             />
-          </button>
+          </div>
         </div>
 
         {/* ARADNAS */}
