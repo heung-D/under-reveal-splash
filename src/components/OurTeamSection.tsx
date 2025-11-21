@@ -131,9 +131,9 @@ const OurTeamSection = () => {
                 transitionDelay: `${index * 100}ms`
               }}
             >
-              <div className="max-w-[1880px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-[40px]">
-                {/* Image Section */}
-                <div className="w-full md:w-1/2 h-[500px] border-b border-foreground/20">
+              <div className="max-w-[1880px] mx-auto px-6 md:px-12 flex flex-col items-start">
+                {/* Image Section - Smaller Rectangle */}
+                <div className="w-full h-[350px] mb-6">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -141,16 +141,18 @@ const OurTeamSection = () => {
                   />
                 </div>
 
-                {/* Info Section */}
-                <div className="w-full md:w-1/2 space-y-8">
-                  <div>
+                {/* Info Section - Two Columns */}
+                <div className="w-full flex justify-between gap-12">
+                  {/* Left Column - Name and Role */}
+                  <div className="flex-shrink-0">
                     <h3 className="text-[36px] font-bold text-foreground mb-0 font-rift">
                       {member.name}
                     </h3>
                     <p className="text-xl text-foreground/70">{member.role}</p>
                   </div>
 
-                  <div>
+                  {/* Right Column - Title and Description */}
+                  <div className="flex-1 text-right">
                     <h4 className="text-[17px] font-semibold text-foreground mb-1">
                       {member.title}
                     </h4>
