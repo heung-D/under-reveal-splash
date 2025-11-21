@@ -87,18 +87,8 @@ const SuperAppPublishingSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
             >
-              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
-                UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region,
-                enabling artists and creators to own, design, and operate their own
-                independent platforms through DOCE-powered publishing.
-              </p>
-              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
-                Each app becomes a personal community and ecosystem where the artist is the true owner
-                -operating fandom, commerce, and content directly under their own control.
-              </p>
-              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto flex items-center justify-center gap-2">
-                <span>→</span>
-                <span>An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.</span>
+              <p className="text-sm md:text-base leading-[1.4] text-foreground w-full mx-auto">
+                UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region, enabling artists and creators to own, design, and operate their own independent platforms through DOCE-powered publishing. Each app becomes a personal community and ecosystem where the artist is the true owner -operating fandom, commerce, and content directly under their own control. → An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.
               </p>
             </div>
 
@@ -132,20 +122,8 @@ const SuperAppPublishingSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
             >
-              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
-                UNDERTHELINE collaborates with global record labels, management companies, publishing networks,
-              </p>
-              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
-                and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure.
-              </p>
-              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto mt-8">
-                Record Distribution: Collaborates with major global labels including Columbia, Warner, Universal, and Sony.
-              </p>
-              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
-                Publishing Network: Connected with global publishers such as Warner Chappell, BMG, and Kobalt.
-              </p>
-              <p className="text-[18px] font-light leading-[1.4] text-foreground w-full mx-auto">
-                Touring Network: Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
+              <p className="text-sm md:text-base leading-[1.4] text-foreground w-full mx-auto">
+                UNDERTHELINE collaborates with global record labels, management companies, publishing networks, and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure. Record Distribution: Collaborates with major global labels including Columbia, Warner, Universal, and Sony. Publishing Network: Connected with global publishers such as Warner Chappell, BMG, and Kobalt. Touring Network: Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
               </p>
             </div>
 
