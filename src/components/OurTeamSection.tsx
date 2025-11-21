@@ -108,6 +108,7 @@ const OurTeamSection = () => {
 
   return (
     <section
+      id="our-team"
       ref={sectionRef}
       className="py-20 bg-background"
     >
