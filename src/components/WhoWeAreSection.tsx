@@ -83,8 +83,10 @@ const WhoWeAreSection = () => {
               <button 
                 className="px-8 py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-lg hover:bg-foreground hover:text-background transition-all duration-300"
                 onClick={() => {
-                  // Network page navigation will be added
-                  console.log('Navigate to Network page');
+                  const superAppSection = document.getElementById('super-app-publishing');
+                  if (superAppSection) {
+                    superAppSection.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
               >
                 NETWORK

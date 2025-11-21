@@ -38,6 +38,7 @@ const SuperAppPublishingSection = () => {
 
   return (
     <div 
+      id="super-app-publishing"
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center px-6 lg:px-[200px] py-20"
       style={{
