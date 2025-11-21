@@ -142,7 +142,7 @@ const OurTeamSection = () => {
                 </div>
 
                 {/* Info Section - Two Columns */}
-                <div className="w-full flex justify-between gap-[100px]">
+                <div className="w-full flex flex-col md:flex-row justify-between gap-6 md:gap-[100px]">
                   {/* Left Column - Name and Role */}
                   <div className="flex-shrink-0">
                     <h3 className="text-[36px] font-bold text-foreground mb-0 font-rift">
@@ -152,11 +152,11 @@ const OurTeamSection = () => {
                   </div>
 
                   {/* Right Column - Title and Description */}
-                  <div className="flex-1 text-right">
-                    <h4 className="text-[17px] font-semibold text-foreground mb-1 text-right">
+                  <div className="flex-1 text-left md:text-right">
+                    <h4 className="text-[17px] font-semibold text-foreground mb-1">
                       {member.title}
                     </h4>
-                    <p className="text-[17px] text-foreground/80 leading-relaxed tracking-tight text-right">
+                    <p className="text-[17px] text-foreground/80 leading-relaxed tracking-tight">
                       {member.description}
                     </p>
                   </div>
