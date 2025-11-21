@@ -48,7 +48,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <button className="group hover:scale-[1.02] transition-all duration-200 ease-out relative block text-left">
+          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110">
             <img 
               src={panoramaLogo} 
               alt="PANORAMA" 
@@ -64,7 +64,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "500ms" }}
         >
-          <button className="group hover:scale-[1.02] transition-all duration-200 ease-out relative block text-left">
+          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110">
             <img 
               src={urbanlinkLogo} 
               alt="URBANLINK" 
@@ -80,7 +80,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "700ms" }}
         >
-          <button className="group hover:scale-[1.02] transition-all duration-200 ease-out relative block text-left">
+          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110">
             <img 
               src={aradnasLogo} 
               alt="ARADNAS" 
@@ -96,7 +96,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "900ms" }}
         >
-          <button className="group hover:scale-[1.02] transition-all duration-200 ease-out relative block text-left">
+          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110">
             <img 
               src={marsLogo} 
               alt="MAR/S" 
@@ -131,7 +131,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <button className="group hover:scale-[1.02] transition-all duration-200 ease-out relative block w-full">
+          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110">
             <img 
               src={panoramaLogo} 
               alt="PANORAMA" 
@@ -147,7 +147,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "500ms" }}
         >
-          <button className="group hover:scale-[1.02] transition-all duration-200 ease-out relative block w-full">
+          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110">
             <img 
               src={urbanlinkLogo} 
               alt="URBANLINK" 
@@ -163,7 +163,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "700ms" }}
         >
-          <button className="group hover:scale-[1.02] transition-all duration-200 ease-out relative block w-full">
+          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110">
             <img 
               src={aradnasLogo} 
               alt="ARADNAS" 
@@ -179,7 +179,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "900ms" }}
         >
-          <button className="group hover:scale-[1.02] transition-all duration-200 ease-out relative block w-full">
+          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110">
             <img 
               src={marsLogo} 
               alt="MAR/S" 
