@@ -31,10 +31,11 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-foreground font-rift">Family Site</h3>
             <div className="space-y-2 text-[14px] text-foreground/70">
-              <p className="hover:text-foreground cursor-pointer transition-colors">About Us</p>
-              <p className="hover:text-foreground cursor-pointer transition-colors">Our Subsidiaries</p>
-              <p className="hover:text-foreground cursor-pointer transition-colors">Careers</p>
-              <p className="hover:text-foreground cursor-pointer transition-colors">Privacy Policy</p>
+              <p className="hover:text-foreground cursor-pointer transition-colors">Urbanlink 360</p>
+              <p className="hover:text-foreground cursor-pointer transition-colors">Urbanlink xyz(400)</p>
+              <p className="hover:text-foreground cursor-pointer transition-colors">Panorama</p>
+              <p className="hover:text-foreground cursor-pointer transition-colors">Aradnas</p>
+              <p className="hover:text-foreground cursor-pointer transition-colors">Mar/s</p>
             </div>
           </div>
         </div>
