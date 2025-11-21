@@ -45,6 +45,7 @@ const teamMembers = [
 
 const OurTeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -66,6 +67,15 @@ const OurTeamSection = () => {
   }, []);
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (!scrollContainerRef.current) return;
+      
+      const container = scrollContainerRef.current;
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const progress = maxScrollLeft > 0 ? (container.scrollLeft / maxScrollLeft) * 100 : 0;
+      setScrollProgress(progress);
+    };
+
     const handleWheel = (e: WheelEvent) => {
       if (!scrollContainerRef.current) return;
       
@@ -88,11 +98,14 @@ const OurTeamSection = () => {
 
     const container = scrollContainerRef.current;
     if (container) {
+      container.addEventListener('scroll', handleScroll);
       container.addEventListener('wheel', handleWheel, { passive: false });
+      handleScroll(); // Initial calculation
     }
 
     return () => {
       if (container) {
+        container.removeEventListener('scroll', handleScroll);
         container.removeEventListener('wheel', handleWheel);
       }
     };
@@ -118,7 +131,7 @@ const OurTeamSection = () => {
       {/* Horizontal Scrollable Team Members */}
       <div 
         ref={scrollContainerRef}
-        className="overflow-x-auto overflow-y-hidden"
+        className="overflow-x-auto overflow-y-hidden scrollbar-hide"
       >
         <div className="flex gap-0 min-w-max">
           {teamMembers.map((member, index) => (
@@ -164,6 +177,16 @@ const OurTeamSection = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Custom Scrollbar */}
+      <div className="px-6 md:px-12 mt-8">
+        <div className="relative w-full h-[2px] bg-border/30">
+          <div 
+            className="absolute left-0 top-0 h-full bg-foreground transition-all duration-150 ease-out"
+            style={{ width: `${scrollProgress}%` }}
+          />
         </div>
       </div>
     </section>
