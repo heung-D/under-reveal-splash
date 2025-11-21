@@ -88,16 +88,6 @@ const ClosingSection = () => {
             BEYOND THE LINE, BEHIND THE SHINE
           </h2>
 
-          {/* Second Text: "UNDERTHELINE" */}
-          <h2
-            className="absolute font-bold text-foreground font-rift transition-opacity duration-700"
-            style={{
-              opacity: textPhase === 3 ? 1 : 0,
-              fontSize: '40px',
-            }}
-          >
-            UNDERTHELINE
-          </h2>
         </div>
       </div>
     </section>
