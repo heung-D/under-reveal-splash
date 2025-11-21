@@ -142,9 +142,9 @@ const OurTeamSection = () => {
                 </div>
 
                 {/* Info Section */}
-                <div className="w-full md:w-1/2 space-y-3">
+                <div className="w-full md:w-1/2 space-y-8">
                   <div>
-                    <h3 className="text-[26px] font-bold text-foreground mb-3 font-rift">
+                    <h3 className="text-[36px] font-bold text-foreground mb-1 font-rift">
                       {member.name}
                     </h3>
                     <p className="text-xl text-foreground/70">{member.role}</p>
