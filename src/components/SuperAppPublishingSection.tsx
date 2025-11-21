@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import mockupImage from "@/assets/mockup.png";
-import entLogosImage from "@/assets/ent-logos.png";
+import entLogosImage from "@/assets/ent-logos-new.png";
 
 const SuperAppPublishingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -170,7 +170,7 @@ const SuperAppPublishingSection = () => {
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
               >
-                <img src={entLogosImage} alt="Entertainment Industry Logos" className="h-64 md:h-80 lg:h-96 w-auto object-contain" />
+                <img src={entLogosImage} alt="Entertainment Industry Logos" className="w-auto h-auto object-contain" />
               </div>
             </div>
           </TabsContent>
