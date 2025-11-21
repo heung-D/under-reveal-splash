@@ -184,7 +184,7 @@ const SuperAppPublishingSection = () => {
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
               >
-                <img src={entLogosImage} alt="Entertainment Industry Logos" className="w-full max-w-md lg:max-w-lg h-auto object-contain" />
+                <img src={entLogosImage} alt="Entertainment Industry Logos" className="w-full max-w-lg lg:max-w-2xl h-auto object-contain" />
               </div>
             </div>
           </TabsContent>
