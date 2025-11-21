@@ -2,7 +2,7 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-foreground/20 pt-[58px] pb-12">
+    <footer className="bg-background border-t border-foreground/20 pt-[68px] pb-12">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
