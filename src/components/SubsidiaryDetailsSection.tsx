@@ -31,8 +31,21 @@ const SubsidiaryDetailsSection = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleTabChange = (event: CustomEvent) => {
+      setActiveTab(event.detail.tab);
+    };
+
+    window.addEventListener('changeSubsidiaryTab' as any, handleTabChange);
+    
+    return () => {
+      window.removeEventListener('changeSubsidiaryTab' as any, handleTabChange);
+    };
+  }, []);
+
   return (
     <section
+      id="subsidiary-details"
       ref={sectionRef}
       className="min-h-screen flex items-center justify-center px-6 md:px-12 py-20 bg-background"
     >
