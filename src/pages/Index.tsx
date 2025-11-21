@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Logo from "@/components/Logo";
 import HeroSection from "@/components/HeroSection";
 import SubsidiariesSection from "@/components/SubsidiariesSection";
@@ -17,7 +18,14 @@ import { Globe } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div 
+      className="min-h-screen bg-background overflow-y-auto"
+      style={{
+        scrollSnapType: 'y proximity',
+        scrollBehavior: 'smooth',
+        scrollPaddingTop: '80px'
+      }}
+    >
       {/* Header with logo and language selector */}
       <header className="fixed top-0 left-0 w-full h-20 z-50 px-6 md:px-12 flex justify-between items-center border-b border-gray-800/20 bg-background">
         <Logo />
@@ -39,13 +47,24 @@ const Index = () => {
 
       {/* Main content */}
       <main>
-        <HeroSection />
-        <SubsidiariesSection />
-        <WhoWeAreSection />
-        <SubsidiaryDetailsSection />
-        <SuperAppPublishingSection />
-        <OurTeamSection />
-        
+        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+          <HeroSection />
+        </section>
+        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+          <SubsidiariesSection />
+        </section>
+        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+          <WhoWeAreSection />
+        </section>
+        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+          <SubsidiaryDetailsSection />
+        </section>
+        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+          <SuperAppPublishingSection />
+        </section>
+        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+          <OurTeamSection />
+        </section>
       </main>
 
       <Footer />
