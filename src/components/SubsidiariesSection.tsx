@@ -34,6 +34,18 @@ const SubsidiariesSection = () => {
     };
   }, []);
 
+  const handleSubsidiaryClick = (tab: string) => {
+    const detailsSection = document.getElementById('subsidiary-details');
+    if (detailsSection) {
+      detailsSection.scrollIntoView({ behavior: 'smooth' });
+      
+      setTimeout(() => {
+        const event = new CustomEvent('changeSubsidiaryTab', { detail: { tab } });
+        window.dispatchEvent(event);
+      }, 500);
+    }
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -48,7 +60,10 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110">
+          <button 
+            onClick={() => handleSubsidiaryClick('urbanlink')}
+            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110"
+          >
             <img 
               src={urbanlinkLogo} 
               alt="URBANLINK" 
@@ -64,7 +79,10 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "500ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110">
+          <button 
+            onClick={() => handleSubsidiaryClick('panorama')}
+            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110"
+          >
             <img 
               src={panoramaLogo} 
               alt="PANORAMA" 
@@ -80,7 +98,10 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "900ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110">
+          <button 
+            onClick={() => handleSubsidiaryClick('aradnas')}
+            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110"
+          >
             <img 
               src={aradnasLogo} 
               alt="ARADNAS" 
@@ -96,7 +117,10 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1100ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110">
+          <button 
+            onClick={() => handleSubsidiaryClick('mars')}
+            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110"
+          >
             <img 
               src={marsLogo} 
               alt="MAR/S" 
@@ -131,7 +155,10 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110">
+          <button 
+            onClick={() => handleSubsidiaryClick('urbanlink')}
+            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110"
+          >
             <img 
               src={urbanlinkLogo} 
               alt="URBANLINK" 
@@ -147,7 +174,10 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "500ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110">
+          <button 
+            onClick={() => handleSubsidiaryClick('panorama')}
+            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110"
+          >
             <img 
               src={panoramaLogo} 
               alt="PANORAMA" 
@@ -179,7 +209,10 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "900ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110">
+          <button 
+            onClick={() => handleSubsidiaryClick('aradnas')}
+            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110"
+          >
             <img 
               src={aradnasLogo} 
               alt="ARADNAS" 
@@ -195,7 +228,10 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1100ms" }}
         >
-          <button className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110">
+          <button 
+            onClick={() => handleSubsidiaryClick('mars')}
+            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110"
+          >
             <img 
               src={marsLogo} 
               alt="MAR/S" 
