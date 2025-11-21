@@ -1,9 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import mockupImage from "@/assets/mockup.png";
 
 const SuperAppPublishingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState("tab1");
+  const [isTab1Expanded, setIsTab1Expanded] = useState(false);
+  const [isTab2Expanded, setIsTab2Expanded] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -66,10 +70,10 @@ const SuperAppPublishingSection = () => {
           </div>
 
           {/* Tab Content */}
-          <TabsContent value="tab1" className="mt-0 w-full max-w-[570px] mx-auto">
+          <TabsContent value="tab1" className="mt-0 w-full max-w-7xl mx-auto">
             {/* Title */}
             <div
-              className={`mb-8 flex justify-center transition-all duration-1000 ${
+              className={`mb-12 flex justify-center transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
@@ -79,22 +83,53 @@ const SuperAppPublishingSection = () => {
               </h2>
             </div>
             
-            <div
-              className={`text-center space-y-8 transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
-            >
-              <p className="text-sm md:text-base leading-[1.4] text-foreground w-full mx-auto">
-                UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region, enabling artists and creators to own, design, and operate their own independent platforms through DOCE-powered publishing. Each app becomes a personal community and ecosystem where the artist is the true owner -operating fandom, commerce, and content directly under their own control. → An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.
-              </p>
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+              {/* Left side - Text content */}
+              <div
+                className={`flex-1 space-y-6 transition-all duration-1000 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
+              >
+                <div className="space-y-4">
+                  <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                    UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region, enabling artists and creators to own, design, and operate their own independent platforms through DOCE-powered publishing.
+                  </p>
+                  
+                  {isTab1Expanded && (
+                    <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                      Each app becomes a personal community and ecosystem where the artist is the true owner - operating fandom, commerce, and content directly under their own control. → An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.
+                    </p>
+                  )}
+                </div>
+                
+                <Button
+                  variant="outline"
+                  onClick={() => setIsTab1Expanded(!isTab1Expanded)}
+                  className="font-rift font-bold"
+                >
+                  {isTab1Expanded ? "LESS" : "MORE"}
+                </Button>
+              </div>
+
+              {/* Right side - Images */}
+              <div
+                className={`flex gap-4 justify-center lg:justify-end transition-all duration-1000 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
+              >
+                <img src={mockupImage} alt="App Mockup 1" className="w-32 md:w-40 lg:w-48 h-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 2" className="w-32 md:w-40 lg:w-48 h-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 3" className="w-32 md:w-40 lg:w-48 h-auto object-contain" />
+              </div>
             </div>
           </TabsContent>
 
-          <TabsContent value="tab2" className="mt-0 w-full max-w-[570px] mx-auto">
+          <TabsContent value="tab2" className="mt-0 w-full max-w-7xl mx-auto">
             {/* Title */}
             <div
-              className={`mb-8 flex justify-center transition-all duration-1000 ${
+              className={`mb-12 flex justify-center transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
@@ -104,15 +139,54 @@ const SuperAppPublishingSection = () => {
               </h2>
             </div>
             
-            <div
-              className={`text-center space-y-6 transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
-            >
-              <p className="text-sm md:text-base leading-[1.4] text-foreground w-full mx-auto">
-                UNDERTHELINE collaborates with global record labels, management companies, publishing networks, and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure. Record Distribution: Collaborates with major global labels including Columbia, Warner, Universal, and Sony. Publishing Network: Connected with global publishers such as Warner Chappell, BMG, and Kobalt. Touring Network: Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
-              </p>
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+              {/* Left side - Text content */}
+              <div
+                className={`flex-1 space-y-6 transition-all duration-1000 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
+              >
+                <div className="space-y-4">
+                  <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                    UNDERTHELINE collaborates with global record labels, management companies, publishing networks, and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure.
+                  </p>
+                  
+                  {isTab2Expanded && (
+                    <>
+                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                        Record Distribution: Collaborates with major global labels including Columbia, Warner, Universal, and Sony.
+                      </p>
+                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                        Publishing Network: Connected with global publishers such as Warner Chappell, BMG, and Kobalt.
+                      </p>
+                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                        Touring Network: Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
+                      </p>
+                    </>
+                  )}
+                </div>
+                
+                <Button
+                  variant="outline"
+                  onClick={() => setIsTab2Expanded(!isTab2Expanded)}
+                  className="font-rift font-bold"
+                >
+                  {isTab2Expanded ? "LESS" : "MORE"}
+                </Button>
+              </div>
+
+              {/* Right side - Images */}
+              <div
+                className={`flex gap-4 justify-center lg:justify-end transition-all duration-1000 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
+              >
+                <img src={mockupImage} alt="App Mockup 1" className="w-32 md:w-40 lg:w-48 h-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 2" className="w-32 md:w-40 lg:w-48 h-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 3" className="w-32 md:w-40 lg:w-48 h-auto object-contain" />
+              </div>
             </div>
           </TabsContent>
         </Tabs>
