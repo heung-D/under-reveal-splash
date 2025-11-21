@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-const SCROLL_THRESHOLD = 80; // 스크롤 감지 임계값
-const TRANSITION_DURATION = 1000; // 1초 전환
+const SCROLL_THRESHOLD = 120; // 스크롤 감지 임계값
+const TRANSITION_DURATION = 1400; // 1.4초 전환 (더 느리게)
 const DEBOUNCE_DELAY = 150; // 입력 디바운스
 const BRAKE_EASING = [0.30, 1.5, 0.8, 1.5]; // 커스텀 브레이크 커브
 
