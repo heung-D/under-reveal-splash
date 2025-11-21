@@ -81,7 +81,7 @@ const SubsidiaryDetailsSection = () => {
                 <Button 
                   variant="outline" 
                   className="group"
-                  onClick={() => window.open('https://panorama-music.com', '_blank')}
+                  onClick={() => window.open('https://www.panoramamgmt.com', '_blank')}
                 >
                   WEBSITE
                   <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
