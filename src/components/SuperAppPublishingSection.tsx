@@ -120,9 +120,9 @@ const SuperAppPublishingSection = () => {
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
               >
-                <img src={mockupImage} alt="App Mockup 1" className="w-32 md:w-40 lg:w-48 h-auto object-contain" />
-                <img src={mockupImage} alt="App Mockup 2" className="w-32 md:w-40 lg:w-48 h-auto object-contain" />
-                <img src={mockupImage} alt="App Mockup 3" className="w-32 md:w-40 lg:w-48 h-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 1" className="h-64 md:h-80 lg:h-96 w-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 2" className="h-64 md:h-80 lg:h-96 w-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 3" className="h-64 md:h-80 lg:h-96 w-auto object-contain" />
               </div>
             </div>
           </TabsContent>
@@ -184,7 +184,7 @@ const SuperAppPublishingSection = () => {
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
               >
-                <img src={entLogosImage} alt="Entertainment Industry Logos" className="w-full max-w-lg lg:max-w-2xl h-auto object-contain" />
+                <img src={entLogosImage} alt="Entertainment Industry Logos" className="h-64 md:h-80 lg:h-96 w-auto object-contain" />
               </div>
             </div>
           </TabsContent>
