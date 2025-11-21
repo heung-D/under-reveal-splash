@@ -100,7 +100,7 @@ const SuperAppPublishingSection = () => {
                 <Button
                   variant="outline"
                   onClick={() => setIsTab1Expanded(!isTab1Expanded)}
-                  className="font-rift font-bold rounded-none border border-foreground"
+                  className="font-rift font-bold rounded-none border border-foreground bg-transparent hover:bg-transparent active:bg-transparent"
                 >
                   {isTab1Expanded ? "LESS" : "MORE"}
                 </Button>
@@ -157,7 +157,7 @@ const SuperAppPublishingSection = () => {
                 <Button
                   variant="outline"
                   onClick={() => setIsTab2Expanded(!isTab2Expanded)}
-                  className="font-rift font-bold rounded-none border border-foreground"
+                  className="font-rift font-bold rounded-none border border-foreground bg-transparent hover:bg-transparent active:bg-transparent"
                 >
                   {isTab2Expanded ? "LESS" : "MORE"}
                 </Button>
