@@ -45,8 +45,8 @@ const HeroSection = () => {
               startAnimation ? "animate-fade-slide-up-delayed" : ""
             }`}
           >
-            <p className="text-sm md:text-base leading-[1.4] text-foreground uppercase">
-              AS THE HIDDEN ENGINE OF THE ENTERTAINMENT INDUSTRY, WE DELIVER STRATEGIC BUSINESS SOLUTIONS THAT ENABLE OUR LABELS AND PARTNERS TO ACHIEVE THEIR BRIGHTEST SUCCESS.
+            <p className="text-sm md:text-base leading-[1.4] text-foreground">
+              As the hidden engine of the entertainment industry, we deliver strategic business solutions that enable our labels and partners to achieve their brightest success.
             </p>
           </div>
         </div>
