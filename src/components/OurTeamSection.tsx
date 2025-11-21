@@ -142,7 +142,7 @@ const OurTeamSection = () => {
                 </div>
 
                 {/* Info Section */}
-                <div className="w-full md:w-1/2 space-y-6">
+                <div className="w-full md:w-1/2 space-y-3">
                   <div>
                     <h3 className="text-[26px] font-bold text-foreground mb-3 font-rift">
                       {member.name}
@@ -151,7 +151,7 @@ const OurTeamSection = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-[20px] font-semibold text-foreground mb-4">
+                    <h4 className="text-[20px] font-semibold text-foreground mb-2">
                       {member.title}
                     </h4>
                     <p className="text-[17px] text-foreground/80 leading-relaxed tracking-tight">
