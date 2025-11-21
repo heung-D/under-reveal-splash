@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo />
             <p className="text-[14px] text-foreground/70 leading-relaxed">
-              As the hidden engine of the entertainment industry, we deliver strategic business solutions that enable our labels and partners to achieve their brightest success.
+              Beyond the Line, Behind the Shine
             </p>
           </div>
 
