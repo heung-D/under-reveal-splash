@@ -64,7 +64,7 @@ const WhoWeAreSection = () => {
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
-            <p className="text-lg md:text-xl font-light leading-[1.4] text-foreground mb-12">
+            <p className="text-sm md:text-base leading-[1.4] text-foreground mb-12">
               UNDERTHELINE is shaping the future of entertainment by breaking down the boundaries between reality and the virtual world, building a next-generation infrastructure for the global entertainment industry.
             </p>
             
