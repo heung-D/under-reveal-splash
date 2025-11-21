@@ -5,7 +5,7 @@ import { ExternalLink } from "lucide-react";
 
 const SubsidiaryDetailsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState("panorama");
+  const [activeTab, setActiveTab] = useState("urbanlink");
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -45,16 +45,16 @@ const SubsidiaryDetailsSection = () => {
           {/* Tab Navigation */}
           <TabsList className="w-full bg-transparent border-b border-border rounded-none h-auto p-0 mb-16 flex justify-center gap-8">
             <TabsTrigger
-              value="panorama"
-              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-base md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
-            >
-              PANORAMA
-            </TabsTrigger>
-            <TabsTrigger
               value="urbanlink"
               className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-base md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
             >
               URBANLINK
+            </TabsTrigger>
+            <TabsTrigger
+              value="panorama"
+              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-base md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+            >
+              PANORAMA
             </TabsTrigger>
             <TabsTrigger
               value="aradnas"
