@@ -47,7 +47,7 @@ const SubsidiaryDetailsSection = () => {
     <section
       id="subsidiary-details"
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center px-6 md:px-12 py-20 bg-background"
+      className="min-h-screen flex items-center justify-center px-[160px] py-20 bg-background"
     >
       <div className="w-full max-w-7xl mx-auto">
         <Tabs
