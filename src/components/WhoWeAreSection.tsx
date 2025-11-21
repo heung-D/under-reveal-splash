@@ -38,7 +38,7 @@ const WhoWeAreSection = () => {
             {/* Horizontal line */}
             <div className="w-full max-w-[500px] overflow-hidden mb-[6px]">
               <div
-                className={`h-[2px] bg-foreground origin-left transition-all duration-1000 ${
+                className={`h-[3px] bg-foreground origin-left transition-all duration-1000 ${
                   isVisible ? "animate-draw-line" : "w-0"
                 }`}
               />

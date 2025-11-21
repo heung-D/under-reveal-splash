@@ -20,7 +20,7 @@ const HeroSection = () => {
             {/* Horizontal line */}
             <div className="w-full max-w-[500px] overflow-hidden mb-[-4px]">
               <div
-                className={`h-[2px] bg-foreground origin-left ${
+                className={`h-[3px] bg-foreground origin-left ${
                   startAnimation ? "animate-draw-line" : "w-0"
                 }`}
               />
