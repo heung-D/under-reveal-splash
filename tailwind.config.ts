@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Pretendard', 'system-ui', 'sans-serif'],
-        display: ['Anton', 'Pretendard', 'sans-serif'],
+        sans: ['Pretendard Variable', 'Pretendard', 'system-ui', 'sans-serif'],
+        display: ['Anton', 'Pretendard Variable', 'sans-serif'],
         rift: ['rift', 'sans-serif'],
       },
       colors: {
