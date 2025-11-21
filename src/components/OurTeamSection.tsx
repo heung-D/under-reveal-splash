@@ -165,11 +165,11 @@ const OurTeamSection = () => {
                   </div>
 
                   {/* Right Column - Title and Description */}
-                  <div className="flex-1 text-left md:text-right">
-                    <h4 className="text-[17px] font-semibold text-foreground mb-1">
+                  <div className="flex-1 text-left">
+                    <h4 className="text-[17px] font-semibold text-foreground mb-0.5">
                       {member.title}
                     </h4>
-                    <p className="text-[17px] text-foreground/80 leading-relaxed tracking-tight">
+                    <p className="text-[17px] text-foreground/80 leading-snug tracking-tight">
                       {member.description}
                     </p>
                   </div>
