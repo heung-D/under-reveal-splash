@@ -71,7 +71,7 @@ const SuperAppPublishingSection = () => {
           </div>
 
           {/* Tab Content */}
-          <TabsContent value="tab1" className="mt-0 w-full max-w-7xl mx-auto">
+          <TabsContent value="tab1" className="mt-0 w-full max-w-[1400px] mx-auto">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
               {/* Left side - Text content */}
               <div
@@ -120,7 +120,7 @@ const SuperAppPublishingSection = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="tab2" className="mt-0 w-full max-w-7xl mx-auto">
+          <TabsContent value="tab2" className="mt-0 w-full max-w-[1400px] mx-auto">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
               {/* Left side - Text content */}
               <div
