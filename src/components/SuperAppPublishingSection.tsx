@@ -72,18 +72,6 @@ const SuperAppPublishingSection = () => {
 
           {/* Tab Content */}
           <TabsContent value="tab1" className="mt-0 w-full max-w-7xl mx-auto">
-            {/* Title */}
-            <div
-              className={`mb-12 flex justify-center transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift">
-                SUPER APP PUBLISHING
-              </h2>
-            </div>
-            
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
               {/* Left side - Text content */}
               <div
@@ -92,6 +80,11 @@ const SuperAppPublishingSection = () => {
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
               >
+                {/* Title */}
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-left">
+                  SUPER APP PUBLISHING
+                </h2>
+                
                 <div className="space-y-4">
                   <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
                     UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region, enabling artists and creators to own, design, and operate their own independent platforms through DOCE-powered publishing.
@@ -107,7 +100,7 @@ const SuperAppPublishingSection = () => {
                 <Button
                   variant="outline"
                   onClick={() => setIsTab1Expanded(!isTab1Expanded)}
-                  className="font-rift font-bold"
+                  className="font-rift font-bold rounded-none border-2 border-foreground"
                 >
                   {isTab1Expanded ? "LESS" : "MORE"}
                 </Button>
@@ -128,18 +121,6 @@ const SuperAppPublishingSection = () => {
           </TabsContent>
 
           <TabsContent value="tab2" className="mt-0 w-full max-w-7xl mx-auto">
-            {/* Title */}
-            <div
-              className={`mb-12 flex justify-center transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-center">
-                GLOBAL ENTERTAINMENT INFRASTRUCTURE
-              </h2>
-            </div>
-            
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
               {/* Left side - Text content */}
               <div
@@ -148,6 +129,11 @@ const SuperAppPublishingSection = () => {
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
               >
+                {/* Title */}
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-left">
+                  GLOBAL ENTERTAINMENT INFRASTRUCTURE
+                </h2>
+                
                 <div className="space-y-4">
                   <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
                     UNDERTHELINE collaborates with global record labels, management companies, publishing networks, and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure.
@@ -171,7 +157,7 @@ const SuperAppPublishingSection = () => {
                 <Button
                   variant="outline"
                   onClick={() => setIsTab2Expanded(!isTab2Expanded)}
-                  className="font-rift font-bold"
+                  className="font-rift font-bold rounded-none border-2 border-foreground"
                 >
                   {isTab2Expanded ? "LESS" : "MORE"}
                 </Button>
