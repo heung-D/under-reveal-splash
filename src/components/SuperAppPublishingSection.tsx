@@ -1,7 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import doceOsLineImage from "@/assets/doce-os-line.png";
-import entLogosImage from "@/assets/ent-logos.png";
 
 const SuperAppPublishingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -68,7 +66,7 @@ const SuperAppPublishingSection = () => {
           </div>
 
           {/* Tab Content */}
-          <TabsContent value="tab1" className="mt-0 w-full max-w-[856px] mx-auto min-h-[600px]">
+          <TabsContent value="tab1" className="mt-0 w-full max-w-[570px] mx-auto">
             {/* Title */}
             <div
               className={`mb-8 flex justify-center transition-all duration-1000 ${
@@ -76,7 +74,7 @@ const SuperAppPublishingSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground font-rift">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift">
                 SUPER APP PUBLISHING
               </h2>
             </div>
@@ -91,19 +89,9 @@ const SuperAppPublishingSection = () => {
                 UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region, enabling artists and creators to own, design, and operate their own independent platforms through DOCE-powered publishing. Each app becomes a personal community and ecosystem where the artist is the true owner -operating fandom, commerce, and content directly under their own control. → An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.
               </p>
             </div>
-
-            {/* DOCE OS Line Image */}
-            <div
-              className={`mt-[40px] flex justify-center transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
-            >
-              <img src={doceOsLineImage} alt="DOCE OS" className="w-full max-w-[856px]" />
-            </div>
           </TabsContent>
 
-          <TabsContent value="tab2" className="mt-0 w-full max-w-[856px] mx-auto min-h-[600px]">
+          <TabsContent value="tab2" className="mt-0 w-full max-w-[570px] mx-auto">
             {/* Title */}
             <div
               className={`mb-8 flex justify-center transition-all duration-1000 ${
@@ -111,7 +99,7 @@ const SuperAppPublishingSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground font-rift text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-center">
                 GLOBAL ENTERTAINMENT INFRASTRUCTURE
               </h2>
             </div>
@@ -125,16 +113,6 @@ const SuperAppPublishingSection = () => {
               <p className="text-sm md:text-base leading-[1.4] text-foreground w-full mx-auto">
                 UNDERTHELINE collaborates with global record labels, management companies, publishing networks, and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure. Record Distribution: Collaborates with major global labels including Columbia, Warner, Universal, and Sony. Publishing Network: Connected with global publishers such as Warner Chappell, BMG, and Kobalt. Touring Network: Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
               </p>
-            </div>
-
-            {/* Logos Image */}
-            <div
-              className={`mt-12 flex justify-center transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
-            >
-              <img src={entLogosImage} alt="Entertainment Infrastructure Logos" className="w-full max-w-[600px]" />
             </div>
           </TabsContent>
         </Tabs>
