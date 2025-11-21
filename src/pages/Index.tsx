@@ -13,7 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Languages } from "lucide-react";
+import { Globe } from "lucide-react";
 
 const Index = () => {
   return (
@@ -24,7 +24,7 @@ const Index = () => {
         
         <DropdownMenu>
           <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors">
-            <Languages className="h-5 w-5" />
+            <Globe className="h-5 w-5" />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-background border-border">
             <DropdownMenuItem className="cursor-pointer">
