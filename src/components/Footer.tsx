@@ -2,14 +2,14 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-foreground/20 pt-[68px] pb-12">
+    <footer className="bg-background border-t border-foreground/20 py-12">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
             <Logo />
             <p className="text-[14px] text-foreground/70 leading-relaxed">
-              Beyond the Line, Behind the Shine
+              As the hidden engine of the entertainment industry, we deliver strategic business solutions that enable our labels and partners to achieve their brightest success.
             </p>
           </div>
 
@@ -42,9 +42,8 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-foreground/10">
-          <p className="text-center text-[14px] text-foreground/60 leading-relaxed">
-            undertheline holdings<br />
-            Beyond the Line, Behind the Shine
+          <p className="text-center text-[14px] text-foreground/60">
+            © {new Date().getFullYear()} Undertheline Holdings. All rights reserved.
           </p>
         </div>
       </div>
