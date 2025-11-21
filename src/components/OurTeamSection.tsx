@@ -151,7 +151,7 @@ const OurTeamSection = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-[20px] font-semibold text-foreground mb-1">
+                    <h4 className="text-[17px] font-semibold text-foreground mb-1">
                       {member.title}
                     </h4>
                     <p className="text-[17px] text-foreground/80 leading-relaxed tracking-tight">
