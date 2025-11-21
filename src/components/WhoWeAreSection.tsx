@@ -64,9 +64,32 @@ const WhoWeAreSection = () => {
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
-            <p className="text-lg md:text-xl font-light leading-[1.4] text-foreground">
+            <p className="text-lg md:text-xl font-light leading-[1.4] text-foreground mb-12">
               UNDERTHELINE is shaping the future of entertainment by breaking down the boundaries between reality and the virtual world, building a next-generation infrastructure for the global entertainment industry.
             </p>
+            
+            <div className="flex gap-6">
+              <button 
+                className="px-8 py-3 bg-foreground text-background font-bold font-rift text-lg hover:scale-105 hover:shadow-lg transition-all duration-300"
+                onClick={() => {
+                  const teamSection = document.getElementById('our-team');
+                  if (teamSection) {
+                    teamSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                OUR TEAM
+              </button>
+              <button 
+                className="px-8 py-3 bg-foreground text-background font-bold font-rift text-lg hover:scale-105 hover:shadow-lg transition-all duration-300"
+                onClick={() => {
+                  // Network page navigation will be added
+                  console.log('Navigate to Network page');
+                }}
+              >
+                NETWORK
+              </button>
+            </div>
           </div>
         </div>
       </div>
