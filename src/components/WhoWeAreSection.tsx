@@ -36,7 +36,7 @@ const WhoWeAreSection = () => {
           {/* Left side - Logo with line */}
           <div className="flex flex-col items-end mt-0">
             {/* Horizontal line */}
-            <div className="w-full max-w-[400px] overflow-hidden mb-[6px]">
+            <div className="w-full max-w-[470px] overflow-hidden mb-[6px]">
               <div
                 className={`h-[3px] bg-foreground origin-left transition-all duration-1000 ${
                   isVisible ? "animate-draw-line" : "w-0"
