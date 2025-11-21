@@ -107,7 +107,7 @@ const SubsidiariesSection = () => {
 
         {/* UNDERTHELINE - Center between PANORAMA and ARADNAS */}
         <div
-          className={`absolute top-[39%] left-[5%] transition-all duration-1000 ${
+          className={`absolute top-[39%] right-[5%] transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "700ms" }}
