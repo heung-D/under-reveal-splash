@@ -32,9 +32,9 @@ const WhoWeAreSection = () => {
   return (
     <div ref={sectionRef} className="flex items-center justify-center min-h-[calc(100vh-120px)] px-6">
       <div className="max-w-7xl w-full">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           {/* Left side - Logo with line */}
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col items-end mt-0">
             {/* Horizontal line */}
             <div className="w-full max-w-[500px] overflow-hidden mb-[6px]">
               <div
@@ -59,7 +59,7 @@ const WhoWeAreSection = () => {
 
           {/* Right side - Description text */}
           <div
-            className={`transition-all duration-1000 ${
+            className={`transition-all duration-1000 mt-0 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
