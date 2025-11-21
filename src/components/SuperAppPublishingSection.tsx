@@ -75,7 +75,7 @@ const SuperAppPublishingSection = () => {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 space-y-6 transition-all duration-1000 ${
+                className={`flex-1 space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
@@ -108,14 +108,14 @@ const SuperAppPublishingSection = () => {
 
               {/* Right side - Images */}
               <div
-                className={`flex gap-4 justify-center lg:justify-end transition-all duration-1000 ${
+                className={`flex gap-4 justify-center lg:justify-end transition-all duration-1000 h-[260px] ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
               >
-                <img src={mockupImage} alt="App Mockup 1" className="h-64 md:h-80 lg:h-96 w-auto object-contain" />
-                <img src={mockupImage} alt="App Mockup 2" className="h-64 md:h-80 lg:h-96 w-auto object-contain" />
-                <img src={mockupImage} alt="App Mockup 3" className="h-64 md:h-80 lg:h-96 w-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 1" className="h-full w-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 2" className="h-full w-auto object-contain" />
+                <img src={mockupImage} alt="App Mockup 3" className="h-full w-auto object-contain" />
               </div>
             </div>
           </TabsContent>
@@ -124,7 +124,7 @@ const SuperAppPublishingSection = () => {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 space-y-6 transition-all duration-1000 ${
+                className={`flex-1 space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
@@ -165,12 +165,12 @@ const SuperAppPublishingSection = () => {
 
               {/* Right side - Logos */}
               <div
-                className={`flex justify-center lg:justify-end transition-all duration-1000 ${
+                className={`flex justify-center lg:justify-end transition-all duration-1000 h-[260px] ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
               >
-                <img src={entLogosImage} alt="Entertainment Industry Logos" className="w-auto h-auto object-contain" />
+                <img src={entLogosImage} alt="Entertainment Industry Logos" className="h-full w-auto object-contain" />
               </div>
             </div>
           </TabsContent>
