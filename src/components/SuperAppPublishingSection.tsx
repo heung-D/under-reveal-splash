@@ -51,7 +51,7 @@ const SuperAppPublishingSection = () => {
         <Tabs defaultValue="tab1" className="w-full" onValueChange={setActiveTab}>
           {/* Tab Title Images */}
           <div
-            className={`transition-all duration-1000 mb-12 ${
+            className={`transition-all duration-1000 mb-12 -mt-[50px] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
