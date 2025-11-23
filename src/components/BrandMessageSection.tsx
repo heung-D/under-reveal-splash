@@ -54,9 +54,9 @@ const BrandMessageSection = () => {
       )}
 
       {/* Brand Message */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 mb-[300px] relative z-10">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 mb-[300px] relative z-10 mt-[40px]">
         <div 
-          className="text-center text-[34px] font-rift transition-opacity duration-[2000ms]" 
+          className="text-center text-[20px] font-rift transition-opacity duration-[2000ms]" 
           style={{ 
             lineHeight: '120%',
             opacity: showText ? 0.8 : 0
