@@ -125,11 +125,11 @@ const SpaceSection = () => {
       />
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center px-6">
-          <h2 className="text-5xl md:text-6xl font-bold text-white font-rift mb-6">
-            EXPLORE THE UNIVERSE
+          <h2 className="text-5xl md:text-7xl font-bold text-white font-rift mb-4">
+            Beyond the Line, Behind the Shine
           </h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Building the future of entertainment across infinite possibilities
+          <p className="text-3xl md:text-4xl text-white/90 font-rift">
+            Invisible. Essential.
           </p>
         </div>
       </div>
