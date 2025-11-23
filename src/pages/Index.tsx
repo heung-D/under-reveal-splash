@@ -23,7 +23,7 @@ const Index = () => {
       style={{
         scrollSnapType: 'y proximity',
         scrollBehavior: 'smooth',
-        scrollPaddingTop: '80px'
+        scrollPaddingTop: '140px'
       }}
     >
       {/* Header with logo and language selector */}
