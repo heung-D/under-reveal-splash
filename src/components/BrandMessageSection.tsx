@@ -26,22 +26,23 @@ const BrandMessageSection = () => {
     <section className="pt-32 pb-12 relative overflow-hidden" style={{
       background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)'
     }}>
-      {/* Background constellation */}
+      {/* Background stars */}
       <div className="absolute inset-0 pointer-events-none">
-        <svg className="w-full h-full" style={{ position: 'absolute', top: 0, left: 0 }}>
-          {/* Constellation lines */}
-          <line x1="20%" y1="15%" x2="15%" y2="40%" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
-          <line x1="15%" y1="40%" x2="30%" y2="70%" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
-          <line x1="70%" y1="25%" x2="80%" y2="60%" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
-          <line x1="20%" y1="15%" x2="70%" y2="25%" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-        </svg>
-        
-        {/* Stars */}
-        <div className="absolute w-1.5 h-1.5 bg-white/50 rounded-full" style={{ top: '15%', left: '20%' }} />
-        <div className="absolute w-1.5 h-1.5 bg-white/40 rounded-full" style={{ top: '25%', left: '70%' }} />
-        <div className="absolute w-1.5 h-1.5 bg-white/45 rounded-full" style={{ top: '40%', left: '15%' }} />
-        <div className="absolute w-1 h-1 bg-white/35 rounded-full" style={{ top: '60%', left: '80%' }} />
-        <div className="absolute w-1.5 h-1.5 bg-white/35 rounded-full" style={{ top: '70%', left: '30%' }} />
+        {/* More stars scattered */}
+        <div className="absolute w-1 h-1 bg-white/40 rounded-full" style={{ top: '10%', left: '15%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-white/30 rounded-full" style={{ top: '12%', left: '25%' }} />
+        <div className="absolute w-1 h-1 bg-white/35 rounded-full" style={{ top: '15%', left: '70%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-white/25 rounded-full" style={{ top: '18%', left: '82%' }} />
+        <div className="absolute w-1 h-1 bg-white/40 rounded-full" style={{ top: '22%', left: '45%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-white/30 rounded-full" style={{ top: '25%', left: '88%' }} />
+        <div className="absolute w-1 h-1 bg-white/35 rounded-full" style={{ top: '28%', left: '8%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-white/25 rounded-full" style={{ top: '32%', left: '65%' }} />
+        <div className="absolute w-1 h-1 bg-white/40 rounded-full" style={{ top: '55%', left: '20%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-white/30 rounded-full" style={{ top: '60%', left: '75%' }} />
+        <div className="absolute w-1 h-1 bg-white/35 rounded-full" style={{ top: '65%', left: '40%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-white/25 rounded-full" style={{ top: '70%', left: '85%' }} />
+        <div className="absolute w-1 h-1 bg-white/40 rounded-full" style={{ top: '75%', left: '12%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-white/30 rounded-full" style={{ top: '80%', left: '55%' }} />
       </div>
 
       {/* Shooting star */}
@@ -64,6 +65,31 @@ const BrandMessageSection = () => {
 
       {/* Brand Message */}
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 mb-[200px] relative z-10 mt-[120px]">
+        {/* Neon arc above text */}
+        <div className="absolute left-1/2 -translate-x-1/2 -top-20 w-[600px] h-[100px]">
+          <svg viewBox="0 0 600 100" className="w-full h-full">
+            <defs>
+              <filter id="neonGlow">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              d="M 50 90 Q 300 10, 550 90"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              filter="url(#neonGlow)"
+              style={{
+                filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.8)) drop-shadow(0 0 15px rgba(255,255,255,0.6))'
+              }}
+            />
+          </svg>
+        </div>
+        
         <div 
           className="text-center text-[20px] font-rift transition-opacity duration-[2000ms]" 
           style={{ 
