@@ -23,14 +23,16 @@ const BrandMessageSection = () => {
   }, []);
 
   return (
-    <section className="pt-32 pb-12 bg-background relative overflow-hidden">
+    <section className="pt-32 pb-12 relative overflow-hidden" style={{
+      background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)'
+    }}>
       {/* Background stars */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute w-1 h-1 bg-foreground/30 rounded-full" style={{ top: '15%', left: '20%' }} />
-        <div className="absolute w-1 h-1 bg-foreground/20 rounded-full" style={{ top: '25%', left: '70%' }} />
-        <div className="absolute w-1 h-1 bg-foreground/25 rounded-full" style={{ top: '40%', left: '15%' }} />
-        <div className="absolute w-0.5 h-0.5 bg-foreground/20 rounded-full" style={{ top: '60%', left: '80%' }} />
-        <div className="absolute w-0.5 h-0.5 bg-foreground/15 rounded-full" style={{ top: '70%', left: '30%' }} />
+        <div className="absolute w-1 h-1 bg-white/40 rounded-full" style={{ top: '15%', left: '20%' }} />
+        <div className="absolute w-1 h-1 bg-white/30 rounded-full" style={{ top: '25%', left: '70%' }} />
+        <div className="absolute w-1 h-1 bg-white/35 rounded-full" style={{ top: '40%', left: '15%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-white/30 rounded-full" style={{ top: '60%', left: '80%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-white/25 rounded-full" style={{ top: '70%', left: '30%' }} />
       </div>
 
       {/* Shooting star */}
@@ -44,8 +46,8 @@ const BrandMessageSection = () => {
           <div 
             className="h-full"
             style={{
-              background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0) 10%, rgba(147,197,253,0.8) 50%, rgba(59,130,246,1) 70%, transparent 100%)',
-              boxShadow: '0 0 20px rgba(59,130,246,0.8), 0 0 40px rgba(59,130,246,0.5)',
+              background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0) 10%, rgba(147,197,253,0.9) 50%, rgba(96,165,250,1) 70%, transparent 100%)',
+              boxShadow: '0 0 30px rgba(96,165,250,1), 0 0 60px rgba(59,130,246,0.8), 0 0 90px rgba(59,130,246,0.5)',
             }}
           />
         </div>
@@ -60,31 +62,31 @@ const BrandMessageSection = () => {
             opacity: showText ? 0.8 : 0
           }}
         >
-          <h2 className="font-bold text-foreground">
+          <h2 className="font-bold text-white">
             Beyond the Line, Behind the Shine
           </h2>
-          <p className="text-foreground/80">
+          <p className="text-white/80">
             Invisible. Essential.
           </p>
         </div>
       </div>
 
       {/* Footer Content */}
-      <div className="border-t border-foreground/20 pt-12 pb-[100px]">
+      <div className="border-t border-white/20 pt-12 pb-[100px]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_auto_auto] gap-8 md:gap-12 mb-8">
             {/* Company Info */}
             <div className="space-y-4">
               <Logo />
-              <p className="text-[14px] text-foreground/70 leading-relaxed">
+              <p className="text-[14px] text-white/70 leading-relaxed">
                 Beyond the Line, Behind the Shine
               </p>
             </div>
 
             {/* Contact Information */}
             <div className="space-y-4">
-              <h3 className="text-lg font-bold text-foreground font-rift">Contact</h3>
-              <div className="space-y-2 text-[14px] text-foreground/70">
+              <h3 className="text-lg font-bold text-white font-rift">Contact</h3>
+              <div className="space-y-2 text-[14px] text-white/70">
                 <p>Email: info@undertheline.com</p>
                 <p>Phone: +1 (555) 123-4567</p>
                 <p className="leading-relaxed">
@@ -97,20 +99,20 @@ const BrandMessageSection = () => {
 
             {/* Quick Links */}
             <div className="space-y-4">
-              <h3 className="text-lg font-bold text-foreground font-rift">Family Site</h3>
-              <div className="space-y-2 text-[14px] text-foreground/70">
-                <p className="hover:text-foreground cursor-pointer transition-colors">Urbanlink 360</p>
-                <p className="hover:text-foreground cursor-pointer transition-colors">Urbanlink xyz(400)</p>
-                <p className="hover:text-foreground cursor-pointer transition-colors">Panorama</p>
-                <p className="hover:text-foreground cursor-pointer transition-colors">Aradnas</p>
-                <p className="hover:text-foreground cursor-pointer transition-colors">Mar/s</p>
+              <h3 className="text-lg font-bold text-white font-rift">Family Site</h3>
+              <div className="space-y-2 text-[14px] text-white/70">
+                <p className="hover:text-white cursor-pointer transition-colors">Urbanlink 360</p>
+                <p className="hover:text-white cursor-pointer transition-colors">Urbanlink xyz(400)</p>
+                <p className="hover:text-white cursor-pointer transition-colors">Panorama</p>
+                <p className="hover:text-white cursor-pointer transition-colors">Aradnas</p>
+                <p className="hover:text-white cursor-pointer transition-colors">Mar/s</p>
               </div>
             </div>
           </div>
 
           {/* Copyright */}
-          <div className="pt-8 border-t border-foreground/10">
-            <p className="text-center text-[14px] text-foreground/60">
+          <div className="pt-8 border-t border-white/10">
+            <p className="text-center text-[14px] text-white/60">
               © {new Date().getFullYear()} Undertheline Holdings. All rights reserved.
             </p>
           </div>
