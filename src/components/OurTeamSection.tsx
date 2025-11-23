@@ -151,7 +151,7 @@ const OurTeamSection = () => {
                 transitionDelay: `${index * 100}ms`
               }}
             >
-              <div className="max-w-[1880px] mx-auto px-6 md:px-12 flex flex-col items-start">
+              <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex flex-col items-start">
                 {/* Image Section - Smaller Rectangle */}
                 <div className="w-full h-[280px] mb-6">
                   <img
