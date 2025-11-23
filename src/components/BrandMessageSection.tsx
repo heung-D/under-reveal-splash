@@ -129,7 +129,7 @@ const BrandMessageSection = () => {
               r="20"
               fill="url(#starGlow)"
               style={{
-                animation: 'starPulse 2s ease-in-out infinite'
+                animation: 'starGlow 2s ease-in-out infinite'
               }}
             />
             <circle
@@ -223,14 +223,12 @@ const BrandMessageSection = () => {
           }
         }
         
-        @keyframes starPulse {
+        @keyframes starGlow {
           0%, 100% {
             opacity: 0.6;
-            transform: scale(1);
           }
           50% {
             opacity: 1;
-            transform: scale(1.2);
           }
         }
       `}</style>
