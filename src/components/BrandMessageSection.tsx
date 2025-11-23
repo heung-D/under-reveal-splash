@@ -26,13 +26,22 @@ const BrandMessageSection = () => {
     <section className="pt-32 pb-12 relative overflow-hidden" style={{
       background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)'
     }}>
-      {/* Background stars */}
+      {/* Background constellation */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute w-1 h-1 bg-white/40 rounded-full" style={{ top: '15%', left: '20%' }} />
-        <div className="absolute w-1 h-1 bg-white/30 rounded-full" style={{ top: '25%', left: '70%' }} />
-        <div className="absolute w-1 h-1 bg-white/35 rounded-full" style={{ top: '40%', left: '15%' }} />
-        <div className="absolute w-0.5 h-0.5 bg-white/30 rounded-full" style={{ top: '60%', left: '80%' }} />
-        <div className="absolute w-0.5 h-0.5 bg-white/25 rounded-full" style={{ top: '70%', left: '30%' }} />
+        <svg className="w-full h-full" style={{ position: 'absolute', top: 0, left: 0 }}>
+          {/* Constellation lines */}
+          <line x1="20%" y1="15%" x2="15%" y2="40%" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+          <line x1="15%" y1="40%" x2="30%" y2="70%" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+          <line x1="70%" y1="25%" x2="80%" y2="60%" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+          <line x1="20%" y1="15%" x2="70%" y2="25%" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+        </svg>
+        
+        {/* Stars */}
+        <div className="absolute w-1.5 h-1.5 bg-white/50 rounded-full" style={{ top: '15%', left: '20%' }} />
+        <div className="absolute w-1.5 h-1.5 bg-white/40 rounded-full" style={{ top: '25%', left: '70%' }} />
+        <div className="absolute w-1.5 h-1.5 bg-white/45 rounded-full" style={{ top: '40%', left: '15%' }} />
+        <div className="absolute w-1 h-1 bg-white/35 rounded-full" style={{ top: '60%', left: '80%' }} />
+        <div className="absolute w-1.5 h-1.5 bg-white/35 rounded-full" style={{ top: '70%', left: '30%' }} />
       </div>
 
       {/* Shooting star */}
