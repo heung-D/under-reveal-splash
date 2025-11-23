@@ -48,6 +48,7 @@ const OurTeamSection = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const hasAutoScrolledRef = useRef(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -78,7 +79,8 @@ const OurTeamSection = () => {
       // Check if scrolled to the end
       const atEnd = container.scrollLeft >= maxScrollLeft - 5;
       
-      if (atEnd && progress > 95) {
+      if (atEnd && progress > 95 && !hasAutoScrolledRef.current) {
+        hasAutoScrolledRef.current = true;
         // Auto-scroll to next section after reaching the end
         setTimeout(() => {
           const closingSection = document.getElementById('closing-section');
@@ -86,6 +88,9 @@ const OurTeamSection = () => {
             closingSection.scrollIntoView({ behavior: 'smooth' });
           }
         }, 500);
+      } else if (!atEnd) {
+        // Reset flag when scrolling back
+        hasAutoScrolledRef.current = false;
       }
     };
 
