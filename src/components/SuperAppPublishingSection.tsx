@@ -132,7 +132,7 @@ const SuperAppPublishingSection = () => {
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
               >
                 {/* Title */}
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-left">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-left max-w-[600px]">
                   GLOBAL ENTERTAINMENT INFRASTRUCTURE
                 </h2>
                 
