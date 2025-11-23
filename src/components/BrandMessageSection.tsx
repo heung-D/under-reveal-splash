@@ -1,11 +1,65 @@
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 
 const BrandMessageSection = () => {
+  const [showText, setShowText] = useState(false);
+  const [shootingStar, setShootingStar] = useState(false);
+
+  useEffect(() => {
+    // Start shooting star animation
+    const starTimer = setTimeout(() => {
+      setShootingStar(true);
+    }, 500);
+
+    // Show text after shooting star passes
+    const textTimer = setTimeout(() => {
+      setShowText(true);
+    }, 2000);
+
+    return () => {
+      clearTimeout(starTimer);
+      clearTimeout(textTimer);
+    };
+  }, []);
+
   return (
-    <section className="pt-32 pb-12 bg-background">
+    <section className="pt-32 pb-12 bg-background relative overflow-hidden">
+      {/* Background stars */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute w-1 h-1 bg-foreground/30 rounded-full" style={{ top: '15%', left: '20%' }} />
+        <div className="absolute w-1 h-1 bg-foreground/20 rounded-full" style={{ top: '25%', left: '70%' }} />
+        <div className="absolute w-1 h-1 bg-foreground/25 rounded-full" style={{ top: '40%', left: '15%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-foreground/20 rounded-full" style={{ top: '60%', left: '80%' }} />
+        <div className="absolute w-0.5 h-0.5 bg-foreground/15 rounded-full" style={{ top: '70%', left: '30%' }} />
+      </div>
+
+      {/* Shooting star */}
+      {shootingStar && (
+        <div 
+          className="absolute top-[35%] left-0 w-full h-[2px] pointer-events-none"
+          style={{
+            animation: 'shootingStar 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards'
+          }}
+        >
+          <div 
+            className="h-full"
+            style={{
+              background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0) 10%, rgba(147,197,253,0.8) 50%, rgba(59,130,246,1) 70%, transparent 100%)',
+              boxShadow: '0 0 20px rgba(59,130,246,0.8), 0 0 40px rgba(59,130,246,0.5)',
+            }}
+          />
+        </div>
+      )}
+
       {/* Brand Message */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 mb-[300px]">
-        <div className="text-center text-[34px] font-rift" style={{ lineHeight: '120%' }}>
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 mb-[300px] relative z-10">
+        <div 
+          className="text-center text-[34px] font-rift transition-opacity duration-[2000ms]" 
+          style={{ 
+            lineHeight: '120%',
+            opacity: showText ? 0.8 : 0
+          }}
+        >
           <h2 className="font-bold text-foreground">
             Beyond the Line, Behind the Shine
           </h2>
@@ -62,6 +116,25 @@ const BrandMessageSection = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes shootingStar {
+          0% {
+            transform: translateX(-100%) translateY(0);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(100vw) translateY(0);
+            opacity: 0;
+          }
+        }
+      `}</style>
     </section>
   );
 };
