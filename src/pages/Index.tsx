@@ -64,13 +64,14 @@ const Index = () => {
         <section className="snap-section">
           <OurTeamSection />
         </section>
+        <section className="snap-section">
+          <BrandMessageSection />
+        </section>
       </main>
 
-      <Footer />
-      
-      <section className="snap-section">
-        <BrandMessageSection />
-      </section>
+      <div className="mt-[100px]">
+        <Footer />
+      </div>
     </div>
   );
 };
