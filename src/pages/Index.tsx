@@ -69,7 +69,7 @@ const Index = () => {
         </section>
       </main>
 
-      <div className="mt-[100px] mb-[100px]">
+      <div className="mt-[300px] mb-[100px]">
         <Footer />
       </div>
     </div>
