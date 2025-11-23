@@ -86,13 +86,19 @@ const OurTeamSection = () => {
       const atStart = container.scrollLeft === 0;
       const atEnd = container.scrollLeft >= maxScrollLeft - 1;
       
-      // Only hijack scroll if we're scrolling horizontally or within the section
+      // Only hijack horizontal scroll if not at boundaries
       if (e.deltaY !== 0) {
-        // If scrolling down and not at end, or scrolling up and not at start
-        if ((e.deltaY > 0 && !atEnd) || (e.deltaY < 0 && !atStart)) {
+        // If scrolling down and not at end, convert to horizontal scroll
+        if (e.deltaY > 0 && !atEnd) {
           e.preventDefault();
           container.scrollLeft += e.deltaY;
         }
+        // If scrolling up and not at start, convert to horizontal scroll
+        else if (e.deltaY < 0 && !atStart) {
+          e.preventDefault();
+          container.scrollLeft += e.deltaY;
+        }
+        // If at boundaries, allow normal vertical scroll to next/previous section
       }
     };
 
