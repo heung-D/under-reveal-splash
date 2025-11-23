@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Logo from "./Logo";
 
 const BrandMessageSection = () => {
   const [showText, setShowText] = useState(false);
@@ -161,7 +160,7 @@ const BrandMessageSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-[2fr_auto_auto] gap-8 md:gap-12 mb-8">
             {/* Company Info */}
             <div className="space-y-4">
-              <Logo />
+              <h2 className="text-xl font-bold text-white font-rift">UNDERTHELINE HOLDINGS</h2>
               <p className="text-[14px] text-white/70 leading-relaxed">
                 Beyond the Line, Behind the Shine
               </p>
