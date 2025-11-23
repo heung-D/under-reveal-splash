@@ -40,7 +40,7 @@ const SuperAppPublishingSection = () => {
     <div 
       id="super-app-publishing"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center px-6 lg:px-[200px] pt-[80px] pb-20"
+      className="relative min-h-screen flex items-center justify-center px-6 lg:px-[200px] pt-[140px] pb-20"
       style={{
         background: 'linear-gradient(180deg, #FFFFFF 0%, #E6E6E6 100%)'
       }}
