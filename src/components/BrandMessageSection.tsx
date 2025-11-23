@@ -123,7 +123,7 @@ const BrandMessageSection = () => {
             {/* Shining star at center */}
             <circle
               cx="300"
-              cy="40"
+              cy="50"
               r="20"
               fill="url(#starGlow)"
               style={{
@@ -132,7 +132,7 @@ const BrandMessageSection = () => {
             />
             <circle
               cx="300"
-              cy="40"
+              cy="50"
               r="2.5"
               fill="white"
             />
