@@ -6,7 +6,6 @@ import WhoWeAreSection from "@/components/WhoWeAreSection";
 import SubsidiaryDetailsSection from "@/components/SubsidiaryDetailsSection";
 import SuperAppPublishingSection from "@/components/SuperAppPublishingSection";
 import OurTeamSection from "@/components/OurTeamSection";
-import SpaceSection from "@/components/SpaceSection";
 
 import Footer from "@/components/Footer";
 import {
@@ -63,9 +62,6 @@ const Index = () => {
         </section>
         <section className="snap-section">
           <OurTeamSection />
-        </section>
-        <section>
-          <SpaceSection />
         </section>
       </main>
 
