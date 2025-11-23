@@ -110,7 +110,7 @@ const SuperAppPublishingSection = () => {
 
               {/* Right side - Images */}
               <div
-                className={`flex gap-4 justify-center lg:justify-end transition-all duration-1000 h-[260px] lg:h-[400px] xl:h-[500px] ${
+                className={`flex gap-4 justify-center lg:justify-end transition-all duration-1000 h-[240px] lg:h-[350px] xl:h-[420px] ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
@@ -167,7 +167,7 @@ const SuperAppPublishingSection = () => {
 
               {/* Right side - Logos */}
               <div
-                className={`flex justify-center lg:justify-end transition-all duration-1000 h-[260px] lg:h-[400px] xl:h-[500px] ${
+                className={`flex justify-center lg:justify-end transition-all duration-1000 h-[240px] lg:h-[350px] xl:h-[420px] ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
