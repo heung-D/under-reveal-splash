@@ -64,7 +64,7 @@ const Index = () => {
         <section className="snap-section">
           <OurTeamSection />
         </section>
-        <section className="snap-section">
+        <section>
           <SpaceSection />
         </section>
       </main>

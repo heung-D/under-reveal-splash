@@ -101,8 +101,8 @@ const SpaceSection = () => {
           );
 
           if (distance < radius * 0.6) {
-            const baseOpacity = Math.max(0, (1 - distance / (radius * 0.6)) * 0.4);
-            const opacity = baseOpacity + avgLightIntensity * 0.4;
+            const baseOpacity = Math.max(0, (1 - distance / (radius * 0.6)) * 0.24);
+            const opacity = baseOpacity + avgLightIntensity * 0.24;
             const brightness = 120 + avgLightIntensity * 80;
             ctx.strokeStyle = `rgba(${brightness}, ${brightness}, ${brightness}, ${opacity})`;
             ctx.beginPath();
@@ -132,13 +132,13 @@ const SpaceSection = () => {
         
         ctx.beginPath();
         ctx.arc(x2d, y2d, size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${brightness}, ${brightness}, ${brightness}, ${0.8 + lightIntensity * 0.2})`;
+        ctx.fillStyle = `rgba(${brightness}, ${brightness}, ${brightness}, ${0.48 + lightIntensity * 0.12})`;
         ctx.fill();
         
         // Add glow effect for lit dots
         if (lightIntensity > 0.3) {
           const gradient = ctx.createRadialGradient(x2d, y2d, 0, x2d, y2d, size * 4);
-          gradient.addColorStop(0, `rgba(${brightness}, ${brightness}, ${brightness}, ${lightIntensity * 0.4})`);
+          gradient.addColorStop(0, `rgba(${brightness}, ${brightness}, ${brightness}, ${lightIntensity * 0.24})`);
           gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
           ctx.fillStyle = gradient;
           ctx.beginPath();
