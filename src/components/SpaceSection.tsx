@@ -160,6 +160,7 @@ const SpaceSection = () => {
 
   return (
     <section 
+      id="closing-section"
       className="relative overflow-hidden"
       style={{ height: 'calc(100vh - 100px)' }}
     >

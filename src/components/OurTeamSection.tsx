@@ -74,6 +74,19 @@ const OurTeamSection = () => {
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
       const progress = maxScrollLeft > 0 ? (container.scrollLeft / maxScrollLeft) * 100 : 0;
       setScrollProgress(progress);
+      
+      // Check if scrolled to the end
+      const atEnd = container.scrollLeft >= maxScrollLeft - 5;
+      
+      if (atEnd && progress > 95) {
+        // Auto-scroll to next section after reaching the end
+        setTimeout(() => {
+          const closingSection = document.getElementById('closing-section');
+          if (closingSection) {
+            closingSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 500);
+      }
     };
 
     const handleWheel = (e: WheelEvent) => {
@@ -98,7 +111,6 @@ const OurTeamSection = () => {
           e.preventDefault();
           container.scrollLeft += e.deltaY;
         }
-        // If at boundaries, allow normal vertical scroll to next/previous section
       }
     };
 
