@@ -19,10 +19,8 @@ import { Globe } from "lucide-react";
 const Index = () => {
   return (
     <div 
-      className="min-h-screen bg-background overflow-y-auto"
+      className="min-h-screen bg-background overflow-y-auto snap-container"
       style={{
-        scrollSnapType: 'y proximity',
-        scrollBehavior: 'smooth',
         scrollPaddingTop: '140px'
       }}
     >
@@ -47,22 +45,22 @@ const Index = () => {
 
       {/* Main content */}
       <main>
-        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+        <section className="snap-section">
           <HeroSection />
         </section>
-        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+        <section className="snap-section">
           <SubsidiariesSection />
         </section>
-        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+        <section className="snap-section">
           <WhoWeAreSection />
         </section>
-        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+        <section className="snap-section">
           <SubsidiaryDetailsSection />
         </section>
-        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+        <section className="snap-section">
           <SuperAppPublishingSection />
         </section>
-        <section style={{ scrollSnapAlign: 'start', scrollSnapStop: 'normal' }}>
+        <section className="snap-section">
           <OurTeamSection />
         </section>
       </main>
