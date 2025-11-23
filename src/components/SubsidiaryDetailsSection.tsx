@@ -47,7 +47,7 @@ const SubsidiaryDetailsSection = () => {
     <section
       id="subsidiary-details"
       ref={sectionRef}
-      className="flex items-center justify-center px-[160px] pt-[60px] pb-20 bg-background"
+      className="flex items-center justify-center px-[160px] pt-0 pb-20 bg-background -mt-[20px]"
       style={{ height: 'calc(100vh - 100px)' }}
     >
       <div className="w-full max-w-7xl mx-auto">
