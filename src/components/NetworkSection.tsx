@@ -83,9 +83,10 @@ const NetworkSection = () => {
       <div className="max-w-[1600px] mx-auto relative" style={{ minHeight: "800px" }}>
         {/* Center Circle with UNDERTHELINE */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
-          {/* Outer dotted circles */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border-2 border-dashed border-gray-300" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border-2 border-dashed border-gray-200" />
+          {/* Outer dotted circles - spacing increases progressively */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[270px] h-[270px] rounded-full border-2 border-dashed border-gray-300" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border-2 border-dashed border-gray-200" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border-2 border-dashed border-gray-100" />
           
           {/* Center circle */}
           <div className="relative w-[180px] h-[180px] rounded-full bg-white border-2 border-black flex items-center justify-center z-10">
