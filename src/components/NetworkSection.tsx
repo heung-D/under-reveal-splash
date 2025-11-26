@@ -63,7 +63,7 @@ const NetworkSection = () => {
       case "top-left":
         return "absolute top-[5%] left-[5%] max-w-[400px]";
       case "top-right":
-        return "absolute top-[5%] right-[5%] max-w-[400px]";
+        return "absolute top-[5%] left-[5%] max-w-[600px]";
       case "right":
         return "absolute top-[45%] right-[5%] -translate-y-1/2 max-w-[400px]";
       case "bottom-right":
@@ -114,30 +114,57 @@ const NetworkSection = () => {
             }`}
             style={{ transitionDelay: `${index * 100}ms` }}
           >
-            <div className="space-y-3 bg-white p-4">
-              <div className="flex items-baseline gap-3">
-                <span className="text-2xl font-bold text-foreground">{network.number}</span>
-                <h3 className="text-lg font-bold text-foreground">{network.title}</h3>
-              </div>
-              
-              <p className="text-sm text-foreground/70 leading-relaxed">
-                {network.description}
-              </p>
-
-              {/* Logos */}
-              {network.logos && (
-                <div className="flex flex-wrap gap-4 mt-4">
-                  {network.logos.map((logo) => (
-                    <div
-                      key={logo}
-                      className="px-3 py-1.5 bg-white border border-gray-300 text-xs font-semibold text-foreground"
-                    >
-                      {logo}
-                    </div>
-                  ))}
+            {network.number === "02" ? (
+              <div className="bg-white p-4 flex gap-6">
+                <div className="flex-1 space-y-3">
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-2xl font-bold text-foreground">{network.number}</span>
+                    <h3 className="text-lg font-bold text-foreground">{network.title}</h3>
+                  </div>
+                  
+                  <p className="text-sm text-foreground/70 leading-relaxed">
+                    {network.description}
+                  </p>
                 </div>
-              )}
-            </div>
+
+                {network.logos && (
+                  <div className="grid grid-cols-2 gap-2">
+                    {network.logos.map((logo) => (
+                      <div
+                        key={logo}
+                        className="px-3 py-1.5 bg-white border border-gray-300 text-xs font-semibold text-foreground text-center"
+                      >
+                        {logo}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="space-y-3 bg-white p-4">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-2xl font-bold text-foreground">{network.number}</span>
+                  <h3 className="text-lg font-bold text-foreground">{network.title}</h3>
+                </div>
+                
+                <p className="text-sm text-foreground/70 leading-relaxed">
+                  {network.description}
+                </p>
+
+                {network.logos && (
+                  <div className="flex flex-wrap gap-4 mt-4">
+                    {network.logos.map((logo) => (
+                      <div
+                        key={logo}
+                        className="px-3 py-1.5 bg-white border border-gray-300 text-xs font-semibold text-foreground"
+                      >
+                        {logo}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>
