@@ -1,8 +1,10 @@
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const WhoWeAreSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,12 +73,7 @@ const WhoWeAreSection = () => {
             <div className="flex gap-5">
               <button 
                 className="px-8 py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-lg hover:bg-foreground hover:text-background transition-all duration-300"
-                onClick={() => {
-                  const teamSection = document.getElementById('our-team');
-                  if (teamSection) {
-                    teamSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+                onClick={() => navigate("/our-team")}
               >
                 OUR TEAM
               </button>
