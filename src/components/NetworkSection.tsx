@@ -82,13 +82,13 @@ const NetworkSection = () => {
     >
       <div className="max-w-[1600px] mx-auto relative" style={{ minHeight: "800px" }}>
         {/* Center Circle with UNDERTHELINE */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
           {/* Outer dotted circles */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full border-2 border-dashed border-gray-300" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-dashed border-gray-200" />
           
           {/* Center circle */}
-          <div className="relative w-[220px] h-[220px] rounded-full bg-white border-2 border-black flex items-center justify-center">
+          <div className="relative w-[220px] h-[220px] rounded-full bg-white border-2 border-black flex items-center justify-center z-10">
             <h1 className="text-2xl font-bold font-rift">UNDERTHELINE</h1>
           </div>
         </div>
@@ -97,12 +97,12 @@ const NetworkSection = () => {
         {networkData.map((network, index) => (
           <div
             key={network.number}
-            className={`${getPositionClasses(network.position)} transition-all duration-700 ${
+            className={`${getPositionClasses(network.position)} transition-all duration-700 z-20 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: `${index * 100}ms` }}
           >
-            <div className="space-y-3">
+            <div className="space-y-3 bg-[#F5F5F5] p-4">
               <div className="flex items-baseline gap-3">
                 <span className="text-2xl font-bold text-foreground">{network.number}</span>
                 <h3 className="text-lg font-bold text-foreground">{network.title}</h3>
