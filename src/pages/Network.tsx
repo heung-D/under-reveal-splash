@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import SuperAppPublishingSection from "@/components/SuperAppPublishingSection";
+import NetworkSection from "@/components/NetworkSection";
 import { ArrowLeft } from "lucide-react";
 
 const Network = () => {
@@ -20,7 +20,7 @@ const Network = () => {
 
       {/* Main content */}
       <main>
-        <SuperAppPublishingSection />
+        <NetworkSection />
       </main>
     </div>
   );
