@@ -84,12 +84,12 @@ const NetworkSection = () => {
         {/* Center Circle with UNDERTHELINE */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
           {/* Outer dotted circles */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-dashed border-gray-300" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border-2 border-dashed border-gray-200" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full border-2 border-dashed border-gray-300" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border-2 border-dashed border-gray-200" />
           
           {/* Center circle */}
-          <div className="relative w-[280px] h-[280px] rounded-full bg-white border-2 border-black flex items-center justify-center">
-            <h1 className="text-3xl font-bold font-rift">UNDERTHELINE</h1>
+          <div className="relative w-[220px] h-[220px] rounded-full bg-white border-2 border-black flex items-center justify-center">
+            <h1 className="text-2xl font-bold font-rift">UNDERTHELINE</h1>
           </div>
         </div>
 
