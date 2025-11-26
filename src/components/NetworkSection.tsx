@@ -89,7 +89,7 @@ const NetworkSection = () => {
           
           {/* Center circle */}
           <div className="relative w-[180px] h-[180px] rounded-full bg-white border-2 border-black flex items-center justify-center z-10">
-            <h1 className="text-2xl font-bold font-rift">UNDERTHELINE</h1>
+            <h1 className="text-3xl font-bold font-rift">UNDERTHELINE</h1>
           </div>
         </div>
 
