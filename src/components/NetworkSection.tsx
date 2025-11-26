@@ -78,7 +78,7 @@ const NetworkSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-[#F5F5F5] pt-[100px] pb-20 px-6 relative"
+      className="min-h-screen bg-white pt-[100px] pb-20 px-6 relative"
     >
       <div className="max-w-[1600px] mx-auto relative" style={{ minHeight: "800px" }}>
         {/* Center Circle with UNDERTHELINE */}
@@ -102,7 +102,7 @@ const NetworkSection = () => {
             }`}
             style={{ transitionDelay: `${index * 100}ms` }}
           >
-            <div className="space-y-3 bg-[#F5F5F5] p-4">
+            <div className="space-y-3 bg-white p-4">
               <div className="flex items-baseline gap-3">
                 <span className="text-2xl font-bold text-foreground">{network.number}</span>
                 <h3 className="text-lg font-bold text-foreground">{network.title}</h3>
