@@ -80,6 +80,17 @@ const NetworkSection = () => {
       ref={sectionRef}
       className="min-h-screen bg-white pt-[100px] pb-20 px-6 relative"
     >
+      {/* Title */}
+      <div className="px-6 md:px-12 mb-8 text-center">
+        <h2 
+          className={`text-[50px] font-bold text-foreground font-rift transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          INFRA&NETWORK
+        </h2>
+      </div>
+
       <div className="max-w-[1600px] mx-auto relative" style={{ minHeight: "800px" }}>
         {/* Center Circle with UNDERTHELINE */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
