@@ -63,7 +63,7 @@ const NetworkSection = () => {
       case "top-left":
         return "absolute top-[5%] left-[5%] max-w-[400px]";
       case "top-right":
-        return "absolute top-[5%] left-[5%] max-w-[600px]";
+        return "absolute top-[5%] right-[5%] max-w-[400px]";
       case "right":
         return "absolute top-[45%] right-[5%] -translate-y-1/2 max-w-[400px]";
       case "bottom-right":
@@ -127,7 +127,7 @@ const NetworkSection = () => {
 
               {/* Logos */}
               {network.logos && (
-                <div className={network.number === "02" ? "grid grid-cols-2 gap-2 mt-4" : "flex flex-wrap gap-4 mt-4"}>
+                <div className="flex flex-wrap gap-4 mt-4">
                   {network.logos.map((logo) => (
                     <div
                       key={logo}
