@@ -148,97 +148,83 @@ const SubsidiariesSection = () => {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden flex flex-col items-start justify-center space-y-12 w-full max-w-[400px] mx-auto px-6">
-        {/* URBANLINK */}
-        <div
-          className={`transition-all duration-1000 w-full ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: "300ms" }}
-        >
-          <button 
-            onClick={() => handleSubsidiaryClick('urbanlink')}
-            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110"
+      <div className="md:hidden w-full overflow-x-auto px-6 scrollbar-hide">
+        <div className="flex items-center gap-8 min-w-max pb-4">
+          {/* URBANLINK */}
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "300ms" }}
           >
-            <img 
-              src={urbanlinkLogo} 
-              alt="URBANLINK" 
-              className="h-6 object-contain"
-            />
-          </button>
-        </div>
-
-        {/* PANORAMA */}
-        <div
-          className={`transition-all duration-1000 w-full ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: "500ms" }}
-        >
-          <button 
-            onClick={() => handleSubsidiaryClick('panorama')}
-            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110"
-          >
-            <img 
-              src={panoramaLogo} 
-              alt="PANORAMA" 
-              className="h-6 object-contain"
-            />
-          </button>
-        </div>
-
-        {/* UNDERTHELINE */}
-        <div
-          className={`transition-all duration-1000 w-full ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: "700ms" }}
-        >
-          <div className="relative block w-full">
-            <img 
-              src={underthelineText} 
-              alt="UNDERTHELINE" 
-              className="h-10 object-contain"
-            />
+            <button 
+              onClick={() => handleSubsidiaryClick('urbanlink')}
+              className="group hover:scale-110 transition-all duration-300 ease-out cursor-pointer hover:brightness-110 flex-shrink-0"
+            >
+              <img 
+                src={urbanlinkLogo} 
+                alt="URBANLINK" 
+                className="h-10 object-contain"
+              />
+            </button>
           </div>
-        </div>
 
-        {/* ARADNAS */}
-        <div
-          className={`transition-all duration-1000 w-full ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: "900ms" }}
-        >
-          <button 
-            onClick={() => handleSubsidiaryClick('aradnas')}
-            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110"
+          {/* PANORAMA */}
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "500ms" }}
           >
-            <img 
-              src={aradnasLogo} 
-              alt="ARADNAS" 
-              className="h-6 object-contain"
-            />
-          </button>
-        </div>
+            <button 
+              onClick={() => handleSubsidiaryClick('panorama')}
+              className="group hover:scale-110 transition-all duration-300 ease-out cursor-pointer hover:brightness-110 flex-shrink-0"
+            >
+              <img 
+                src={panoramaLogo} 
+                alt="PANORAMA" 
+                className="h-10 object-contain"
+              />
+            </button>
+          </div>
 
-        {/* MAR/S */}
-        <div
-          className={`transition-all duration-1000 w-full ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: "1100ms" }}
-        >
-          <button 
-            onClick={() => handleSubsidiaryClick('mars')}
-            className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block w-full cursor-pointer hover:brightness-110"
+          {/* ARADNAS */}
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "700ms" }}
           >
-            <img 
-              src={marsLogo} 
-              alt="MAR/S" 
-              className="h-6 object-contain"
-            />
-          </button>
+            <button 
+              onClick={() => handleSubsidiaryClick('aradnas')}
+              className="group hover:scale-110 transition-all duration-300 ease-out cursor-pointer hover:brightness-110 flex-shrink-0"
+            >
+              <img 
+                src={aradnasLogo} 
+                alt="ARADNAS" 
+                className="h-10 object-contain"
+              />
+            </button>
+          </div>
+
+          {/* MAR/S */}
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: "900ms" }}
+          >
+            <button 
+              onClick={() => handleSubsidiaryClick('mars')}
+              className="group hover:scale-110 transition-all duration-300 ease-out cursor-pointer hover:brightness-110 flex-shrink-0"
+            >
+              <img 
+                src={marsLogo} 
+                alt="MAR/S" 
+                className="h-10 object-contain"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </section>
