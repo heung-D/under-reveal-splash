@@ -32,7 +32,7 @@ const networkData = [
     number: "05",
     title: "Global OTT Network",
     description: "Panorama leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists",
-    position: "bottom-left-lower",
+    position: "bottom-right-lower",
     logos: ["Netflix", "Disney+", "Apple TV+", "Prime Video", "HBO Max"]
   }
 ];
@@ -72,8 +72,8 @@ const NetworkSection = () => {
         return "absolute bottom-[5%] right-[15%] max-w-[400px]";
       case "bottom-left":
         return "absolute top-[45%] left-[5%] max-w-[400px]";
-      case "bottom-left-lower":
-        return "absolute bottom-[-15%] left-[5%] max-w-[400px]";
+      case "bottom-right-lower":
+        return "absolute top-[65%] right-[5%] max-w-[400px]";
       default:
         return "";
     }
