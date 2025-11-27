@@ -47,8 +47,8 @@ const SubsidiaryDetailsSection = () => {
     <section
       id="subsidiary-details"
       ref={sectionRef}
-      className="flex items-center justify-center px-[160px] pt-0 pb-20 bg-background -mt-[20px]"
-      style={{ height: 'calc(100vh - 100px)' }}
+      className="flex items-center justify-center px-6 md:px-[160px] pt-0 pb-20 bg-background -mt-[20px]"
+      style={{ minHeight: 'calc(100vh - 100px)' }}
     >
       <div className="w-full max-w-7xl mx-auto">
         <Tabs
@@ -57,28 +57,28 @@ const SubsidiaryDetailsSection = () => {
           className="w-full"
         >
           {/* Tab Navigation */}
-          <TabsList className="w-full bg-transparent border-b border-border rounded-none h-auto p-0 mb-16 flex justify-center gap-8">
+          <TabsList className="w-full bg-transparent border-b border-border rounded-none h-auto p-0 mb-12 md:mb-16 flex justify-center md:gap-8 gap-4 overflow-x-auto scrollbar-hide">
             <TabsTrigger
               value="urbanlink"
-              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-base md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-2 md:px-4 text-sm md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300 whitespace-nowrap"
             >
               URBANLINK
             </TabsTrigger>
             <TabsTrigger
               value="panorama"
-              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-base md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-2 md:px-4 text-sm md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300 whitespace-nowrap"
             >
               PANORAMA
             </TabsTrigger>
             <TabsTrigger
               value="aradnas"
-              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-base md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-2 md:px-4 text-sm md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300 whitespace-nowrap"
             >
               ARADNAS
             </TabsTrigger>
             <TabsTrigger
               value="mars"
-              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-base md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none pb-2 px-2 md:px-4 text-sm md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300 whitespace-nowrap"
             >
               MAR/S
             </TabsTrigger>
@@ -86,12 +86,12 @@ const SubsidiaryDetailsSection = () => {
 
           {/* PANORAMA Tab */}
           <TabsContent value="panorama" className="mt-0">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
-              <div className="transition-all duration-1000 opacity-100 translate-x-0">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
+              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full">
                 <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                   PANORAMA
                 </h2>
-                <div className="h-1 w-[300px] bg-foreground mb-6"></div>
+                <div className="h-1 w-full md:w-[300px] bg-foreground mb-6 mx-auto md:mx-0"></div>
                 <Button 
                   variant="outline" 
                   className="group"
@@ -145,12 +145,12 @@ const SubsidiaryDetailsSection = () => {
 
           {/* URBANLINK Tab */}
           <TabsContent value="urbanlink" className="mt-0">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
-              <div className="transition-all duration-1000 opacity-100 translate-x-0">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
+              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full">
                 <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                   URBANLINK
                 </h2>
-                <div className="h-1 w-[300px] bg-foreground"></div>
+                <div className="h-1 w-full md:w-[300px] bg-foreground mb-6 md:mb-0 mx-auto md:mx-0"></div>
               </div>
 
               <div
@@ -191,12 +191,12 @@ const SubsidiaryDetailsSection = () => {
 
           {/* ARADNAS Tab */}
           <TabsContent value="aradnas" className="mt-0">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
-              <div className="transition-all duration-1000 opacity-100 translate-x-0">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
+              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full">
                 <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                   ARADNAS
                 </h2>
-                <div className="h-1 w-[300px] bg-foreground"></div>
+                <div className="h-1 w-full md:w-[300px] bg-foreground mb-6 md:mb-0 mx-auto md:mx-0"></div>
               </div>
 
               <div
@@ -223,12 +223,12 @@ const SubsidiaryDetailsSection = () => {
 
           {/* MAR/S Tab */}
           <TabsContent value="mars" className="mt-0">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
-              <div className="transition-all duration-1000 opacity-100 translate-x-0">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
+              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full">
                 <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                   MAR/S
                 </h2>
-                <div className="h-1 w-[300px] bg-foreground"></div>
+                <div className="h-1 w-full md:w-[300px] bg-foreground mb-6 md:mb-0 mx-auto md:mx-0"></div>
               </div>
 
               <div
