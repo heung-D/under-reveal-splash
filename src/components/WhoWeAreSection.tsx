@@ -53,7 +53,7 @@ const WhoWeAreSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "500ms" : "0ms" }}
             >
-              <h2 className="text-[44px] font-bold text-foreground font-rift text-right">
+              <h2 className="text-[39px] lg:text-[44px] leading-[100%] font-bold text-foreground font-rift text-right">
                 WHO WE ARE
               </h2>
             </div>

@@ -88,7 +88,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="panorama" className="mt-0">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0">
-                <h2 className="text-[50px] font-bold text-foreground mb-[4px] font-rift">
+                <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                   PANORAMA
                 </h2>
                 <div className="h-1 w-[300px] bg-foreground mb-6"></div>
@@ -147,7 +147,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="urbanlink" className="mt-0">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0">
-                <h2 className="text-[50px] font-bold text-foreground mb-[4px] font-rift">
+                <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                   URBANLINK
                 </h2>
                 <div className="h-1 w-[300px] bg-foreground"></div>
@@ -193,7 +193,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="aradnas" className="mt-0">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0">
-                <h2 className="text-[50px] font-bold text-foreground mb-[4px] font-rift">
+                <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                   ARADNAS
                 </h2>
                 <div className="h-1 w-[300px] bg-foreground"></div>
@@ -225,7 +225,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="mars" className="mt-0">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0">
-                <h2 className="text-[50px] font-bold text-foreground mb-[4px] font-rift">
+                <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                   MAR/S
                 </h2>
                 <div className="h-1 w-[300px] bg-foreground"></div>

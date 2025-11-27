@@ -33,7 +33,7 @@ const HeroSection = () => {
               }`}
               style={{ animationDelay: "var(--delay-logo)" }}
             >
-              <h1 className="text-[44px] font-bold text-foreground font-rift text-right">
+              <h1 className="text-[39px] lg:text-[44px] leading-[100%] font-bold text-foreground font-rift text-right">
                 UNDERTHELINE HOLDINGS
               </h1>
             </div>

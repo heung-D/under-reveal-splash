@@ -155,7 +155,7 @@ const OurTeamSection = () => {
       {/* Title */}
       <div className="px-6 md:px-12 mb-8 text-center">
         <h2 
-          className={`text-[36px] lg:text-[50px] font-bold text-foreground font-rift transition-all duration-700 ${
+          className={`text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground font-rift transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -213,7 +213,7 @@ const OurTeamSection = () => {
                 <div className="w-full flex flex-col md:flex-row justify-between gap-6 md:gap-[100px]">
                   {/* Left Column - Name and Role */}
                   <div className="flex-shrink-0">
-                    <h3 className="text-[32px] font-bold text-foreground mb-0 font-rift">
+                    <h3 className="text-[27px] lg:text-[32px] leading-[100%] font-bold text-foreground mb-0 font-rift">
                       {member.name}
                     </h3>
                     <p className="text-xl text-foreground/70">{member.role}</p>
