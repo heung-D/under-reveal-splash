@@ -121,7 +121,7 @@ const NetworkSection = () => {
                 <h3 className="text-lg font-bold text-foreground">{network.title}</h3>
               </div>
               
-              <p className="text-sm text-foreground/70 leading-relaxed">
+              <p className="text-[15px] text-foreground/70 leading-relaxed tracking-wide">
                 {network.description}
               </p>
 
@@ -175,7 +175,7 @@ const NetworkSection = () => {
                   <h3 className="text-lg font-bold text-foreground">{network.title}</h3>
                 </div>
                 
-                <p className="text-sm text-foreground/70 leading-relaxed">
+                <p className="text-[15px] text-foreground/70 leading-relaxed tracking-wide">
                   {network.description}
                 </p>
 
