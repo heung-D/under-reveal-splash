@@ -18,7 +18,7 @@ const HeroSection = () => {
           {/* Left side - Logo with line */}
           <div className="flex flex-col items-end">
             {/* Horizontal line */}
-            <div className="w-full max-w-[470px] overflow-hidden mb-[9px] md:mb-[-6px]">
+            <div className="w-full max-w-[470px] overflow-hidden mb-[7px] md:mb-[-6px]">
               <div
                 className={`h-[3px] bg-foreground origin-left ${
                   startAnimation ? "animate-draw-line" : "w-0"
