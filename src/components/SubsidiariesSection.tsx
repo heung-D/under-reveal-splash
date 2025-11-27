@@ -148,7 +148,7 @@ const SubsidiariesSection = () => {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden w-full flex flex-col items-center justify-center space-y-16 px-6">
+      <div className="md:hidden w-full flex flex-col items-center justify-center space-y-8 px-6">
         {/* URBANLINK */}
         <div
           className={`transition-all duration-1000 w-full ${
@@ -163,7 +163,7 @@ const SubsidiariesSection = () => {
             <img 
               src={urbanlinkLogo} 
               alt="URBANLINK" 
-              className="h-10 object-contain mx-auto"
+              className="h-16 object-contain mx-auto"
             />
           </button>
         </div>
@@ -182,7 +182,7 @@ const SubsidiariesSection = () => {
             <img 
               src={panoramaLogo} 
               alt="PANORAMA" 
-              className="h-10 object-contain mx-auto"
+              className="h-16 object-contain mx-auto"
             />
           </button>
         </div>
@@ -201,7 +201,7 @@ const SubsidiariesSection = () => {
             <img 
               src={aradnasLogo} 
               alt="ARADNAS" 
-              className="h-10 object-contain mx-auto"
+              className="h-16 object-contain mx-auto"
             />
           </button>
         </div>
@@ -220,7 +220,7 @@ const SubsidiariesSection = () => {
             <img 
               src={marsLogo} 
               alt="MAR/S" 
-              className="h-10 object-contain mx-auto"
+              className="h-16 object-contain mx-auto"
             />
           </button>
         </div>
@@ -236,7 +236,7 @@ const SubsidiariesSection = () => {
             <img 
               src={underthelineText} 
               alt="UNDERTHELINE" 
-              className="h-12 object-contain mx-auto"
+              className="h-20 object-contain mx-auto"
             />
           </div>
         </div>
