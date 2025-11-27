@@ -224,6 +224,22 @@ const SubsidiariesSection = () => {
             />
           </button>
         </div>
+
+        {/* UNDERTHELINE */}
+        <div
+          className={`transition-all duration-1000 w-full ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: "1100ms" }}
+        >
+          <div className="w-full">
+            <img 
+              src={underthelineText} 
+              alt="UNDERTHELINE" 
+              className="h-12 object-contain mx-auto"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
