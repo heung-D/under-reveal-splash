@@ -100,6 +100,11 @@ const NetworkSection = () => {
         {/* Center Circle with UNDERTHELINE */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
           {/* Outer dotted circles - spacing increases progressively */}
+          <div className="absolute top-1/2 left-1/2 w-[270px] h-[270px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" />
+          <div className="absolute top-1/2 left-1/2 w-[270px] h-[270px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "1s" }} />
+          <div className="absolute top-1/2 left-1/2 w-[270px] h-[270px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "2s" }} />
+          
+          {/* Static circles */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[270px] h-[270px] rounded-full border-2 border-dashed border-gray-300" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border-2 border-dashed border-gray-200" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border-2 border-dashed border-gray-50" />
@@ -152,7 +157,12 @@ const NetworkSection = () => {
         {/* Center Circle with UNDERTHELINE */}
         <div className="flex justify-center mb-12">
           <div className="relative">
-            {/* Outer dotted circles */}
+            {/* Animated expanding circles */}
+            <div className="absolute top-1/2 left-1/2 w-[200px] h-[200px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" />
+            <div className="absolute top-1/2 left-1/2 w-[200px] h-[200px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "1s" }} />
+            <div className="absolute top-1/2 left-1/2 w-[200px] h-[200px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "2s" }} />
+            
+            {/* Static outer dotted circles */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full border-2 border-dashed border-gray-300" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border-2 border-dashed border-gray-100" />
             

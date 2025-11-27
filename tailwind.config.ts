@@ -75,10 +75,24 @@ export default {
             height: "0",
           },
         },
+        "orbit-expand": {
+          "0%": {
+            transform: "translate(-50%, -50%) scale(0.8)",
+            opacity: "0",
+          },
+          "50%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translate(-50%, -50%) scale(1.5)",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "orbit-expand": "orbit-expand 3s ease-out infinite",
       },
     },
   },
