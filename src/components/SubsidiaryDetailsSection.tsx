@@ -162,13 +162,13 @@ const SubsidiaryDetailsSection = () => {
               >
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
-                    URBANLINK XYZ
+                    URBANLINK 400
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
                     Driving business expansion through producing projects for global artists and sports icons, supported by Super App publishing.
                   </p>
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                    With the participation of Republic Records, URBANLINK XYZ strengthens its position as a global entertainment partner—building a large-scale ecosystem that connects music, sports, and digital fandom worldwide.
+                    With the participation of Republic Records, URBANLINK 400 strengthens its position as a global entertainment partner—building a large-scale ecosystem that connects music, sports, and digital fandom worldwide.
                   </p>
                 </div>
 
