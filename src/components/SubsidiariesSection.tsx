@@ -68,7 +68,7 @@ const SubsidiariesSection = () => {
             <img 
               src={urbanlinkLogo} 
               alt="URBANLINK" 
-              className="h-8 object-contain"
+              className="h-16 object-contain"
             />
           </button>
         </div>
@@ -87,7 +87,7 @@ const SubsidiariesSection = () => {
             <img 
               src={panoramaLogo} 
               alt="PANORAMA" 
-              className="h-8 object-contain"
+              className="h-16 object-contain"
             />
           </button>
         </div>
@@ -106,7 +106,7 @@ const SubsidiariesSection = () => {
             <img 
               src={aradnasLogo} 
               alt="ARADNAS" 
-              className="h-8 object-contain"
+              className="h-16 object-contain"
             />
           </button>
         </div>
@@ -125,25 +125,9 @@ const SubsidiariesSection = () => {
             <img 
               src={marsLogo} 
               alt="MAR/S" 
-              className="h-8 object-contain"
+              className="h-16 object-contain"
             />
           </button>
-        </div>
-
-        {/* UNDERTHELINE - Center between PANORAMA and ARADNAS */}
-        <div
-          className={`absolute top-[39%] right-[5%] transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: "700ms" }}
-        >
-          <div className="relative block text-left">
-            <img 
-              src={underthelineText} 
-              alt="UNDERTHELINE" 
-              className="h-10 object-contain"
-            />
-          </div>
         </div>
       </div>
 
@@ -223,22 +207,6 @@ const SubsidiariesSection = () => {
               className="h-16 object-contain mx-auto"
             />
           </button>
-        </div>
-
-        {/* UNDERTHELINE */}
-        <div
-          className={`transition-all duration-1000 w-full ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: "1100ms" }}
-        >
-          <div className="w-full">
-            <img 
-              src={underthelineText} 
-              alt="UNDERTHELINE" 
-              className="h-20 object-contain mx-auto"
-            />
-          </div>
         </div>
       </div>
     </section>
