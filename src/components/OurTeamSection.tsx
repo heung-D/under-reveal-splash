@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import teamRobert from "@/assets/team-robert.png";
 import teamHan from "@/assets/team-han.png";
 import teamRyan from "@/assets/team-ryan.png";
@@ -46,8 +47,35 @@ const teamMembers = [
 const OurTeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToIndex = (index: number) => {
+    if (!scrollContainerRef.current) return;
+    
+    const container = scrollContainerRef.current;
+    const targetScroll = container.clientWidth * index;
+    
+    container.scrollTo({
+      left: targetScroll,
+      behavior: 'smooth'
+    });
+    
+    setCurrentIndex(index);
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      scrollToIndex(currentIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < teamMembers.length - 1) {
+      scrollToIndex(currentIndex + 1);
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -136,11 +164,31 @@ const OurTeamSection = () => {
       </div>
 
       {/* Horizontal Scrollable Team Members */}
-      <div 
-        ref={scrollContainerRef}
-        className="overflow-x-auto overflow-y-hidden scrollbar-hide w-full"
-      >
-        <div className="flex gap-0 min-w-max">
+      <div className="relative">
+        {/* Navigation Buttons - Mobile Only */}
+        <button
+          onClick={handlePrevious}
+          disabled={currentIndex === 0}
+          className="md:hidden absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full p-3 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-background transition-all"
+          aria-label="Previous team member"
+        >
+          <ChevronLeft className="w-6 h-6 text-foreground" />
+        </button>
+        
+        <button
+          onClick={handleNext}
+          disabled={currentIndex === teamMembers.length - 1}
+          className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full p-3 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-background transition-all"
+          aria-label="Next team member"
+        >
+          <ChevronRight className="w-6 h-6 text-foreground" />
+        </button>
+
+        <div 
+          ref={scrollContainerRef}
+          className="overflow-x-auto overflow-y-hidden scrollbar-hide w-full"
+        >
+          <div className="flex gap-0 min-w-max">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
@@ -185,6 +233,7 @@ const OurTeamSection = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
 
       {/* Custom Scrollbar */}
