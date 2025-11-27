@@ -19,7 +19,7 @@ const networkData = [
     number: "03",
     title: "Global Touring Network",
     description: "Panorama leverages its relationships with global talent booking agencies and live event promoters to secure maximum value from tours while sharing in the success with K-pop artists",
-    position: "right",
+    position: "bottom-left",
     logos: ["CAA", "WME", "DYNAMIC", "Live Nation", "AEG", "UTA"]
   },
   {
@@ -32,7 +32,7 @@ const networkData = [
     number: "05",
     title: "Global OTT Network",
     description: "Panorama leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists",
-    position: "bottom-left",
+    position: "bottom-left-lower",
     logos: ["Netflix", "Disney+", "Apple TV+", "Prime Video", "HBO Max"]
   }
 ];
@@ -70,6 +70,8 @@ const NetworkSection = () => {
         return "absolute bottom-[5%] right-[15%] max-w-[400px]";
       case "bottom-left":
         return "absolute bottom-[5%] left-[5%] max-w-[400px]";
+      case "bottom-left-lower":
+        return "absolute bottom-[-15%] left-[5%] max-w-[400px]";
       default:
         return "";
     }
