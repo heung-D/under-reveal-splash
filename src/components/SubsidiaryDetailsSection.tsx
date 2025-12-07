@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
@@ -7,6 +8,7 @@ const SubsidiaryDetailsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState("urbanlink");
   const sectionRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,9 +47,9 @@ const SubsidiaryDetailsSection = () => {
 
   return (
     <section
-      id="subsidiary-details"
+      id="what-we-do"
       ref={sectionRef}
-      className="flex items-center justify-center px-6 md:px-[160px] pt-0 pb-20 bg-background -mt-[20px]"
+      className="flex flex-col items-center justify-center px-6 md:px-[160px] pt-0 pb-20 bg-background -mt-[20px]"
       style={{ minHeight: 'calc(100vh - 100px)' }}
     >
       <div className="w-full max-w-7xl mx-auto">
@@ -250,6 +252,16 @@ const SubsidiaryDetailsSection = () => {
             </div>
           </TabsContent>
         </Tabs>
+        
+        {/* MORE Button */}
+        <div className="mt-12 flex justify-center">
+          <button 
+            className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
+            onClick={() => navigate("/more?from=what-we-do&tab=network")}
+          >
+            MORE
+          </button>
+        </div>
       </div>
     </section>
   );
