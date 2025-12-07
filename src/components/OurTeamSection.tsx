@@ -7,6 +7,7 @@ import teamStavros from "@/assets/team-stavros.png";
 import teamHoontack from "@/assets/team-hoontack.png";
 import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
+import teamCharles from "@/assets/team-charles.png";
 
 const teamMembers = [
   // 1
@@ -41,7 +42,14 @@ const teamMembers = [
     description: "Hoontack Jung is the founder of the Korea Entertainment Management Association and Sidus (IHQ), and a leading figure in Korea's management and content production business. Since the 2000s, he has discovered and managed many of Korea's top stars, including Jun Ji-hyun, Gong Yoo, Park Bo-gum, Song Hye-kyo, Jay Park, g.o.d, Song Joong-ki, Ha Jung-woo, and Shin Min-a, earning recognition as a key pioneer and mentor in the industry.",
     image: teamHoontack
   },
-  // 5 - Charles placeholder (need image)
+  // 5
+  {
+    name: "Charles Stanton",
+    role: "Advisor",
+    title: "Industry Expert",
+    description: "Bringing valuable expertise and insights to guide strategic initiatives and business development.",
+    image: teamCharles
+  },
   // 6
   {
     name: "Mark Friedman",
