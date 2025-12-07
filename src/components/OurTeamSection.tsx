@@ -21,9 +21,9 @@ const teamMembers = [
   // 2
   {
     name: "Robert W. Lewis III",
-    role: "CEO, Unbanlink Group Strategic Advisor – U.S. Music & Super-App Strategy, Undertheline Holdings",
-    title: "Strategic Advisor – U.S. Music & Super-App Strategy, Undertheline",
-    description: "Robert Lewis is a veteran of the U.S. music industry with over 30 years of experience. He has collaborated with world-renowned artists including Brandy & Monica, Whitney Houston, Destiny's Child, Jennifer Lopez, Beyoncé, Akon, Snoop Dogg, Michael Jackson, Justin Bieber, Lady Gaga, Ariana Grande, The Weeknd, Cardi B, Doja Cat, and many more. He contributes to the expansion of super-app strategies and supports the production and development of artists across all labels under Undertheline.",
+    role: "Co-Founder",
+    title: "Strategic Leader & Innovator",
+    description: "As Co-Founder, he brings decades of experience in building global entertainment ecosystems and driving strategic partnerships across industries.",
     image: teamRobert
   },
   // 3
