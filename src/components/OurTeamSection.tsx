@@ -127,10 +127,15 @@ const OurTeamSection = () => {
       const progress = maxScrollLeft > 0 ? (container.scrollLeft / maxScrollLeft) * 100 : 0;
       setScrollProgress(progress);
       
+      // Update currentIndex based on scroll position
+      const newIndex = Math.round(container.scrollLeft / container.clientWidth);
+      setCurrentIndex(newIndex);
     };
 
+    let isScrolling = false;
+
     const handleWheel = (e: WheelEvent) => {
-      if (!scrollContainerRef.current) return;
+      if (!scrollContainerRef.current || isScrolling) return;
       
       const container = scrollContainerRef.current;
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
@@ -141,17 +146,23 @@ const OurTeamSection = () => {
       
       // Only hijack vertical scroll if not at boundaries
       if (e.deltaY !== 0) {
+        const currentIdx = Math.round(container.scrollLeft / container.clientWidth);
+        
         // If scrolling down and not at end, snap to next
         if (e.deltaY > 0 && !atEnd) {
           e.preventDefault();
-          const newIndex = Math.min(currentIndex + 1, teamMembers.length - 1);
+          isScrolling = true;
+          const newIndex = Math.min(currentIdx + 1, teamMembers.length - 1);
           scrollToIndex(newIndex);
+          setTimeout(() => { isScrolling = false; }, 500);
         }
         // If scrolling up and not at start, snap to previous
         else if (e.deltaY < 0 && !atStart) {
           e.preventDefault();
-          const newIndex = Math.max(currentIndex - 1, 0);
+          isScrolling = true;
+          const newIndex = Math.max(currentIdx - 1, 0);
           scrollToIndex(newIndex);
+          setTimeout(() => { isScrolling = false; }, 500);
         }
       }
     };
