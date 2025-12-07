@@ -251,16 +251,6 @@ const SubsidiaryDetailsSection = () => {
             </div>
           </TabsContent>
         </Tabs>
-        
-        {/* MORE Button */}
-        <div className="mt-12 flex justify-center">
-          <button 
-            className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
-            onClick={() => navigate("/more?from=what-we-do&tab=network")}
-          >
-            MORE
-          </button>
-        </div>
       </div>
     </section>
   );
