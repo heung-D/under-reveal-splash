@@ -21,7 +21,7 @@ const teamMembers = [
   // 2
   {
     name: "Robert W. Lewis III",
-    role: "Co-Founder",
+    role: "CEO, URBANLINK 360\nCEO, URBANLINK 400",
     title: "Strategic Leader & Innovator",
     description: "As Co-Founder, he brings decades of experience in building global entertainment ecosystems and driving strategic partnerships across industries.",
     image: teamRobert
@@ -258,7 +258,7 @@ const OurTeamSection = () => {
                     <h3 className="text-[27px] lg:text-[32px] leading-[100%] font-bold text-foreground mb-0 font-rift">
                       {member.name}
                     </h3>
-                    <p className="text-[20px] text-foreground/70">{member.role}</p>
+                    <p className="text-[20px] text-foreground/70 whitespace-pre-line">{member.role}</p>
                   </div>
 
                   {/* Right Column - Title and Description */}
