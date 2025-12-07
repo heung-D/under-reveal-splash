@@ -4,7 +4,6 @@ import Logo from "@/components/Logo";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import WhoWeAreSection from "@/components/WhoWeAreSection";
-import WhatWeDoSection from "@/components/WhatWeDoSection";
 import BrandMessageSection from "@/components/BrandMessageSection";
 import {
   DropdownMenu,
@@ -62,9 +61,6 @@ const Index = () => {
         </section>
         <section className="snap-section">
           <AboutSection />
-        </section>
-        <section className="snap-section">
-          <WhatWeDoSection />
         </section>
         <section className="snap-section">
           <WhoWeAreSection />
