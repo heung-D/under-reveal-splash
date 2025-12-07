@@ -29,7 +29,7 @@ const More = () => {
             className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="h-5 w-5" />
-            <span className="font-rift text-sm">Back</span>
+            <span className="hidden md:inline font-rift text-sm">Back</span>
           </button>
 
           {/* Tabs */}
