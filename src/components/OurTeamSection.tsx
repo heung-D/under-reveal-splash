@@ -255,18 +255,18 @@ const OurTeamSection = () => {
                 <div className="w-full flex flex-col md:flex-row justify-between gap-6 md:gap-[100px]">
                   {/* Left Column - Name and Role */}
                   <div className="flex-shrink-0">
-                    <h3 className="text-[27px] lg:text-[32px] leading-[100%] font-bold text-foreground mb-0 font-rift">
+                    <h3 className="text-[24px] lg:text-[28px] leading-[100%] font-bold text-foreground mb-1 font-rift">
                       {member.name}
                     </h3>
-                    <p className="text-[20px] text-foreground/70 whitespace-pre-line">{member.role}</p>
+                    <p className="text-[14px] text-foreground/70 whitespace-pre-line">{member.role}</p>
                   </div>
 
                   {/* Right Column - Title and Description */}
                   <div className="flex-1 text-left">
-                    <h4 className="text-[17px] font-semibold text-foreground mb-0.5">
+                    <h4 className="text-[18px] font-semibold text-foreground mb-2">
                       {member.title}
                     </h4>
-                    <p className="text-[17px] text-foreground/80 leading-snug tracking-tight">
+                    <p className="text-[15px] text-foreground/80 leading-relaxed">
                       {member.description}
                     </p>
                   </div>
