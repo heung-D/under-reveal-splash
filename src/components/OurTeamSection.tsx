@@ -258,7 +258,7 @@ const OurTeamSection = () => {
                     <h3 className="text-[27px] lg:text-[32px] leading-[100%] font-bold text-foreground mb-0 font-rift">
                       {member.name}
                     </h3>
-                    <p className="text-xl text-foreground/70">{member.role}</p>
+                    <p className="text-[20px] text-foreground/70">{member.role}</p>
                   </div>
 
                   {/* Right Column - Title and Description */}
