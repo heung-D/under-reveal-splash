@@ -47,13 +47,13 @@ const Index = () => {
           <HeroSection />
         </section>
         <section className="snap-section">
-          <SubsidiariesSection />
-        </section>
-        <section className="snap-section">
           <AboutSection />
         </section>
         <section className="snap-section">
           <WhoWeAreSection />
+        </section>
+        <section className="snap-section">
+          <SubsidiariesSection />
         </section>
         <section className="snap-section">
           <SubsidiaryDetailsSection />
