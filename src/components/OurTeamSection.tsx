@@ -29,9 +29,9 @@ const teamMembers = [
   // 3
   {
     name: "Han Kim",
-    role: "Chief Technology Officer",
-    title: "Technology Pioneer",
-    description: "Leading our technology vision and implementing cutting-edge solutions that power our global entertainment infrastructure.",
+    role: "CEO, Panorama",
+    title: "International entertainment law and management leader",
+    description: "Han Kim is an international expert with over 15 years in the K-pop and global music industries. A U.S.-licensed attorney recognized among Billboard's Top Music Lawyers, he has worked with SM Entertainment, JYP Entertainment, Kakao, and THEBLACKLABEL. With a Master's degree in Music Business from NYU, he now leads Panorama, connecting K-pop with the global music market through platforms and infrastructure.",
     image: teamHan
   },
   // 5
