@@ -78,7 +78,7 @@ const NetworkSection = () => {
       case "bottom-right":
         return "absolute bottom-[5%] right-[15%] max-w-[400px]";
       case "bottom-left":
-        return "absolute top-[45%] left-[5%] max-w-[400px]";
+        return "absolute top-[55%] left-[5%] max-w-[400px]";
       case "bottom-right-lower":
         return "absolute top-[65%] right-[5%] max-w-[400px]";
       default:
