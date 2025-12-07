@@ -89,10 +89,10 @@ const NetworkSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-white pt-[100px] pb-20 px-6 relative"
+      className="min-h-screen bg-white pt-[60px] lg:pt-[100px] pb-20 px-6 relative"
     >
       {/* Title */}
-      <div className="px-6 md:px-12 mb-16 text-center">
+      <div className="px-6 md:px-12 mb-8 lg:mb-16 text-center">
         <h2 
           className={`text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground font-rift transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -154,14 +154,14 @@ const NetworkSection = () => {
       {/* Mobile/Tablet Layout */}
       <div className="lg:hidden max-w-[800px] mx-auto">
         {/* Center Circle with UNDERTHELINE - 맨 위에 배치, 점선 원형 라인 삭제 */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-6">
           <div className="relative w-[140px] h-[140px] rounded-full bg-white border-2 border-black flex items-center justify-center">
             <h1 className="text-xl font-bold font-rift text-center px-2">UNDERTHELINE</h1>
           </div>
         </div>
 
         {/* Network Sections - 번호순 세로 리스트 */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {[...networkData].sort((a, b) => parseInt(a.number) - parseInt(b.number)).map((network, index) => (
             <div
               key={network.number}
