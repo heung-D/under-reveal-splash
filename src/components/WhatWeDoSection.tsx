@@ -32,8 +32,8 @@ const WhatWeDoSection = () => {
   }, []);
 
   return (
-    <div id="what-we-do-intro" ref={sectionRef} className="flex items-center justify-center px-6 pt-[40px]" style={{ height: 'calc(100vh - 100px)' }}>
-      <div className="max-w-7xl w-full">
+    <div id="what-we-do-intro" ref={sectionRef} className="flex items-center justify-center px-6 pt-[40px] -mt-[60px]" style={{ height: 'calc(100vh - 100px)' }}>
+      <div className="max-w-7xl w-full -mt-[80px]">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           {/* Left side - Logo with line */}
           <div className="flex flex-col items-end mt-0">
@@ -67,7 +67,7 @@ const WhatWeDoSection = () => {
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
             <p className="text-sm md:text-base leading-[1.4] text-foreground mb-12">
-              We build and operate a next-generation entertainment infrastructure that connects artists, fans, and brands through our proprietary DOCE technology ecosystem.
+              UNDERTHELINE designs and operates integrated entertainment ecosystems for artists and IP owners. We bring together platforms, labels, management, production, touring, commerce, and data into one structure, so that artists can build, own, and run their own worlds instead of renting space from legacy platforms.
             </p>
             
             <div className="flex gap-5">
