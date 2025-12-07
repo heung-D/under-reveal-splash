@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import teamRobert from "@/assets/team-robert.png";
 import teamHan from "@/assets/team-han.png";
-import teamRyan from "@/assets/team-ryan.png";
 import teamMaurizio from "@/assets/team-maurizio.png";
+import teamStavros from "@/assets/team-stavros.png";
 import teamHoontack from "@/assets/team-hoontack.png";
 import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
 
 const teamMembers = [
-  // Row 1: 1, 2, 3
+  // 1
   {
     name: "Sanghyun Shin",
     role: "Founder",
@@ -17,6 +17,7 @@ const teamMembers = [
     description: "As the Founder & CEO of Undertheline Holdings, he lead the global expansion of a next-generation entertainment ecosystem. Powered by proprietary DOCE technology, he unify networks across industries and nations, designing infrastructure where artists, fans, and brands can thrive together.",
     image: teamSanghyun
   },
+  // 2
   {
     name: "Robert W. Lewis III",
     role: "Co-Founder",
@@ -24,6 +25,7 @@ const teamMembers = [
     description: "As Co-Founder, he brings decades of experience in building global entertainment ecosystems and driving strategic partnerships across industries.",
     image: teamRobert
   },
+  // 3
   {
     name: "Han Kim",
     role: "Chief Technology Officer",
@@ -31,7 +33,7 @@ const teamMembers = [
     description: "Leading our technology vision and implementing cutting-edge solutions that power our global entertainment infrastructure.",
     image: teamHan
   },
-  // Row 2: 4, 5, 6
+  // 4
   {
     name: "Hoontack Jung",
     role: "CEO, KLIP",
@@ -39,6 +41,8 @@ const teamMembers = [
     description: "Hoontack Jung is the founder of the Korea Entertainment Management Association and Sidus (IHQ), and a leading figure in Korea's management and content production business. Since the 2000s, he has discovered and managed many of Korea's top stars, including Jun Ji-hyun, Gong Yoo, Park Bo-gum, Song Hye-kyo, Jay Park, g.o.d, Song Joong-ki, Ha Jung-woo, and Shin Min-a, earning recognition as a key pioneer and mentor in the industry.",
     image: teamHoontack
   },
+  // 5 - Charles placeholder (need image)
+  // 6
   {
     name: "Mark Friedman",
     role: "Strategic Investment Advisor",
@@ -46,20 +50,21 @@ const teamMembers = [
     description: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
     image: teamMark
   },
-  {
-    name: "Ryan Jang",
-    role: "Chief Operating Officer",
-    title: "Operations Excellence",
-    description: "Driving operational excellence and ensuring seamless execution of our global expansion strategy.",
-    image: teamRyan
-  },
-  // Row 3: 7
+  // 7
   {
     name: "Maurizio Romiti",
     role: "Senior Advisor",
     title: "Industry Veteran",
     description: "Providing strategic guidance with decades of experience in international business and entertainment industries.",
     image: teamMaurizio
+  },
+  // 8
+  {
+    name: "Stavros Pirounis",
+    role: "Strategic Advisor",
+    title: "Global Strategy Expert",
+    description: "Advising on global market strategies and international expansion opportunities.",
+    image: teamStavros
   }
 ];
 
