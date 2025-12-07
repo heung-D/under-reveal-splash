@@ -210,13 +210,13 @@ const OurTeamSection = () => {
 
         <div 
           ref={scrollContainerRef}
-          className="overflow-x-auto overflow-y-hidden scrollbar-hide w-full"
+          className="overflow-x-auto overflow-y-hidden scrollbar-hide w-full snap-x snap-mandatory"
         >
           <div className="flex gap-0 min-w-max">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className={`flex-shrink-0 w-screen min-h-[400px] flex items-center justify-center transition-all duration-700 delay-${index * 100}`}
+              className={`flex-shrink-0 w-screen min-h-[400px] flex items-center justify-center transition-all duration-700 delay-${index * 100} snap-center`}
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(50px)",
