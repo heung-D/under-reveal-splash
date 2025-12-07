@@ -12,7 +12,7 @@ const WhatWeDo = () => {
         <div className="h-20 px-6 md:px-12 flex items-center relative">
           {/* Back button */}
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/#what-we-do")}
             className="flex items-center gap-2 text-foreground hover:text-primary transition-colors z-10"
           >
             <ArrowLeft className="h-5 w-5" />

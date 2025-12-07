@@ -32,7 +32,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="flex items-center justify-center px-6 pt-[40px]" style={{ height: 'calc(100vh - 100px)' }}>
+    <div id="what-we-do" ref={sectionRef} className="flex items-center justify-center px-6 pt-[40px]" style={{ height: 'calc(100vh - 100px)' }}>
       <div className="max-w-7xl w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           {/* Left side - Logo with line */}
