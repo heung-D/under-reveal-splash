@@ -22,7 +22,7 @@ const teamMembers = [
   {
     name: "Robert W. Lewis III",
     role: "CEO, URBANLINK 360\nCEO, URBANLINK 400",
-    title: "Strategic Leader & Innovator",
+    title: "Highly sought-after producer",
     description: "As Co-Founder, he brings decades of experience in building global entertainment ecosystems and driving strategic partnerships across industries.",
     image: teamRobert
   },
