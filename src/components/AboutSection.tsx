@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AboutSection = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -64,9 +66,18 @@ const AboutSection = () => {
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
-            <p className="text-sm md:text-base leading-[1.4] text-foreground">
+            <p className="text-sm md:text-base leading-[1.4] text-foreground mb-12">
               UNDERTHELINE designs and operates integrated entertainment ecosystems for artists and IP owners. We bring together platforms, labels, management, production, touring, commerce, and data into one structure, so that artists can build, own, and run their own worlds instead of renting space from legacy platforms.
             </p>
+            
+            <div className="flex gap-5">
+              <button 
+                className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
+                onClick={() => navigate("/more?from=what-we-do")}
+              >
+                MORE
+              </button>
+            </div>
           </div>
         </div>
       </div>
