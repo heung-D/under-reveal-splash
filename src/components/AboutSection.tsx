@@ -51,8 +51,8 @@ const AboutSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "500ms" : "0ms" }}
             >
-              <h2 className="text-[39px] lg:text-[44px] leading-[100%] font-bold text-foreground font-rift text-right">
-                WHO WE ARE
+            <h2 className="text-[39px] lg:text-[44px] leading-[100%] font-bold text-foreground font-rift text-right">
+                WHAT WE DO
               </h2>
             </div>
           </div>
@@ -65,7 +65,7 @@ const AboutSection = () => {
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
             <p className="text-sm md:text-base leading-[1.4] text-foreground">
-              UNDERTHELINE is shaping the future of entertainment by breaking down the boundaries between reality and the virtual world, building a next-generation infrastructure for the global entertainment industry.
+              UNDERTHELINE designs and operates integrated entertainment ecosystems for artists and IP owners. We bring together platforms, labels, management, production, touring, commerce, and data into one structure, so that artists can build, own, and run their own worlds instead of renting space from legacy platforms.
             </p>
           </div>
         </div>
