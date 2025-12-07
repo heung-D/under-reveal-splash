@@ -5,7 +5,7 @@ import teamHan from "@/assets/team-han.png";
 import teamMaurizio from "@/assets/team-maurizio.png";
 import teamStavros from "@/assets/team-stavros.png";
 
-
+import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
 import teamRyan from "@/assets/team-ryan.png";
 
@@ -42,7 +42,15 @@ const teamMembers = [
     description: "Wonjoon Jang is a finance executive with expertise spanning entertainment, SaaS, and cross-border investments. A Georgetown McDonough School of Business graduate in finance and former Deloitte Tohmatsu FAS professional, he has extensive experience in GCC cross-border trading finance as a partner at Alcenyar and Daleelaq in Doha. As CEO of Eidos Investment, LLC in California, he has led investments in real estate finance, F&B, and entertainment, and now serves as CFO, driving financial strategy and growth.",
     image: teamRyan
   },
-  // 7
+  // 5
+  {
+    name: "Mark Friedman",
+    role: "Strategic Investment Advisor",
+    title: "Institutional investor & growth strategist",
+    description: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
+    image: teamMark
+  },
+  // 6
   {
     name: "Maurizio Romiti",
     role: "Strategic Partner – Europe",
