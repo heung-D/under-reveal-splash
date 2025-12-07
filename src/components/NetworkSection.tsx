@@ -104,8 +104,13 @@ const NetworkSection = () => {
 
       {/* Desktop Layout */}
       <div className="hidden lg:block max-w-[1600px] mx-auto relative" style={{ minHeight: "800px" }}>
-        {/* Center Circle with UNDERTHELINE - 점선 원형 라인 삭제 */}
+        {/* Center Circle with UNDERTHELINE */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+          {/* Animated expanding circles - 센터에서 퍼져나가는 효과 */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "1s" }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "2s" }} />
+          
           {/* Center circle */}
           <div className="relative w-[180px] h-[180px] rounded-full bg-white border-2 border-black flex items-center justify-center z-10">
             <h1 className="text-3xl font-bold font-rift">UNDERTHELINE</h1>
