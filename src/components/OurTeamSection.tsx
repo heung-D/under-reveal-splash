@@ -4,12 +4,12 @@ import teamRobert from "@/assets/team-robert.png";
 import teamHan from "@/assets/team-han.png";
 import teamRyan from "@/assets/team-ryan.png";
 import teamMaurizio from "@/assets/team-maurizio.png";
-import teamStavros from "@/assets/team-stavros.png";
 import teamHoontack from "@/assets/team-hoontack.png";
 import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
 
 const teamMembers = [
+  // Row 1: 1, 2, 3
   {
     name: "Sanghyun Shin",
     role: "Founder",
@@ -31,6 +31,7 @@ const teamMembers = [
     description: "Hoontack Jung is the founder of the Korea Entertainment Management Association and Sidus (IHQ), and a leading figure in Korea's management and content production business. Since the 2000s, he has discovered and managed many of Korea's top stars, including Jun Ji-hyun, Gong Yoo, Park Bo-gum, Song Hye-kyo, Jay Park, g.o.d, Song Joong-ki, Ha Jung-woo, and Shin Min-a, earning recognition as a key pioneer and mentor in the industry.",
     image: teamHoontack
   },
+  // Row 2: 4, 5, 6
   {
     name: "Mark Friedman",
     role: "Strategic Investment Advisor",
@@ -52,19 +53,13 @@ const teamMembers = [
     description: "Driving operational excellence and ensuring seamless execution of our global expansion strategy.",
     image: teamRyan
   },
+  // Row 3: 7
   {
     name: "Maurizio Romiti",
     role: "Senior Advisor",
     title: "Industry Veteran",
     description: "Providing strategic guidance with decades of experience in international business and entertainment industries.",
     image: teamMaurizio
-  },
-  {
-    name: "Stavros Pirounis",
-    role: "Strategic Advisor",
-    title: "Global Strategy Expert",
-    description: "Advising on global market strategies and international expansion opportunities.",
-    image: teamStavros
   }
 ];
 
