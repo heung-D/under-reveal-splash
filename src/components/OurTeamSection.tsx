@@ -7,7 +7,7 @@ import teamStavros from "@/assets/team-stavros.png";
 
 import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
-import teamCharles from "@/assets/team-charles.png";
+import teamRyan from "@/assets/team-ryan.png";
 
 const teamMembers = [
   // 1
@@ -34,13 +34,13 @@ const teamMembers = [
     description: "Han Kim is an international expert with over 15 years in the K-pop and global music industries. A U.S.-licensed attorney recognized among Billboard's Top Music Lawyers, he has worked with SM Entertainment, JYP Entertainment, Kakao, and THEBLACKLABEL. With a Master's degree in Music Business from NYU, he now leads Panorama, connecting K-pop with the global music market through platforms and infrastructure.",
     image: teamHan
   },
-  // 5
+  // 4
   {
-    name: "Charles Stanton",
-    role: "Advisor",
-    title: "Industry Expert",
-    description: "Bringing valuable expertise and insights to guide strategic initiatives and business development.",
-    image: teamCharles
+    name: "Ryan Jang",
+    role: "CFO",
+    title: "Cross-Border Investment & Global Finance Executive",
+    description: "Wonjoon Jang is a finance executive with expertise spanning entertainment, SaaS, and cross-border investments. A Georgetown McDonough School of Business graduate in finance and former Deloitte Tohmatsu FAS professional, he has extensive experience in GCC cross-border trading finance as a partner at Alcenyar and Daleelaq in Doha. As CEO of Eidos Investment, LLC in California, he has led investments in real estate finance, F&B, and entertainment, and now serves as CFO, driving financial strategy and growth.",
+    image: teamRyan
   },
   // 6
   {
@@ -247,7 +247,7 @@ const OurTeamSection = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className={`w-full h-full ${member.name === "Charles Stanton" ? "object-contain object-right" : "object-cover"}`}
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
