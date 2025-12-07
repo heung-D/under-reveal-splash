@@ -4,7 +4,7 @@ import teamRobert from "@/assets/team-robert.png";
 import teamHan from "@/assets/team-han.png";
 import teamMaurizio from "@/assets/team-maurizio.png";
 import teamStavros from "@/assets/team-stavros.png";
-import teamHoontack from "@/assets/team-hoontack.png";
+
 import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
 import teamCharles from "@/assets/team-charles.png";
@@ -33,14 +33,6 @@ const teamMembers = [
     title: "Technology Pioneer",
     description: "Leading our technology vision and implementing cutting-edge solutions that power our global entertainment infrastructure.",
     image: teamHan
-  },
-  // 4
-  {
-    name: "Hoontack Jung",
-    role: "CEO, KLIP",
-    title: "Pioneer in Korea's entertainment management industry",
-    description: "Hoontack Jung is the founder of the Korea Entertainment Management Association and Sidus (IHQ), and a leading figure in Korea's management and content production business. Since the 2000s, he has discovered and managed many of Korea's top stars, including Jun Ji-hyun, Gong Yoo, Park Bo-gum, Song Hye-kyo, Jay Park, g.o.d, Song Joong-ki, Ha Jung-woo, and Shin Min-a, earning recognition as a key pioneer and mentor in the industry.",
-    image: teamHoontack
   },
   // 5
   {
