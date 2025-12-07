@@ -33,7 +33,7 @@ const More = () => {
           </button>
 
           {/* Tabs */}
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex justify-center">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex justify-center md:justify-center">
             <TabsList className="bg-transparent gap-4">
               <TabsTrigger 
                 value="our-team" 
@@ -50,8 +50,8 @@ const More = () => {
             </TabsList>
           </Tabs>
 
-          {/* Spacer for balance */}
-          <div className="w-[80px]" />
+          {/* Spacer for balance - hidden on mobile */}
+          <div className="hidden md:block w-[80px]" />
         </div>
       </header>
 
