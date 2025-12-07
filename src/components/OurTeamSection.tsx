@@ -61,9 +61,9 @@ const teamMembers = [
   // 8
   {
     name: "Stavros Pirounis",
-    role: "Strategic Advisor",
-    title: "Global Strategy Expert",
-    description: "Advising on global market strategies and international expansion opportunities.",
+    role: "Strategic Partner – Luxury",
+    title: "Pioneer in Korea's entertainment management industry",
+    description: "Stavros Pirounis is a veteran executive in the global fashion industry. He served as Executive Director for Asia and President of Korea at ST Dupont (2010–2023), and earlier as CEO of Gruppo G.F.T. Asia-Pacific (1996–2009), managing brands like Armani, Valentino, and Calvin Klein. He also held senior roles at Loro Piana and Ermenegildo Zegna, contributing to their growth as leading luxury houses.",
     image: teamStavros
   }
 ];
