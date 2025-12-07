@@ -136,20 +136,22 @@ const OurTeamSection = () => {
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
       
       // Check if we're at the boundaries
-      const atStart = container.scrollLeft === 0;
+      const atStart = container.scrollLeft <= 1;
       const atEnd = container.scrollLeft >= maxScrollLeft - 1;
       
-      // Only hijack horizontal scroll if not at boundaries
+      // Only hijack vertical scroll if not at boundaries
       if (e.deltaY !== 0) {
-        // If scrolling down and not at end, convert to horizontal scroll
+        // If scrolling down and not at end, snap to next
         if (e.deltaY > 0 && !atEnd) {
           e.preventDefault();
-          container.scrollLeft += e.deltaY;
+          const newIndex = Math.min(currentIndex + 1, teamMembers.length - 1);
+          scrollToIndex(newIndex);
         }
-        // If scrolling up and not at start, convert to horizontal scroll
+        // If scrolling up and not at start, snap to previous
         else if (e.deltaY < 0 && !atStart) {
           e.preventDefault();
-          container.scrollLeft += e.deltaY;
+          const newIndex = Math.max(currentIndex - 1, 0);
+          scrollToIndex(newIndex);
         }
       }
     };
