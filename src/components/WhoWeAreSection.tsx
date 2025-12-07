@@ -66,16 +66,18 @@ const WhoWeAreSection = () => {
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
-            <p className="text-sm md:text-base leading-[1.4] text-foreground mb-8">
+            <p className="text-sm md:text-base leading-[1.4] text-foreground mb-12">
               UNDERTHELINE is shaping the future of entertainment by breaking down the boundaries between reality and the virtual world, building a next-generation infrastructure for the global entertainment industry.
             </p>
             
-            <button 
-              className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
-              onClick={() => navigate("/more?from=who-we-are")}
-            >
-              MORE
-            </button>
+            <div className="flex gap-5">
+              <button 
+                className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
+                onClick={() => navigate("/more?from=who-we-are")}
+              >
+                MORE
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Logo from "@/components/Logo";
 import HeroSection from "@/components/HeroSection";
+import SubsidiariesSection from "@/components/SubsidiariesSection";
 import AboutSection from "@/components/AboutSection";
 import WhoWeAreSection from "@/components/WhoWeAreSection";
+import SubsidiaryDetailsSection from "@/components/SubsidiaryDetailsSection";
 import BrandMessageSection from "@/components/BrandMessageSection";
 import {
   DropdownMenu,
@@ -64,6 +66,12 @@ const Index = () => {
         </section>
         <section className="snap-section">
           <WhoWeAreSection />
+        </section>
+        <section className="snap-section">
+          <SubsidiariesSection />
+        </section>
+        <section className="snap-section">
+          <SubsidiaryDetailsSection />
         </section>
         <section className="snap-section">
           <BrandMessageSection />
