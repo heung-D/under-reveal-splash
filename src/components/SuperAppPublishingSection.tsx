@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import mockupImage from "@/assets/mockup.png";
+import appPublishingImage from "@/assets/app-publishing-mockup.png";
 import entLogosImage from "@/assets/ent-logos-new.png";
 
 const SuperAppPublishingSection = () => {
@@ -110,14 +110,12 @@ const SuperAppPublishingSection = () => {
 
               {/* Right side - Images */}
               <div
-                className={`flex gap-4 justify-center lg:justify-end transition-all duration-1000 h-[240px] lg:h-[350px] xl:h-[420px] ${
+                className={`flex-1 flex justify-center lg:justify-end transition-all duration-1000 h-[240px] lg:h-[350px] xl:h-[420px] ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
               >
-                <img src={mockupImage} alt="App Mockup 1" className="h-full w-auto object-contain" />
-                <img src={mockupImage} alt="App Mockup 2" className="h-full w-auto object-contain" />
-                <img src={mockupImage} alt="App Mockup 3" className="h-full w-auto object-contain" />
+                <img src={appPublishingImage} alt="Super App Publishing Mockup" className="h-full w-auto object-contain" />
               </div>
             </div>
           </TabsContent>
