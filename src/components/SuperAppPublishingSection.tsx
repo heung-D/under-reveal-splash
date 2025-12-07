@@ -40,7 +40,7 @@ const SuperAppPublishingSection = () => {
     <div 
       id="super-app-publishing"
       ref={sectionRef}
-      className="relative flex items-center justify-center px-[200px] pt-[140px] pb-20"
+      className="relative flex items-center justify-center px-6 md:px-12 lg:px-20 pt-[140px] pb-20"
       style={{
         background: 'linear-gradient(180deg, #FFFFFF 0%, #E6E6E6 100%)',
         height: 'calc(100vh - 100px)'
@@ -73,11 +73,11 @@ const SuperAppPublishingSection = () => {
           </div>
 
           {/* Tab Content */}
-          <TabsContent value="tab1" className="mt-0 w-full max-w-[1400px] mx-auto">
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          <TabsContent value="tab1" className="mt-0 w-full max-w-[1600px] mx-auto">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between ${
+                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
@@ -122,11 +122,11 @@ const SuperAppPublishingSection = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="tab2" className="mt-0 w-full max-w-[1400px] mx-auto">
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          <TabsContent value="tab2" className="mt-0 w-full max-w-[1600px] mx-auto">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between ${
+                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
