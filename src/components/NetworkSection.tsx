@@ -1,4 +1,15 @@
 import { useEffect, useState, useRef } from "react";
+import network01 from "@/assets/network-01.png";
+import network02 from "@/assets/network-02.png";
+import network03 from "@/assets/network-03.png";
+import network05 from "@/assets/network-05.png";
+
+const networkImages: Record<string, string> = {
+  "01": network01,
+  "02": network02,
+  "03": network03,
+  "05": network05,
+};
 
 const networkData = [
   {
@@ -6,21 +17,18 @@ const networkData = [
     title: "Global Record Distribution Network",
     description: "Panorama leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists.",
     position: "top-left",
-    logos: ["ADA", "AWAL", "Atlantic", "Def Jam", "The Orchard", "Virgin Music", "Republic", "Epic", "Warner Music", "JIVE"]
   },
   {
     number: "02",
     title: "Global Publishing Network",
     description: "Panorama leverages its global publishing partnerships to maximize publishing income and set up songwriting and production sessions with leading songwriters and producers of the world for K-pop artists",
     position: "top-right",
-    logos: ["Concord", "Universal", "BMG", "Sony", "Warner Chappell", "Downtown", "Kobalt", "peermusic"]
   },
   {
     number: "03",
     title: "Global Touring Network",
     description: "Panorama leverages its relationships with global talent booking agencies and live event promoters to secure maximum value from tours while sharing in the success with K-pop artists",
     position: "bottom-left",
-    logos: ["CAA", "WME", "DYNAMIC", "Live Nation", "AEG", "UTA"]
   },
   {
     number: "04",
@@ -33,7 +41,6 @@ const networkData = [
     title: "Global OTT Network",
     description: "Panorama leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists",
     position: "bottom-right-lower",
-    logos: ["Netflix", "Disney+", "Apple TV+", "Prime Video", "HBO Max"]
   }
 ];
 
@@ -97,13 +104,8 @@ const NetworkSection = () => {
 
       {/* Desktop Layout */}
       <div className="hidden lg:block max-w-[1600px] mx-auto relative" style={{ minHeight: "800px" }}>
-        {/* Center Circle with UNDERTHELINE */}
+        {/* Center Circle with UNDERTHELINE - 점선 원형 라인 삭제 */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
-          {/* Animated expanding circles */}
-          <div className="absolute top-1/2 left-1/2 w-[270px] h-[270px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" />
-          <div className="absolute top-1/2 left-1/2 w-[270px] h-[270px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "1s" }} />
-          <div className="absolute top-1/2 left-1/2 w-[270px] h-[270px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "2s" }} />
-          
           {/* Center circle */}
           <div className="relative w-[180px] h-[180px] rounded-full bg-white border-2 border-black flex items-center justify-center z-10">
             <h1 className="text-3xl font-bold font-rift">UNDERTHELINE</h1>
@@ -129,17 +131,14 @@ const NetworkSection = () => {
                 {network.description}
               </p>
 
-              {/* Logos */}
-              {network.logos && (
-                <div className="flex flex-wrap gap-4 mt-4">
-                  {network.logos.map((logo) => (
-                    <div
-                      key={logo}
-                      className="px-3 py-1.5 bg-white border border-gray-300 text-xs font-semibold text-foreground"
-                    >
-                      {logo}
-                    </div>
-                  ))}
+              {/* Network Image */}
+              {networkImages[network.number] && (
+                <div className="mt-4">
+                  <img 
+                    src={networkImages[network.number]} 
+                    alt={`${network.title} partners`}
+                    className="w-full max-w-[380px] h-auto object-contain"
+                  />
                 </div>
               )}
             </div>
@@ -149,18 +148,10 @@ const NetworkSection = () => {
 
       {/* Mobile/Tablet Layout */}
       <div className="lg:hidden max-w-[800px] mx-auto">
-        {/* Center Circle with UNDERTHELINE - 맨 위에 배치 */}
+        {/* Center Circle with UNDERTHELINE - 맨 위에 배치, 점선 원형 라인 삭제 */}
         <div className="flex justify-center mb-12">
-          <div className="relative">
-            {/* Animated expanding circles */}
-            <div className="absolute top-1/2 left-1/2 w-[200px] h-[200px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" />
-            <div className="absolute top-1/2 left-1/2 w-[200px] h-[200px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "1s" }} />
-            <div className="absolute top-1/2 left-1/2 w-[200px] h-[200px] rounded-full border-2 border-dashed border-gray-300 animate-orbit-expand" style={{ animationDelay: "2s" }} />
-            
-            {/* Center circle */}
-            <div className="relative w-[140px] h-[140px] rounded-full bg-white border-2 border-black flex items-center justify-center z-10">
-              <h1 className="text-xl font-bold font-rift text-center px-2">UNDERTHELINE</h1>
-            </div>
+          <div className="relative w-[140px] h-[140px] rounded-full bg-white border-2 border-black flex items-center justify-center">
+            <h1 className="text-xl font-bold font-rift text-center px-2">UNDERTHELINE</h1>
           </div>
         </div>
 
@@ -184,17 +175,14 @@ const NetworkSection = () => {
                   {network.description}
                 </p>
 
-                {/* Logos */}
-                {network.logos && (
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {network.logos.map((logo) => (
-                      <div
-                        key={logo}
-                        className="px-2 py-1 bg-white border border-gray-300 text-xs font-semibold text-foreground"
-                      >
-                        {logo}
-                      </div>
-                    ))}
+                {/* Network Image */}
+                {networkImages[network.number] && (
+                  <div className="mt-3">
+                    <img 
+                      src={networkImages[network.number]} 
+                      alt={`${network.title} partners`}
+                      className="w-full max-w-[350px] h-auto object-contain"
+                    />
                   </div>
                 )}
               </div>
