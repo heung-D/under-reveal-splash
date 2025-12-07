@@ -22,9 +22,7 @@ const Index = () => {
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
       if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
-        }, 100);
+        element.scrollIntoView({ behavior: "instant" });
       }
     }
   }, [location]);
