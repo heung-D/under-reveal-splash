@@ -175,11 +175,11 @@ const OurTeamSection = () => {
     <section
       id="our-team"
       ref={sectionRef}
-      className="pt-[100px] pb-8 bg-background"
+      className="pt-[20px] md:pt-[100px] pb-8 bg-background"
       style={{ minHeight: 'calc(100vh - 100px)' }}
     >
-      {/* Title */}
-      <div className="px-6 md:px-12 mb-8 text-center">
+      {/* Title - Hidden on mobile */}
+      <div className="hidden md:block px-6 md:px-12 mb-8 text-center">
         <h2 
           className={`text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground font-rift transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
