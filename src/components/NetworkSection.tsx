@@ -149,7 +149,7 @@ const NetworkSection = () => {
 
       {/* Mobile/Tablet Layout */}
       <div className="lg:hidden max-w-[800px] mx-auto">
-        {/* Center Circle with UNDERTHELINE */}
+        {/* Center Circle with UNDERTHELINE - 맨 위에 배치 */}
         <div className="flex justify-center mb-12">
           <div className="relative">
             {/* Animated expanding circles */}
@@ -164,9 +164,9 @@ const NetworkSection = () => {
           </div>
         </div>
 
-        {/* Network Sections - Vertical List */}
-        <div className="space-y-8">
-          {networkData.map((network, index) => (
+        {/* Network Sections - 번호순 세로 리스트 */}
+        <div className="space-y-6">
+          {[...networkData].sort((a, b) => parseInt(a.number) - parseInt(b.number)).map((network, index) => (
             <div
               key={network.number}
               className={`transition-all duration-700 ${
@@ -174,23 +174,23 @@ const NetworkSection = () => {
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="space-y-3 bg-white p-6 border border-gray-200">
+              <div className="space-y-3 bg-white p-4">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-2xl font-bold text-foreground">{network.number}</span>
-                  <h3 className="text-lg font-bold text-foreground">{network.title}</h3>
+                  <span className="text-3xl font-bold text-foreground">{network.number}</span>
+                  <h3 className="text-base font-bold text-foreground">{network.title}</h3>
                 </div>
                 
-                <p className="text-[15px] text-foreground/70 leading-relaxed tracking-wide">
+                <p className="text-sm text-foreground/70 leading-relaxed">
                   {network.description}
                 </p>
 
                 {/* Logos */}
                 {network.logos && (
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <div className="flex flex-wrap gap-2 mt-3">
                     {network.logos.map((logo) => (
                       <div
                         key={logo}
-                        className="px-3 py-1.5 bg-white border border-gray-300 text-xs font-semibold text-foreground"
+                        className="px-2 py-1 bg-white border border-gray-300 text-xs font-semibold text-foreground"
                       >
                         {logo}
                       </div>
