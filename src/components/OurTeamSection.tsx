@@ -25,26 +25,26 @@ const teamMembers = [
     image: teamRobert
   },
   {
+    name: "Han Kim",
+    role: "Chief Technology Officer",
+    title: "Technology Pioneer",
+    description: "Leading our technology vision and implementing cutting-edge solutions that power our global entertainment infrastructure.",
+    image: teamHan
+  },
+  // Row 2: 4, 5, 6
+  {
     name: "Hoontack Jung",
     role: "CEO, KLIP",
     title: "Pioneer in Korea's entertainment management industry",
     description: "Hoontack Jung is the founder of the Korea Entertainment Management Association and Sidus (IHQ), and a leading figure in Korea's management and content production business. Since the 2000s, he has discovered and managed many of Korea's top stars, including Jun Ji-hyun, Gong Yoo, Park Bo-gum, Song Hye-kyo, Jay Park, g.o.d, Song Joong-ki, Ha Jung-woo, and Shin Min-a, earning recognition as a key pioneer and mentor in the industry.",
     image: teamHoontack
   },
-  // Row 2: 4, 5, 6
   {
     name: "Mark Friedman",
     role: "Strategic Investment Advisor",
     title: "Institutional investor & growth strategist",
     description: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
     image: teamMark
-  },
-  {
-    name: "Han Kim",
-    role: "Chief Technology Officer",
-    title: "Technology Pioneer",
-    description: "Leading our technology vision and implementing cutting-edge solutions that power our global entertainment infrastructure.",
-    image: teamHan
   },
   {
     name: "Ryan Jang",
