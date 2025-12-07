@@ -133,9 +133,12 @@ const OurTeamSection = () => {
     };
 
     let isScrolling = false;
-
+    let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
     const handleWheel = (e: WheelEvent) => {
       if (!scrollContainerRef.current || isScrolling) return;
+      
+      // Ignore small scroll movements
+      if (Math.abs(e.deltaY) < 30) return;
       
       const container = scrollContainerRef.current;
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
@@ -154,7 +157,8 @@ const OurTeamSection = () => {
           isScrolling = true;
           const newIndex = Math.min(currentIdx + 1, teamMembers.length - 1);
           scrollToIndex(newIndex);
-          setTimeout(() => { isScrolling = false; }, 500);
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => { isScrolling = false; }, 800);
         }
         // If scrolling up and not at start, snap to previous
         else if (e.deltaY < 0 && !atStart) {
@@ -162,7 +166,8 @@ const OurTeamSection = () => {
           isScrolling = true;
           const newIndex = Math.max(currentIdx - 1, 0);
           scrollToIndex(newIndex);
-          setTimeout(() => { isScrolling = false; }, 500);
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => { isScrolling = false; }, 800);
         }
       }
     };
