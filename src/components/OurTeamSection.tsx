@@ -255,7 +255,7 @@ const OurTeamSection = () => {
                 <div className="w-full flex flex-col md:flex-row justify-between gap-6 md:gap-[100px]">
                   {/* Left Column - Name and Role */}
                   <div className="flex-shrink-0">
-                    <h3 className="text-[24px] lg:text-[28px] leading-[100%] font-bold text-foreground mb-1 font-rift">
+                    <h3 className="text-[24px] lg:text-[28px] leading-[100%] font-bold text-foreground mb-1 font-sans uppercase">
                       {member.name}
                     </h3>
                     <p className="text-[14px] text-foreground/70 whitespace-pre-line">{member.role}</p>
