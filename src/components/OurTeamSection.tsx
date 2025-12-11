@@ -24,7 +24,7 @@ const teamMembers = [
     role: "CEO, URBANLINK 360\nCEO, URBANLINK 400",
     title: "Highly sought-after producer",
     description: "Robert Lewis is a veteran of the U.S. music industry with over 30 years of experience. He has collaborated with world-renowned artists including Brandy & Monica, Whitney Houston, Destiny's Child, Jennifer Lopez, Beyoncé, Akon, Snoop Dogg, Michael Jackson, Justin Bieber,",
-    fullDescription: "Lady Gaga, Ariana Grande, The Weeknd, Cardi B, Doja Cat, and many more.",
+    fullDescription: "Lady Gaga, Ariana Grande, The Weeknd, Cardi B, Doja Cat, and many more. He contributes to the expansion of super-app strategies and supports the production and development of artists across all labels under Undertheline.",
     image: teamRobert
   },
   // 3
