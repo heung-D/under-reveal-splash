@@ -41,8 +41,16 @@ const SubsidiariesSection = () => {
       const event = new CustomEvent('changeSubsidiaryTab', { detail: { tab } });
       window.dispatchEvent(event);
       
-      // 즉시 해당 섹션으로 이동
-      detailsSection.scrollIntoView({ behavior: 'instant' });
+      // 모바일에서는 헤더 높이(약 80px)를 고려해서 스크롤
+      const isMobile = window.innerWidth < 768;
+      const headerOffset = isMobile ? 80 : 0;
+      const elementPosition = detailsSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 

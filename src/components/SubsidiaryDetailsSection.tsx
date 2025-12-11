@@ -49,7 +49,7 @@ const SubsidiaryDetailsSection = () => {
     <section
       id="subsidiary-details"
       ref={sectionRef}
-      className="flex flex-col items-center justify-start px-6 md:px-[160px] pt-0 md:pt-[50px] pb-[80px] md:pb-20 bg-background -mt-[50px] md:-mt-[30px]"
+      className="flex flex-col items-center justify-start px-6 md:px-[160px] pt-4 md:pt-[50px] pb-[80px] md:pb-20 bg-background -mt-[20px] md:-mt-[30px]"
     >
       <div className="w-full max-w-7xl mx-auto">
         <Tabs
