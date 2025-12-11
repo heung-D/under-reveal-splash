@@ -41,7 +41,7 @@ const SuperAppPublishingSection = () => {
     <div 
       id="super-app-publishing"
       ref={sectionRef}
-      className="relative flex items-center justify-center px-8 md:px-28 lg:px-40 xl:px-52 pt-[140px] pb-20 min-h-[calc(100vh-100px)] lg:h-[calc(100vh-100px)]"
+      className="relative flex items-center justify-center px-8 md:px-28 lg:px-40 xl:px-52 pt-[140px] pb-20 min-h-[calc(100vh-100px)]"
       style={{
         background: 'linear-gradient(180deg, #FFFFFF 0%, #E6E6E6 100%)',
       }}
@@ -73,7 +73,7 @@ const SuperAppPublishingSection = () => {
           </div>
 
           {/* Tab Content - Flex grow to fill remaining space */}
-          <div className="flex-1 overflow-visible lg:overflow-hidden">
+          <div className="flex-1 overflow-visible">
           <TabsContent value="tab1" className="mt-0 w-full max-w-[1000px] mx-auto" onAnimationEnd={() => setImageVisible(true)}>
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
               {/* Left side - Text content */}
