@@ -111,7 +111,7 @@ const SuperAppPublishingSection = () => {
 
               {/* Right side - Images */}
               <div
-                className={`flex-1 flex justify-center lg:justify-end items-start transition-all duration-1000 -mt-8 lg:-mt-16 ${
+                className={`flex-1 flex justify-center lg:justify-end items-start transition-all duration-1000 -mt-12 lg:-mt-24 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
