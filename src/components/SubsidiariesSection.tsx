@@ -51,17 +51,20 @@ const SubsidiariesSection = () => {
       const elementPosition = detailsSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
-      // 즉시 이동 (스크롤 안보이게)
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'instant'
-      });
-      
-      // 이동 후 페이드인 (천천히)
+      // 페이드 아웃 후 이동 및 페이드인
       setTimeout(() => {
-        detailsSection.style.transition = 'opacity 2s ease-out';
-        detailsSection.style.opacity = '1';
-      }, 50);
+        // 즉시 이동 (스크롤 안보이게)
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'instant'
+        });
+        
+        // 이동 후 페이드인 (천천히)
+        setTimeout(() => {
+          detailsSection.style.transition = 'opacity 2s ease-out';
+          detailsSection.style.opacity = '1';
+        }, 100);
+      }, 800); // 페이드 아웃 완료 후 이동
     }
   };
 
