@@ -121,10 +121,9 @@ const GlobalNetworkSection = () => {
                 key={index}
                 d={`M ${from.x}% ${from.y}% Q ${midX}% ${midY}% ${to.x}% ${to.y}%`}
                 fill="none"
-                stroke="hsl(var(--primary))"
-                strokeWidth="1"
-                strokeOpacity="0.4"
-                strokeDasharray="4 2"
+                stroke="#9CA3AF"
+                strokeWidth="1.5"
+                strokeDasharray="6 4"
               />
             );
           })}
