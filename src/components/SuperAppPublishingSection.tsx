@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import appPublishingImage from "@/assets/super-app-mockup.png";
+import appPublishingImage from "@/assets/super-app-mockup-new.png";
 import entLogosImage from "@/assets/ent-logos-updated.png";
 
 const SuperAppPublishingSection = () => {
@@ -103,7 +103,7 @@ const SuperAppPublishingSection = () => {
                 <Button
                   variant="outline"
                   onClick={() => setIsTab1Expanded(!isTab1Expanded)}
-                  className="font-rift font-bold rounded-none border border-foreground bg-transparent hover:bg-transparent active:bg-transparent"
+                  className="font-rift font-bold rounded-none border border-foreground bg-transparent hover:bg-transparent active:bg-transparent w-[120px]"
                 >
                   {isTab1Expanded ? "LESS" : "MORE"}
                 </Button>
@@ -164,7 +164,7 @@ const SuperAppPublishingSection = () => {
                 <Button
                   variant="outline"
                   onClick={() => setIsTab2Expanded(!isTab2Expanded)}
-                  className="font-rift font-bold rounded-none border border-foreground bg-transparent hover:bg-transparent active:bg-transparent"
+                  className="font-rift font-bold rounded-none border border-foreground bg-transparent hover:bg-transparent active:bg-transparent w-[120px]"
                 >
                   {isTab2Expanded ? "LESS" : "MORE"}
                 </Button>
