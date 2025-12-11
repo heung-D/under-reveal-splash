@@ -84,18 +84,18 @@ const OurTeamSection = () => {
     // 부드러운 커스텀 스크롤 애니메이션
     const startScroll = container.scrollLeft;
     const distance = targetScroll - startScroll;
-    const duration = 800; // 더 긴 duration
+    const duration = 1200; // 더 천천히
     let startTime: number | null = null;
     
-    const easeInOutSine = (t: number): number => {
-      return -(Math.cos(Math.PI * t) - 1) / 2;
+    const easeOutQuart = (t: number): number => {
+      return 1 - Math.pow(1 - t, 4);
     };
     
     const animateScroll = (currentTime: number) => {
       if (startTime === null) startTime = currentTime;
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const easeProgress = easeInOutSine(progress);
+      const easeProgress = easeOutQuart(progress);
       
       container.scrollLeft = startScroll + distance * easeProgress;
       
