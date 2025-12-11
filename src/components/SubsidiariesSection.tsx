@@ -148,97 +148,54 @@ const SubsidiariesSection = () => {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden w-full flex flex-col items-start justify-center space-y-10 px-8">
-        {/* URBANLINK */}
-        <div
-          className={`transition-all duration-1000 w-full border-b border-foreground/20 pb-4 ${
+      <div className="md:hidden w-full flex flex-col items-center justify-center gap-12 px-6">
+        <button 
+          onClick={() => handleSubsidiaryClick('urbanlink')}
+          className={`transition-all duration-700 hover:opacity-70 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-          style={{ transitionDelay: "300ms" }}
+          style={{ transitionDelay: "200ms" }}
         >
-          <button 
-            onClick={() => handleSubsidiaryClick('urbanlink')}
-            className="group hover:scale-105 transition-all duration-300 ease-out cursor-pointer hover:brightness-110"
-          >
-            <img 
-              src={urbanlinkLogo} 
-              alt="URBANLINK" 
-              className="h-8 object-contain"
-            />
-          </button>
-        </div>
+          <img src={urbanlinkLogo} alt="URBANLINK" className="h-7" />
+        </button>
 
-        {/* PANORAMA */}
-        <div
-          className={`transition-all duration-1000 w-full border-b border-foreground/20 pb-4 ${
+        <button 
+          onClick={() => handleSubsidiaryClick('panorama')}
+          className={`transition-all duration-700 hover:opacity-70 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-          style={{ transitionDelay: "500ms" }}
+          style={{ transitionDelay: "400ms" }}
         >
-          <button 
-            onClick={() => handleSubsidiaryClick('panorama')}
-            className="group hover:scale-105 transition-all duration-300 ease-out cursor-pointer hover:brightness-110"
-          >
-            <img 
-              src={panoramaLogo} 
-              alt="PANORAMA" 
-              className="h-8 object-contain"
-            />
-          </button>
-        </div>
+          <img src={panoramaLogo} alt="PANORAMA" className="h-7" />
+        </button>
 
-        {/* ARADNAS */}
-        <div
-          className={`transition-all duration-1000 w-full border-b border-foreground/20 pb-4 ${
+        <button 
+          onClick={() => handleSubsidiaryClick('aradnas')}
+          className={`transition-all duration-700 hover:opacity-70 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-          style={{ transitionDelay: "700ms" }}
+          style={{ transitionDelay: "600ms" }}
         >
-          <button 
-            onClick={() => handleSubsidiaryClick('aradnas')}
-            className="group hover:scale-105 transition-all duration-300 ease-out cursor-pointer hover:brightness-110"
-          >
-            <img 
-              src={aradnasLogo} 
-              alt="ARADNAS" 
-              className="h-8 object-contain"
-            />
-          </button>
-        </div>
+          <img src={aradnasLogo} alt="ARADNAS" className="h-7" />
+        </button>
 
-        {/* MAR/S */}
-        <div
-          className={`transition-all duration-1000 w-full border-b border-foreground/20 pb-4 ${
+        <button 
+          onClick={() => handleSubsidiaryClick('mars')}
+          className={`transition-all duration-700 hover:opacity-70 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-          style={{ transitionDelay: "900ms" }}
+          style={{ transitionDelay: "800ms" }}
         >
-          <button 
-            onClick={() => handleSubsidiaryClick('mars')}
-            className="group hover:scale-105 transition-all duration-300 ease-out cursor-pointer hover:brightness-110"
-          >
-            <img 
-              src={marsLogo} 
-              alt="MAR/S" 
-              className="h-8 object-contain"
-            />
-          </button>
-        </div>
+          <img src={marsLogo} alt="MAR/S" className="h-7" />
+        </button>
 
-        {/* UNDERTHELINE */}
-        <div
-          className={`transition-all duration-1000 w-full border-t border-foreground/40 pt-6 ${
+        <div 
+          className={`transition-all duration-700 mt-4 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-          style={{ transitionDelay: "1100ms" }}
+          style={{ transitionDelay: "1000ms" }}
         >
-          <div className="w-full flex justify-center">
-            <img 
-              src={underthelineText} 
-              alt="UNDERTHELINE" 
-              className="h-10 object-contain"
-            />
-          </div>
+          <img src={underthelineText} alt="UNDERTHELINE" className="h-8" />
         </div>
       </div>
     </section>
