@@ -49,7 +49,7 @@ const SubsidiariesSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex items-start md:items-center justify-center px-6 md:px-[160px] relative pt-[80px] md:pt-[140px] pb-20 md:pb-20 min-h-screen md:min-h-0"
+      className="flex items-start md:items-center justify-center px-6 md:px-[160px] relative pt-[60px] md:pt-[140px] pb-20 md:pb-20 min-h-screen md:min-h-0"
       style={{ height: 'auto' }}
     >
       {/* Desktop Layout */}
