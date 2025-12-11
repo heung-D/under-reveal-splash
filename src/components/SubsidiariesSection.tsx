@@ -41,9 +41,9 @@ const SubsidiariesSection = () => {
       const event = new CustomEvent('changeSubsidiaryTab', { detail: { tab } });
       window.dispatchEvent(event);
       
-      // 섹션 페이드 효과
+      // 섹션 페이드 아웃
       detailsSection.style.opacity = '0';
-      detailsSection.style.transition = 'opacity 0.3s ease-out';
+      detailsSection.style.transition = 'opacity 0.8s ease-out';
       
       // 모바일에서는 헤더 높이를 고려해서 스크롤
       const isMobile = window.innerWidth < 768;
@@ -51,13 +51,12 @@ const SubsidiariesSection = () => {
       const elementPosition = detailsSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
-      // 자연스러운 스크롤 애니메이션
+      // 빠른 스크롤
       const startPosition = window.pageYOffset;
       const distance = offsetPosition - startPosition;
-      const duration = 800;
+      const duration = 400; // 빠르게
       let startTime: number | null = null;
       
-      // easeOutQuart - 자연스럽게 감속
       const easeOutQuart = (t: number) => {
         return 1 - Math.pow(1 - t, 4);
       };
@@ -73,8 +72,10 @@ const SubsidiariesSection = () => {
         if (timeElapsed < duration) {
           requestAnimationFrame(animation);
         } else {
-          // 스크롤 완료 후 페이드인
-          detailsSection.style.opacity = '1';
+          // 스크롤 완료 후 천천히 페이드인
+          setTimeout(() => {
+            detailsSection.style.opacity = '1';
+          }, 100);
         }
       };
       
