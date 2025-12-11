@@ -89,7 +89,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="panorama" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
-                <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
+                <div className="w-[200px] md:w-[300px]">
                   <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                     PANORAMA
                   </h2>
@@ -150,7 +150,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="urbanlink" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
-                <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
+                <div className="w-[200px] md:w-[300px]">
                   <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                     URBANLINK
                   </h2>
@@ -198,7 +198,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="aradnas" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
-                <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
+                <div className="w-[200px] md:w-[300px]">
                   <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                     ARADNAS
                   </h2>
@@ -232,7 +232,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="mars" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
-                <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
+                <div className="w-[200px] md:w-[300px]">
                   <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                     MAR/S
                   </h2>
