@@ -31,7 +31,7 @@ const Index = () => {
 
   return (
     <div 
-      className="min-h-screen bg-background overflow-y-auto snap-container"
+      className="min-h-screen bg-background overflow-y-auto"
       style={{
         scrollPaddingTop: '140px'
       }}
@@ -57,27 +57,13 @@ const Index = () => {
 
       {/* Main content */}
       <main>
-        <section className="snap-section">
-          <HeroSection />
-        </section>
-        <section className="snap-section">
-          <AboutSection />
-        </section>
-        <section className="snap-section">
-          <WhoWeAreSection />
-        </section>
-        <section className="snap-section">
-          <SubsidiariesSection />
-        </section>
-        <section className="snap-section">
-          <SubsidiaryDetailsSection />
-        </section>
-        <section className="snap-section">
-          <BrandMessageSection />
-        </section>
-        <section className="snap-section">
-          <ClosingSection />
-        </section>
+        <HeroSection />
+        <AboutSection />
+        <WhoWeAreSection />
+        <SubsidiariesSection />
+        <SubsidiaryDetailsSection />
+        <BrandMessageSection />
+        <ClosingSection />
       </main>
       <Footer />
     </div>
