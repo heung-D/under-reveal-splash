@@ -58,7 +58,7 @@ const SubsidiaryDetailsSection = () => {
           className="w-full"
         >
           {/* Tab Navigation */}
-          <TabsList className="w-full bg-transparent border-b border-border rounded-none h-auto p-0 mb-6 md:mb-16 flex items-end justify-center md:gap-8 gap-4 overflow-x-auto scrollbar-hide">
+          <TabsList className="w-full bg-transparent border-b border-border rounded-none h-auto p-0 mb-6 md:mb-20 lg:mb-16 flex items-end justify-center md:gap-8 gap-4 overflow-x-auto scrollbar-hide">
             <TabsTrigger
               value="urbanlink"
               className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:font-bold data-[state=active]:bg-transparent rounded-none h-[44px] px-2 md:px-4 text-sm md:text-lg font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300 whitespace-nowrap flex items-center justify-center"
