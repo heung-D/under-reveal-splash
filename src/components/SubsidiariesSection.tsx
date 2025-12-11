@@ -41,8 +41,8 @@ const SubsidiariesSection = () => {
       const event = new CustomEvent('changeSubsidiaryTab', { detail: { tab } });
       window.dispatchEvent(event);
       
-      // 섹션 페이드 아웃 (빠르게)
-      detailsSection.style.transition = 'opacity 0.3s ease-out';
+      // 섹션 페이드 아웃 (느리게)
+      detailsSection.style.transition = 'opacity 0.8s ease-out';
       detailsSection.style.opacity = '0';
       
       // 모바일에서는 헤더 높이를 고려해서 스크롤
