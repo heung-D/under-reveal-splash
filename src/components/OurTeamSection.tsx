@@ -87,15 +87,15 @@ const OurTeamSection = () => {
     const duration = 800; // 더 긴 duration
     let startTime: number | null = null;
     
-    const easeOutCubic = (t: number): number => {
-      return 1 - Math.pow(1 - t, 3);
+    const easeInOutSine = (t: number): number => {
+      return -(Math.cos(Math.PI * t) - 1) / 2;
     };
     
     const animateScroll = (currentTime: number) => {
       if (startTime === null) startTime = currentTime;
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const easeProgress = easeOutCubic(progress);
+      const easeProgress = easeInOutSine(progress);
       
       container.scrollLeft = startScroll + distance * easeProgress;
       
