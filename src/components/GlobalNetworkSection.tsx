@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { MapPin } from "lucide-react";
+import worldMap from "@/assets/world-map.png";
 
 const GlobalNetworkSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -71,31 +72,13 @@ const GlobalNetworkSection = () => {
         </h2>
       </div>
 
-      {/* World Map SVG Background */}
+      {/* World Map Image Background */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-        <svg
-          viewBox="0 0 1000 500"
-          className="w-full h-full opacity-20"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          {/* Simplified world map paths */}
-          <g fill="currentColor" className="text-foreground">
-            {/* North America */}
-            <path d="M150,100 Q200,80 250,90 L280,120 Q300,150 280,180 L250,200 Q200,220 150,200 L120,170 Q100,140 120,110 Z" opacity="0.4" />
-            {/* South America */}
-            <path d="M220,250 Q250,240 270,260 L290,320 Q300,380 280,420 L250,440 Q220,450 200,430 L180,380 Q170,320 190,270 Z" opacity="0.4" />
-            {/* Europe */}
-            <path d="M420,80 Q480,70 520,90 L550,120 Q560,150 540,170 L500,190 Q450,200 420,180 L400,150 Q390,110 410,90 Z" opacity="0.4" />
-            {/* Africa */}
-            <path d="M450,200 Q500,190 540,220 L560,280 Q570,350 550,400 L500,430 Q450,440 420,410 L400,350 Q390,280 420,220 Z" opacity="0.4" />
-            {/* Asia */}
-            <path d="M550,80 Q650,60 750,80 L820,120 Q850,170 830,220 L780,260 Q700,290 620,270 L570,230 Q540,180 550,130 Z" opacity="0.4" />
-            {/* Southeast Asia */}
-            <path d="M700,280 Q750,270 800,290 L830,330 Q850,370 830,400 L780,420 Q720,430 680,400 L660,360 Q650,310 680,280 Z" opacity="0.4" />
-            {/* Australia */}
-            <path d="M780,380 Q830,370 870,390 L900,420 Q910,460 890,480 L840,490 Q790,495 760,470 L750,430 Q745,390 770,380 Z" opacity="0.4" />
-          </g>
-        </svg>
+        <img
+          src={worldMap}
+          alt="World Map"
+          className="w-full h-full object-contain opacity-60"
+        />
       </div>
 
       {/* Location Pins */}
