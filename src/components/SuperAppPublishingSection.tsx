@@ -52,7 +52,7 @@ const SuperAppPublishingSection = () => {
         <Tabs defaultValue="tab1" className="w-full h-full flex flex-col" onValueChange={setActiveTab}>
           {/* Tab Title Images - Fixed position */}
           <div
-            className={`transition-all duration-1000 mb-12 flex-shrink-0 relative z-20 ${
+            className={`transition-all duration-1000 mb-[30px] lg:mb-12 flex-shrink-0 relative z-20 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
