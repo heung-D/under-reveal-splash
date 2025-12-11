@@ -56,7 +56,8 @@ const GlobalNetworkSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[60vh] md:min-h-[70vh] overflow-hidden bg-white"
+      className="relative w-full bg-white overflow-hidden"
+      style={{ aspectRatio: '1920 / 1080' }}
     >
       {/* Title */}
       <div 
