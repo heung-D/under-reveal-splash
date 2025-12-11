@@ -148,95 +148,95 @@ const SubsidiariesSection = () => {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden w-full flex flex-col items-center justify-center space-y-16 px-6">
+      <div className="md:hidden w-full flex flex-col items-start justify-center space-y-10 px-8">
         {/* URBANLINK */}
         <div
-          className={`transition-all duration-1000 w-full ${
+          className={`transition-all duration-1000 w-full border-b border-foreground/20 pb-4 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "300ms" }}
         >
           <button 
             onClick={() => handleSubsidiaryClick('urbanlink')}
-            className="group hover:scale-110 transition-all duration-300 ease-out cursor-pointer hover:brightness-110 w-full"
+            className="group hover:scale-105 transition-all duration-300 ease-out cursor-pointer hover:brightness-110"
           >
             <img 
               src={urbanlinkLogo} 
               alt="URBANLINK" 
-              className="h-10 object-contain mx-auto"
+              className="h-8 object-contain"
             />
           </button>
         </div>
 
         {/* PANORAMA */}
         <div
-          className={`transition-all duration-1000 w-full ${
+          className={`transition-all duration-1000 w-full border-b border-foreground/20 pb-4 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "500ms" }}
         >
           <button 
             onClick={() => handleSubsidiaryClick('panorama')}
-            className="group hover:scale-110 transition-all duration-300 ease-out cursor-pointer hover:brightness-110 w-full"
+            className="group hover:scale-105 transition-all duration-300 ease-out cursor-pointer hover:brightness-110"
           >
             <img 
               src={panoramaLogo} 
               alt="PANORAMA" 
-              className="h-10 object-contain mx-auto"
+              className="h-8 object-contain"
             />
           </button>
         </div>
 
         {/* ARADNAS */}
         <div
-          className={`transition-all duration-1000 w-full ${
+          className={`transition-all duration-1000 w-full border-b border-foreground/20 pb-4 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "700ms" }}
         >
           <button 
             onClick={() => handleSubsidiaryClick('aradnas')}
-            className="group hover:scale-110 transition-all duration-300 ease-out cursor-pointer hover:brightness-110 w-full"
+            className="group hover:scale-105 transition-all duration-300 ease-out cursor-pointer hover:brightness-110"
           >
             <img 
               src={aradnasLogo} 
               alt="ARADNAS" 
-              className="h-10 object-contain mx-auto"
+              className="h-8 object-contain"
             />
           </button>
         </div>
 
         {/* MAR/S */}
         <div
-          className={`transition-all duration-1000 w-full ${
+          className={`transition-all duration-1000 w-full border-b border-foreground/20 pb-4 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "900ms" }}
         >
           <button 
             onClick={() => handleSubsidiaryClick('mars')}
-            className="group hover:scale-110 transition-all duration-300 ease-out cursor-pointer hover:brightness-110 w-full"
+            className="group hover:scale-105 transition-all duration-300 ease-out cursor-pointer hover:brightness-110"
           >
             <img 
               src={marsLogo} 
               alt="MAR/S" 
-              className="h-10 object-contain mx-auto"
+              className="h-8 object-contain"
             />
           </button>
         </div>
 
         {/* UNDERTHELINE */}
         <div
-          className={`transition-all duration-1000 w-full ${
+          className={`transition-all duration-1000 w-full border-t border-foreground/40 pt-6 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "1100ms" }}
         >
-          <div className="w-full">
+          <div className="w-full flex justify-center">
             <img 
               src={underthelineText} 
               alt="UNDERTHELINE" 
-              className="h-12 object-contain mx-auto"
+              className="h-10 object-contain"
             />
           </div>
         </div>

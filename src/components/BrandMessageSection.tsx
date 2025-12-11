@@ -155,7 +155,7 @@ const BrandMessageSection = () => {
       </div>
 
       {/* Footer Content */}
-      <div className="border-t border-white/20 pt-12 pb-[150px] md:pb-[100px]">
+      <div className="border-t border-white/20 pt-12 pb-[200px] md:pb-[100px]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_auto_auto] gap-8 md:gap-12 mb-8">
             {/* Company Info */}
