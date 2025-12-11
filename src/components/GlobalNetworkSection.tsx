@@ -140,14 +140,14 @@ const GlobalNetworkSection = () => {
               top: `${location.y}%`,
             }}
           >
-            <div className="relative flex flex-col items-center -translate-x-1/2 -translate-y-full">
-              {/* Speech bubble */}
-              <div className="px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-sm mb-0.5">
+            <div className="relative flex flex-col items-center -translate-x-1/2 -translate-y-full group hover:z-50">
+              {/* Speech bubble - visible on hover */}
+              <div className="px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-md mb-0.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 {location.name}
               </div>
               {/* Pin icon */}
               <MapPin 
-                className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-md" 
+                className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-md cursor-pointer" 
                 fill="currentColor"
               />
             </div>
