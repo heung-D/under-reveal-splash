@@ -190,6 +190,8 @@ const GlobalNetworkSection = () => {
                         <MapPin 
                           className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-md cursor-pointer" 
                           fill="currentColor"
+                          stroke="white"
+                          strokeWidth={1}
                         />
                       </div>
                     </div>
