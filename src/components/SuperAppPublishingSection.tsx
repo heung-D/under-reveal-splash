@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import appPublishingImage from "@/assets/app-publishing-mockup.png";
+import appPublishingImage from "@/assets/super-app-mockup.png";
 import entLogosImage from "@/assets/ent-logos-updated.png";
 
 const SuperAppPublishingSection = () => {
