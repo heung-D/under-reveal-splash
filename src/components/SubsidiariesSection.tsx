@@ -41,32 +41,40 @@ const SubsidiariesSection = () => {
       const event = new CustomEvent('changeSubsidiaryTab', { detail: { tab } });
       window.dispatchEvent(event);
       
-      // 모바일에서는 헤더 높이를 고려해서 스크롤 (탭이 헤더 바로 아래 보이도록)
+      // 섹션 페이드 효과
+      detailsSection.style.opacity = '0';
+      detailsSection.style.transition = 'opacity 0.3s ease-out';
+      
+      // 모바일에서는 헤더 높이를 고려해서 스크롤
       const isMobile = window.innerWidth < 768;
       const headerOffset = isMobile ? 100 : 0;
       const elementPosition = detailsSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
-      // 느린 스크롤 애니메이션 구현
+      // 자연스러운 스크롤 애니메이션
       const startPosition = window.pageYOffset;
       const distance = offsetPosition - startPosition;
-      const duration = 1200; // 1.2초
+      const duration = 800;
       let startTime: number | null = null;
       
-      const easeInOutCubic = (t: number) => {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      // easeOutQuart - 자연스럽게 감속
+      const easeOutQuart = (t: number) => {
+        return 1 - Math.pow(1 - t, 4);
       };
       
       const animation = (currentTime: number) => {
         if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
         const progress = Math.min(timeElapsed / duration, 1);
-        const easedProgress = easeInOutCubic(progress);
+        const easedProgress = easeOutQuart(progress);
         
         window.scrollTo(0, startPosition + distance * easedProgress);
         
         if (timeElapsed < duration) {
           requestAnimationFrame(animation);
+        } else {
+          // 스크롤 완료 후 페이드인
+          detailsSection.style.opacity = '1';
         }
       };
       
