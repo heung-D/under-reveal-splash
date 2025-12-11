@@ -49,7 +49,8 @@ const teamMembers = [
     name: "Mark Friedman",
     role: "Strategic Investment Advisor",
     title: "Institutional investor & growth strategist",
-    description: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
+    description: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds.",
+    fullDescription: "He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC.",
     image: teamMark
   },
   // 6
