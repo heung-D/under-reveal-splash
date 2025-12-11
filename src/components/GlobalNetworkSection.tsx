@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import { MapPin } from "lucide-react";
 import worldMap from "@/assets/world-map.png";
 
 const GlobalNetworkSection = () => {
@@ -53,15 +52,41 @@ const GlobalNetworkSection = () => {
     { name: "Japan", x: 86, y: 35 },
   ];
 
+  // 연결선 정의 (핀들을 연결)
+  const connections = [
+    // 미주 연결
+    { from: "USA", to: "South America" },
+    // 유럽 내부 연결
+    { from: "Europe", to: "France" },
+    { from: "France", to: "Italy" },
+    // 유럽에서 중동/아시아
+    { from: "Italy", to: "GCC" },
+    { from: "GCC", to: "India" },
+    // 동남아 연결
+    { from: "India", to: "Thailand" },
+    { from: "Thailand", to: "Cambodia" },
+    { from: "Thailand", to: "Vietnam" },
+    { from: "Thailand", to: "Malaysia" },
+    { from: "Malaysia", to: "Singapore" },
+    { from: "Malaysia", to: "Indonesia" },
+    { from: "Vietnam", to: "Philippines" },
+    { from: "Vietnam", to: "Hong Kong" },
+    { from: "Hong Kong", to: "Japan" },
+    // USA에서 유럽/아시아
+    { from: "USA", to: "Europe" },
+    { from: "USA", to: "Japan" },
+  ];
+
+  const getLocation = (name: string) => locations.find(loc => loc.name === name);
+
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-white overflow-hidden"
-      style={{ aspectRatio: '1920 / 1080' }}
+      className="relative w-full bg-white overflow-hidden py-8 md:py-16"
     >
       {/* Title */}
       <div 
-        className={`absolute top-8 md:top-12 left-0 right-0 z-20 text-center transition-all duration-1000 ${
+        className={`text-center mb-8 md:mb-12 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
         }`}
       >
@@ -70,17 +95,41 @@ const GlobalNetworkSection = () => {
         </h2>
       </div>
 
-      {/* World Map Image Background */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+      {/* Map Container */}
+      <div className="relative w-full" style={{ aspectRatio: '1920 / 900' }}>
+        {/* World Map Image */}
         <img
           src={worldMap}
           alt="World Map"
           className="w-full h-full object-contain"
         />
-      </div>
 
-      {/* Location Pins */}
-      <div className="absolute inset-0">
+        {/* Connection Lines SVG */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none">
+          {connections.map((connection, index) => {
+            const from = getLocation(connection.from);
+            const to = getLocation(connection.to);
+            if (!from || !to) return null;
+
+            // 곡선 컨트롤 포인트 계산
+            const midX = (from.x + to.x) / 2;
+            const midY = (from.y + to.y) / 2 - 5;
+
+            return (
+              <path
+                key={index}
+                d={`M ${from.x}% ${from.y}% Q ${midX}% ${midY}% ${to.x}% ${to.y}%`}
+                fill="none"
+                stroke="hsl(var(--primary))"
+                strokeWidth="1"
+                strokeOpacity="0.4"
+                strokeDasharray="4 2"
+              />
+            );
+          })}
+        </svg>
+
+        {/* Location Pins */}
         {locations.map((location) => (
           <div
             key={location.name}
@@ -91,11 +140,8 @@ const GlobalNetworkSection = () => {
             }}
           >
             <div className="relative group cursor-pointer">
-              {/* Pin icon */}
-              <MapPin 
-                className="w-4 h-4 md:w-6 md:h-6 text-primary drop-shadow-lg -translate-x-1/2 -translate-y-1/2" 
-                fill="currentColor"
-              />
+              {/* Circle dot */}
+              <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2" />
               {/* Tooltip */}
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black/80 text-white text-[10px] md:text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 {location.name}
