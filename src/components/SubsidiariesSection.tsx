@@ -57,9 +57,9 @@ const SubsidiariesSection = () => {
         behavior: 'instant'
       });
       
-      // 이동 후 페이드인
+      // 이동 후 페이드인 (천천히)
       setTimeout(() => {
-        detailsSection.style.transition = 'opacity 1.2s ease-out';
+        detailsSection.style.transition = 'opacity 2s ease-out';
         detailsSection.style.opacity = '1';
       }, 50);
     }
