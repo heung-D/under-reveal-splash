@@ -56,10 +56,7 @@ const GlobalNetworkSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[60vh] md:min-h-[70vh] overflow-hidden"
-      style={{
-        background: 'linear-gradient(180deg, #FFFFFF 0%, #E8E8E8 30%, #1a1a2e 70%, #000000 100%)',
-      }}
+      className="relative min-h-[60vh] md:min-h-[70vh] overflow-hidden bg-white"
     >
       {/* Title */}
       <div 
@@ -77,27 +74,22 @@ const GlobalNetworkSection = () => {
         <img
           src={worldMap}
           alt="World Map"
-          className="w-full h-full object-contain opacity-60"
+          className="w-full h-full object-contain"
         />
       </div>
 
       {/* Location Pins */}
       <div className="absolute inset-0">
-        {locations.map((location, index) => (
+        {locations.map((location) => (
           <div
             key={location.name}
-            className={`absolute flex flex-col items-center transition-all duration-700 ${
-              isVisible ? "opacity-100 scale-100" : "opacity-0 scale-50"
-            }`}
+            className="absolute flex flex-col items-center"
             style={{
               left: `${location.x}%`,
               top: `${location.y}%`,
-              transitionDelay: `${index * 100}ms`,
             }}
           >
             <div className="relative group cursor-pointer">
-              {/* Pulse effect */}
-              <div className="absolute inset-0 w-6 h-6 md:w-8 md:h-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/30 animate-ping" />
               {/* Pin icon */}
               <MapPin 
                 className="w-4 h-4 md:w-6 md:h-6 text-primary drop-shadow-lg -translate-x-1/2 -translate-y-1/2" 
@@ -111,9 +103,6 @@ const GlobalNetworkSection = () => {
           </div>
         ))}
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
     </section>
   );
 };
