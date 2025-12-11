@@ -119,7 +119,7 @@ const SuperAppPublishingSection = () => {
                 <img 
                   src={appPublishingImage} 
                   alt="Super App Publishing Mockup" 
-                  className={`h-[240px] lg:h-[350px] xl:h-[420px] w-auto object-contain transition-opacity duration-700 ${
+                  className={`h-[240px] lg:h-[350px] xl:h-[520px] w-auto object-contain transition-opacity duration-700 ${
                     activeTab === "tab1" ? "opacity-100" : "opacity-0"
                   }`}
                 />
