@@ -104,7 +104,7 @@ const GlobalNetworkSection = () => {
           minScale={1}
           maxScale={4}
           centerOnInit
-          wheel={{ step: 0.1 }}
+          wheel={{ disabled: true }}
           pinch={{ step: 5 }}
         >
           {({ zoomIn, zoomOut, resetTransform }) => (
