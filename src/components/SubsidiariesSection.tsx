@@ -51,32 +51,17 @@ const SubsidiariesSection = () => {
       const elementPosition = detailsSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
-      // 일정한 속도로 스크롤
-      const startPosition = window.pageYOffset;
-      const distance = offsetPosition - startPosition;
-      const duration = 600; // 느린 일정 속도
-      let startTime: number | null = null;
+      // 기본 스무스 스크롤
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
       
-      const animation = (currentTime: number) => {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);
-        
-        // 일정한 속도 (linear)
-        window.scrollTo(0, startPosition + distance * progress);
-        
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation);
-        } else {
-          // 스크롤 완료 후 천천히 페이드인
-          setTimeout(() => {
-            detailsSection.style.transition = 'opacity 1.2s ease-out';
-            detailsSection.style.opacity = '1';
-          }, 100);
-        }
-      };
-      
-      requestAnimationFrame(animation);
+      // 스크롤 후 페이드인
+      setTimeout(() => {
+        detailsSection.style.transition = 'opacity 1.2s ease-out';
+        detailsSection.style.opacity = '1';
+      }, 500);
     }
   };
 
