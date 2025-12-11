@@ -51,17 +51,17 @@ const SubsidiariesSection = () => {
       const elementPosition = detailsSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
-      // 기본 스무스 스크롤
+      // 즉시 이동 (스크롤 안보이게)
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'instant'
       });
       
-      // 스크롤 후 페이드인
+      // 이동 후 페이드인
       setTimeout(() => {
         detailsSection.style.transition = 'opacity 1.2s ease-out';
         detailsSection.style.opacity = '1';
-      }, 500);
+      }, 50);
     }
   };
 
