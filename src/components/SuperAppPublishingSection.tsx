@@ -75,26 +75,26 @@ const SuperAppPublishingSection = () => {
 
           {/* Tab Content */}
           <TabsContent value="tab1" className="mt-0 w-full max-w-[1000px] mx-auto" onAnimationEnd={() => setImageVisible(true)}>
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between ${
+                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between items-center lg:items-start ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
               >
                 {/* Title */}
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-left">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-center lg:text-left">
                   SUPER APP PUBLISHING
                 </h2>
                 
                 <div className="space-y-4">
-                  <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                  <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                     UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region, enabling artists and creators to own, design, and operate their own independent platforms through DOCE-powered publishing.
                   </p>
                   
                   {isTab1Expanded && (
-                    <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                    <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                       Each app becomes a personal community and ecosystem where the artist is the true owner - operating fandom, commerce, and content directly under their own control. → An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.
                     </p>
                   )}
@@ -128,33 +128,33 @@ const SuperAppPublishingSection = () => {
           </TabsContent>
 
           <TabsContent value="tab2" className="mt-0 w-full max-w-[1000px] mx-auto">
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between ${
+                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between items-center lg:items-start ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
               >
                 {/* Title */}
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-left max-w-[600px]">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-center lg:text-left max-w-[600px]">
                   GLOBAL ENTERTAINMENT INFRASTRUCTURE
                 </h2>
                 
                 <div className="space-y-4">
-                  <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                  <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                     UNDERTHELINE collaborates with global record labels, management companies, publishing networks, and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure.
                   </p>
                   
                   {isTab2Expanded && (
                     <>
-                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                         Record Distribution: Collaborates with major global labels including Columbia, Warner, Universal, and Sony.
                       </p>
-                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                         Publishing Network: Connected with global publishers such as Warner Chappell, BMG, and Kobalt.
                       </p>
-                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-left">
+                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                         Touring Network: Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
                       </p>
                     </>
