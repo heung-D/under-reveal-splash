@@ -89,19 +89,19 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="panorama" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full md:w-auto">
-                <div className="inline-block">
+                <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
                   <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                     PANORAMA
                   </h2>
                   <div className="h-1 w-full bg-foreground mb-6"></div>
-                <Button 
-                  variant="outline" 
-                  className="group"
-                  onClick={() => window.open('https://www.panoramamgmt.com', '_blank')}
-                >
-                  WEBSITE
-                  <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                  <Button 
+                    variant="outline" 
+                    className="group"
+                    onClick={() => window.open('https://www.panoramamgmt.com', '_blank')}
+                  >
+                    WEBSITE
+                    <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
                 </div>
               </div>
 
@@ -150,7 +150,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="urbanlink" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full md:w-auto">
-                <div className="inline-block">
+                <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
                   <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                     URBANLINK
                   </h2>
@@ -198,7 +198,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="aradnas" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full md:w-auto">
-                <div className="inline-block">
+                <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
                   <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                     ARADNAS
                   </h2>
@@ -232,7 +232,7 @@ const SubsidiaryDetailsSection = () => {
           <TabsContent value="mars" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full md:w-auto">
-                <div className="inline-block">
+                <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
                   <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
                     MAR/S
                   </h2>
