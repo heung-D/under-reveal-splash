@@ -85,6 +85,16 @@ const GlobalNetworkSection = () => {
       ref={sectionRef}
       className="relative w-full bg-white overflow-hidden py-8 md:py-16 pb-16 md:pb-32"
     >
+      {/* Title */}
+      <div 
+        className={`text-center mb-8 md:mb-12 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+        }`}
+      >
+        <h2 className="text-2xl md:text-4xl font-bold font-rift text-foreground">
+          Location
+        </h2>
+      </div>
 
       {/* Map Container */}
       <div className="relative w-full" style={{ aspectRatio: '1920 / 900' }}>
