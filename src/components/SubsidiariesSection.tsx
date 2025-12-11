@@ -41,9 +41,9 @@ const SubsidiariesSection = () => {
       const event = new CustomEvent('changeSubsidiaryTab', { detail: { tab } });
       window.dispatchEvent(event);
       
-      // 섹션 페이드 아웃
+      // 섹션 페이드 아웃 (빠르게)
+      detailsSection.style.transition = 'opacity 0.3s ease-out';
       detailsSection.style.opacity = '0';
-      detailsSection.style.transition = 'opacity 1.2s ease-out';
       
       // 모바일에서는 헤더 높이를 고려해서 스크롤
       const isMobile = window.innerWidth < 768;
@@ -74,6 +74,7 @@ const SubsidiariesSection = () => {
         } else {
           // 스크롤 완료 후 천천히 페이드인
           setTimeout(() => {
+            detailsSection.style.transition = 'opacity 1.2s ease-out';
             detailsSection.style.opacity = '1';
           }, 100);
         }
