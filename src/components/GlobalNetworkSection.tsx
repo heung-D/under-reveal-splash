@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { MapPin } from "lucide-react";
+import { MapPin, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import worldMap from "@/assets/world-map.png";
 
 const GlobalNetworkSection = () => {
@@ -96,62 +97,108 @@ const GlobalNetworkSection = () => {
         </h2>
       </div>
 
-      {/* Map Container */}
+      {/* Map Container with Zoom */}
       <div className="relative w-full" style={{ aspectRatio: '1920 / 900' }}>
-        {/* World Map Image */}
-        <img
-          src={worldMap}
-          alt="World Map"
-          className="w-full h-full object-contain"
-        />
-
-        {/* Connection Lines SVG */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
-          {connections.map((connection, index) => {
-            const from = getLocation(connection.from);
-            const to = getLocation(connection.to);
-            if (!from || !to) return null;
-
-            // 곡선 컨트롤 포인트 계산
-            const midX = (from.x + to.x) / 2;
-            const midY = (from.y + to.y) / 2 - 5;
-
-            return (
-              <path
-                key={index}
-                d={`M ${from.x}% ${from.y}% Q ${midX}% ${midY}% ${to.x}% ${to.y}%`}
-                fill="none"
-                stroke="#9CA3AF"
-                strokeWidth="1.5"
-                strokeDasharray="6 4"
-              />
-            );
-          })}
-        </svg>
-
-        {/* Location Pins */}
-        {locations.map((location) => (
-          <div
-            key={location.name}
-            className="absolute flex flex-col items-center"
-            style={{
-              left: `${location.x}%`,
-              top: `${location.y}%`,
-            }}
-          >
-            <div className="relative flex flex-col items-center -translate-x-1/2 -translate-y-full group hover:z-50">
-              {/* Speech bubble - visible on hover */}
-              <div className="px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-md mb-0.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                {location.name}
+        <TransformWrapper
+          initialScale={1}
+          minScale={1}
+          maxScale={4}
+          centerOnInit
+          wheel={{ step: 0.1 }}
+          pinch={{ step: 5 }}
+        >
+          {({ zoomIn, zoomOut, resetTransform }) => (
+            <>
+              {/* Zoom Controls */}
+              <div className="absolute top-4 right-4 z-20 flex flex-col gap-2">
+                <button
+                  onClick={() => zoomIn()}
+                  className="p-2 bg-white/90 hover:bg-white rounded-lg shadow-md transition-colors border border-gray-200"
+                  aria-label="Zoom in"
+                >
+                  <ZoomIn className="w-5 h-5 text-gray-700" />
+                </button>
+                <button
+                  onClick={() => zoomOut()}
+                  className="p-2 bg-white/90 hover:bg-white rounded-lg shadow-md transition-colors border border-gray-200"
+                  aria-label="Zoom out"
+                >
+                  <ZoomOut className="w-5 h-5 text-gray-700" />
+                </button>
+                <button
+                  onClick={() => resetTransform()}
+                  className="p-2 bg-white/90 hover:bg-white rounded-lg shadow-md transition-colors border border-gray-200"
+                  aria-label="Reset zoom"
+                >
+                  <RotateCcw className="w-5 h-5 text-gray-700" />
+                </button>
               </div>
-              {/* Pin icon */}
-              <MapPin 
-                className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-md cursor-pointer" 
-                fill="currentColor"
-              />
-            </div>
-          </div>
-        ))}
+
+              <TransformComponent
+                wrapperStyle={{ width: '100%', height: '100%' }}
+                contentStyle={{ width: '100%', height: '100%' }}
+              >
+                <div className="relative w-full h-full">
+                  {/* World Map Image */}
+                  <img
+                    src={worldMap}
+                    alt="World Map"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
+
+                  {/* Connection Lines SVG */}
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
+                    {connections.map((connection, index) => {
+                      const from = getLocation(connection.from);
+                      const to = getLocation(connection.to);
+                      if (!from || !to) return null;
+
+                      // 곡선 컨트롤 포인트 계산
+                      const midX = (from.x + to.x) / 2;
+                      const midY = (from.y + to.y) / 2 - 5;
+
+                      return (
+                        <path
+                          key={index}
+                          d={`M ${from.x}% ${from.y}% Q ${midX}% ${midY}% ${to.x}% ${to.y}%`}
+                          fill="none"
+                          stroke="#9CA3AF"
+                          strokeWidth="1.5"
+                          strokeDasharray="6 4"
+                        />
+                      );
+                    })}
+                  </svg>
+
+                  {/* Location Pins */}
+                  {locations.map((location) => (
+                    <div
+                      key={location.name}
+                      className="absolute flex flex-col items-center"
+                      style={{
+                        left: `${location.x}%`,
+                        top: `${location.y}%`,
+                      }}
+                    >
+                      <div className="relative flex flex-col items-center -translate-x-1/2 -translate-y-full group hover:z-50">
+                        {/* Speech bubble - visible on hover */}
+                        <div className="px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-md mb-0.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                          {location.name}
+                        </div>
+                        {/* Pin icon */}
+                        <MapPin 
+                          className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-md cursor-pointer" 
+                          fill="currentColor"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </TransformComponent>
+            </>
+          )}
+        </TransformWrapper>
       </div>
     </section>
   );
