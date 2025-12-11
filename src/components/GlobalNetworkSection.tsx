@@ -67,7 +67,7 @@ const GlobalNetworkSection = () => {
         }`}
       >
         <h2 className="text-2xl md:text-4xl font-bold font-rift text-foreground">
-          GLOBAL NETWORK
+          GLOBAL MAP
         </h2>
       </div>
 
