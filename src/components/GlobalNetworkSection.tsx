@@ -106,7 +106,7 @@ const GlobalNetworkSection = () => {
         />
 
         {/* Connection Lines SVG */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none">
+        <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
           {connections.map((connection, index) => {
             const from = getLocation(connection.from);
             const to = getLocation(connection.to);
