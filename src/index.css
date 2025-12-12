@@ -52,7 +52,7 @@ All colors MUST be HSL.
     --duration-line: 1.2s;
     --duration-logo: 0.8s;
     --duration-text: 0.6s;
-    
+
     /* Delays */
     --delay-logo: 0.4s;
     --delay-text: 1s;
@@ -96,10 +96,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-family: "Pretendard Variable", "Pretendard", -apple-system,
+      BlinkMacSystemFont, system-ui, sans-serif;
     font-weight: 200;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
@@ -108,17 +109,14 @@ All colors MUST be HSL.
   .snap-container {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 100vh;
   }
 
   /* Smooth scroll snap sections */
   .snap-section {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    height: calc(100vh - 100px);
-    min-height: calc(100vh - 100px);
+    height: calc(100dvh - 80px);
+    min-height: calc(100dvh - 80px);
   }
 
   /* Enhanced smooth scrolling with custom timing */
@@ -136,7 +134,7 @@ All colors MUST be HSL.
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
@@ -172,7 +170,58 @@ All colors MUST be HSL.
   }
 
   .animate-fade-slide-up-delayed {
-    animation: fadeSlideUp var(--duration-text) ease-out var(--delay-text) forwards;
+    animation: fadeSlideUp var(--duration-text) ease-out var(--delay-text)
+      forwards;
     opacity: 0;
+  }
+
+  /* Fade in animation for tab content */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+
+  /* BrandMessageSection animations */
+  @keyframes shootingStar {
+    0% {
+      transform: translateX(-100%) translateY(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100vw) translateY(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes starGlow {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .animate-shooting-star {
+    animation: shootingStar 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-star-glow {
+    animation: starGlow 2s ease-in-out infinite;
   }
 }

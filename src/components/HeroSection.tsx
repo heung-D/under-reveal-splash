@@ -12,7 +12,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center px-6 pt-[140px]" style={{ height: 'calc(100vh - 100px)' }}>
+    <div className="h-full flex items-center justify-center px-6">
       <div className="max-w-7xl w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
           {/* Left side - Logo with line */}
@@ -25,7 +25,7 @@ const HeroSection = () => {
                 }`}
               />
             </div>
-            
+
             {/* Logo text */}
             <div
               className={`opacity-0 ${
@@ -46,7 +46,11 @@ const HeroSection = () => {
             }`}
           >
             <p className="text-sm md:text-base leading-[1.4] text-foreground">
-              "Undertheline" comes from a simple promise: we stand under every artist's line, not above it. We are not a company that pulls rights and data upward; instead, we design and operate the structures beneath, so that artists and labels can hold sovereignty over their own catalogs, communities and economics.
+              "Undertheline" comes from a simple promise: we stand under every
+              artist's line, not above it. We are not a company that pulls
+              rights and data upward; instead, we design and operate the
+              structures beneath, so that artists and labels can hold
+              sovereignty over their own catalogs, communities and economics.
             </p>
           </div>
         </div>

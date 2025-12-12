@@ -32,7 +32,11 @@ const WhoWeAreSection = () => {
   }, []);
 
   return (
-    <div id="who-we-are" ref={sectionRef} className="flex items-center justify-center px-6 pt-[40px]" style={{ height: 'calc(100vh - 100px)' }}>
+    <div
+      id="who-we-are"
+      ref={sectionRef}
+      className="h-full flex items-center justify-center px-6"
+    >
       <div className="max-w-7xl w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           {/* Left side - Logo with line */}
@@ -45,11 +49,13 @@ const WhoWeAreSection = () => {
                 }`}
               />
             </div>
-            
+
             {/* WHO WE ARE text */}
             <div
               className={`transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0 animate-fade-slide-up" : "opacity-0 translate-y-4"
+                isVisible
+                  ? "opacity-100 translate-y-0 animate-fade-slide-up"
+                  : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: isVisible ? "500ms" : "0ms" }}
             >
@@ -62,16 +68,21 @@ const WhoWeAreSection = () => {
           {/* Right side - Description text */}
           <div
             className={`transition-all duration-1000 mt-[-10px] ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
             <p className="text-sm md:text-base leading-[1.4] text-foreground mb-12">
-              UNDERTHELINE is shaping the future of entertainment by breaking down the boundaries between reality and the virtual world, building a next-generation infrastructure for the global entertainment industry.
+              UNDERTHELINE is shaping the future of entertainment by breaking
+              down the boundaries between reality and the virtual world,
+              building a next-generation infrastructure for the global
+              entertainment industry.
             </p>
-            
+
             <div className="flex gap-5">
-              <button 
+              <button
                 className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
                 onClick={() => navigate("/more?from=who-we-are")}
               >

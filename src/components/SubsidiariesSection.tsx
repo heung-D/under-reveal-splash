@@ -37,42 +37,19 @@ const SubsidiariesSection = () => {
   const handleSubsidiaryClick = (tab: string) => {
     const detailsSection = document.getElementById('subsidiary-details');
     if (detailsSection) {
-      // 먼저 탭 변경 이벤트 발생
+      // Change tab
       const event = new CustomEvent('changeSubsidiaryTab', { detail: { tab } });
       window.dispatchEvent(event);
-      
-      // 섹션 페이드 아웃 (느리게)
-      detailsSection.style.transition = 'opacity 0.8s ease-out';
-      detailsSection.style.opacity = '0';
-      
-      // 모바일에서는 헤더 높이를 고려해서 스크롤
-      const isMobile = window.innerWidth < 768;
-      const headerOffset = isMobile ? 100 : 0;
-      const elementPosition = detailsSection.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
-      // 페이드 아웃 후 이동 및 페이드인
-      setTimeout(() => {
-        // 즉시 이동 (스크롤 안보이게)
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'instant'
-        });
-        
-        // 이동 후 페이드인 (천천히)
-        setTimeout(() => {
-          detailsSection.style.transition = 'opacity 2s ease-out';
-          detailsSection.style.opacity = '1';
-        }, 100);
-      }, 800); // 페이드 아웃 완료 후 이동
+
+      // Scroll to the section (works with inner scroll container)
+      detailsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <section
       ref={sectionRef}
-      className="flex items-start md:items-center justify-center px-6 md:px-[160px] relative pt-[60px] md:pt-[140px] pb-20 md:pb-20 min-h-screen md:min-h-0"
-      style={{ height: 'auto' }}
+      className="h-full flex items-center justify-center px-6 md:px-[160px] relative"
     >
       {/* Desktop Layout */}
       <div className="hidden md:block relative w-full max-w-[1400px] mx-auto h-[600px]">

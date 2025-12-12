@@ -30,21 +30,19 @@ const Index = () => {
   }, [location]);
 
   return (
-    <div 
-      className="min-h-screen bg-background overflow-y-auto"
-      style={{
-        scrollPaddingTop: '140px'
-      }}
-    >
+    <div className="w-full h-dvh flex flex-col bg-background">
       {/* Header with logo and language selector */}
-      <header className="fixed top-0 left-0 w-full h-20 z-50 px-6 md:px-12 flex justify-between items-center border-b border-gray-800/20 bg-background">
+      <header className="shrink-0 w-full h-20 px-6 md:px-12 flex justify-between items-center border-b border-gray-800/20 bg-background">
         <Logo />
-        
+
         <DropdownMenu>
           <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors">
             <Globe className="h-5 w-5" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-background border-border">
+          <DropdownMenuContent
+            align="end"
+            className="bg-background border-border"
+          >
             <DropdownMenuItem className="cursor-pointer">
               English
             </DropdownMenuItem>
@@ -55,17 +53,33 @@ const Index = () => {
         </DropdownMenu>
       </header>
 
-      {/* Main content */}
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <WhoWeAreSection />
-        <SubsidiariesSection />
-        <SubsidiaryDetailsSection />
-        <GlobalNetworkSection />
-        <BrandMessageSection />
+      {/* Main content - scrollable area */}
+      <main className="flex-1 overflow-y-auto snap-container">
+        <section className="snap-section">
+          <HeroSection />
+        </section>
+        <section className="snap-section">
+          <AboutSection />
+        </section>
+        <section className="snap-section">
+          <WhoWeAreSection />
+        </section>
+        <section className="snap-section">
+          <SubsidiariesSection />
+        </section>
+        <section className="snap-section">
+          <SubsidiaryDetailsSection />
+        </section>
+        <section className="snap-section">
+          <GlobalNetworkSection />
+        </section>
+        <section className="snap-section">
+          <BrandMessageSection />
+        </section>
+        <section className="snap-section">
+          <Footer />
+        </section>
       </main>
-      <Footer />
     </div>
   );
 };
