@@ -30,14 +30,9 @@ const Index = () => {
   }, [location]);
 
   return (
-    <div
-      className="min-h-screen bg-background overflow-y-auto snap-container"
-      style={{
-        scrollPaddingTop: "80px",
-      }}
-    >
+    <div className="w-full h-dvh flex flex-col bg-background">
       {/* Header with logo and language selector */}
-      <header className="fixed top-0 left-0 w-full h-20 z-50 px-6 md:px-12 flex justify-between items-center border-b border-gray-800/20 bg-background">
+      <header className="shrink-0 w-full h-20 px-6 md:px-12 flex justify-between items-center border-b border-gray-800/20 bg-background">
         <Logo />
 
         <DropdownMenu>
@@ -58,8 +53,8 @@ const Index = () => {
         </DropdownMenu>
       </header>
 
-      {/* Main content */}
-      <main>
+      {/* Main content - scrollable area */}
+      <main className="flex-1 overflow-y-auto snap-container">
         <section className="snap-section">
           <HeroSection />
         </section>

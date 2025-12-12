@@ -85,7 +85,7 @@ const GlobalNetworkSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[100%] w-full bg-white overflow-hidden py-8 md:py-16 pb-16 md:pb-32 flex items-center"
+      className="relative h-full w-full bg-white overflow-hidden flex items-center"
     >
       <div>
         {/* Title */}

@@ -23,7 +23,7 @@ const BrandMessageSection = () => {
 
   return (
     <section
-      className="h-[100%] pt-32 pb-12 relative overflow-hidden"
+      className="h-full relative overflow-hidden flex items-center justify-center"
       style={{
         background:
           "linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)",
