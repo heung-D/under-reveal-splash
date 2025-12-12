@@ -2,7 +2,11 @@ import { useEffect, useState, useRef } from "react";
 import { MapPin, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import worldMap from "@/assets/world-map.png";
-import { locations, connections, getLocationById } from "@/data/globalNetworkData";
+import {
+  locations,
+  connections,
+  getLocationById,
+} from "@/data/globalNetworkData";
 
 const GlobalNetworkSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,22 +39,33 @@ const GlobalNetworkSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative h-full w-full bg-white overflow-hidden flex items-center"
+      className="relative h-full w-full bg-white overflow-hidden flex flex-col justify-center"
     >
-      <div>
+      <div className="flex flex-col items-center justify-center">
         {/* Title */}
         <div
-          className={`text-center mb-8 md:mb-12 transition-all duration-1000 ${
+          className={`text-center transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
           }`}
         >
           <h2 className="text-2xl md:text-4xl font-bold font-rift text-foreground">
-            Location
+            Global Presence
           </h2>
         </div>
 
+        <p className="mt-6 mt:mb-8 text-sm md:text-base leading-[1.4] text-foreground md:w-[60%] w-[100%] md:p-0 p-[20px] text-center">
+          "Undertheline" comes from a simple promise: we stand under every
+          artist's line, not above it. We are not a company that pulls rights
+          and data upward; instead, we design and operate the structures
+          beneath, so that artists and labels can hold sovereignty over their
+          own catalogs, communities and economics.
+        </p>
+
         {/* Map Container with Zoom */}
-        <div className="relative w-full" style={{ aspectRatio: "1920 / 900" }}>
+        <div
+          className="mt-6 mt:mb-8 relative w-full"
+          style={{ aspectRatio: "1920 / 900" }}
+        >
           <TransformWrapper
             initialScale={1}
             minScale={1}
