@@ -95,7 +95,7 @@ const SubsidiaryDetailsSection = () => {
           <div className="flex-1 flex items-center">
             {/* PANORAMA Tab */}
             <TabsContent value="panorama" className="mt-0 w-full">
-              <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center animate-fade-slide-up">
+              <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-20 items-start md:items-center animate-fade-slide-up">
                 <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
                   <div className="w-full md:w-[300px]">
                     <div className="flex items-center justify-between md:block">
@@ -130,7 +130,7 @@ const SubsidiaryDetailsSection = () => {
                 </div>
 
                 <div
-                  className={`space-y-[30px] transition-all duration-1000 delay-200 ${
+                  className={`md:space-y-[30px] space-y-[16px] transition-all duration-1000 delay-200 ${
                     isVisible && activeTab === "panorama"
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 translate-x-8"
@@ -177,7 +177,7 @@ const SubsidiaryDetailsSection = () => {
 
             {/* URBANLINK Tab */}
             <TabsContent value="urbanlink" className="mt-0 w-full">
-              <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center animate-fade-slide-up">
+              <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-20 items-start md:items-center animate-fade-slide-up">
                 <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
                   <div className="w-full md:w-[300px]">
                     <div className="flex items-center justify-between md:block">
@@ -208,7 +208,7 @@ const SubsidiaryDetailsSection = () => {
                 </div>
 
                 <div
-                  className={`space-y-[30px] transition-all duration-1000 delay-200 ${
+                  className={`md:space-y-[30px] space-y-[16px] transition-all duration-1000 delay-200 ${
                     isVisible && activeTab === "urbanlink"
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 translate-x-8"
@@ -255,7 +255,7 @@ const SubsidiaryDetailsSection = () => {
 
             {/* ARADNAS Tab */}
             <TabsContent value="aradnas" className="mt-0 w-full">
-              <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center animate-fade-slide-up">
+              <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-20 items-start md:items-center animate-fade-slide-up">
                 <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
                   <div className="w-full md:w-[300px]">
                     <div className="flex items-center justify-between md:block">
@@ -312,7 +312,7 @@ const SubsidiaryDetailsSection = () => {
 
             {/* MAR/S Tab */}
             <TabsContent value="mars" className="mt-0 w-full">
-              <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center animate-fade-slide-up">
+              <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-20 items-start md:items-center animate-fade-slide-up">
                 <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
                   <div className="w-full md:w-[300px]">
                     <div className="flex items-center justify-between md:block">
