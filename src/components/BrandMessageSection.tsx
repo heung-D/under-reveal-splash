@@ -115,7 +115,7 @@ const NeonArcLayer = () => (
 // ============================================
 const BrandTextLayer = ({ visible }: { visible: boolean }) => (
   <div
-    className="text-center text-[40px] font-rift transition-opacity duration-[2000ms] -mt-[3vw]"
+    className="text-center text-[max(15px,3vw)] font-rift transition-opacity duration-[2000ms] -mt-[3vw]"
     style={{
       lineHeight: "120%",
       opacity: visible ? 0.8 : 0,

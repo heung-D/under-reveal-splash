@@ -101,16 +101,16 @@ const SubsidiaryDetailsSection = () => {
                     <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                       PANORAMA
                     </h2>
-                    <div className="h-1 w-full bg-foreground mb-6"></div>
+                    <div className="h-1 w-full bg-foreground mb-2 md:mb-6"></div>
                     <Button
                       variant="outline"
-                      className="group"
+                      className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
                       onClick={() =>
                         window.open("https://www.panoramamgmt.com", "_blank")
                       }
                     >
                       WEBSITE
-                      <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </div>
                 </div>
@@ -169,14 +169,14 @@ const SubsidiaryDetailsSection = () => {
                     <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                       URBANLINK
                     </h2>
-                    <div className="h-1 w-full bg-foreground mb-6"></div>
+                    <div className="h-1 w-full bg-foreground mb-2 md:mb-6"></div>
                     <Button
                       variant="outline"
-                      className="group"
+                      className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
                       disabled
                     >
                       WEBSITE
-                      <ExternalLink className="ml-2 h-4 w-4" />
+                      <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                     </Button>
                   </div>
                 </div>
@@ -235,14 +235,14 @@ const SubsidiaryDetailsSection = () => {
                     <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                       ARADNAS
                     </h2>
-                    <div className="h-1 w-full bg-foreground mb-6"></div>
+                    <div className="h-1 w-full bg-foreground mb-2 md:mb-6"></div>
                     <Button
                       variant="outline"
-                      className="group"
+                      className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
                       disabled
                     >
                       WEBSITE
-                      <ExternalLink className="ml-2 h-4 w-4" />
+                      <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                     </Button>
                   </div>
                 </div>
@@ -280,14 +280,14 @@ const SubsidiaryDetailsSection = () => {
                     <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                       MAR/S
                     </h2>
-                    <div className="h-1 w-full bg-foreground mb-6"></div>
+                    <div className="h-1 w-full bg-foreground mb-2 md:mb-6"></div>
                     <Button
                       variant="outline"
-                      className="group"
+                      className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
                       disabled
                     >
                       WEBSITE
-                      <ExternalLink className="ml-2 h-4 w-4" />
+                      <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                     </Button>
                   </div>
                 </div>
