@@ -103,14 +103,14 @@ const NewsDetail = () => {
             {news.title}
           </h1>
 
-          {/* Featured Image - Smaller */}
+          {/* Featured Image */}
           <div 
-            className={`max-w-md mx-auto mb-16 transition-all duration-1000 ${
+            className={`mb-16 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
           >
-            <div className="aspect-[4/3] overflow-hidden">
+            <div className="aspect-[16/9] overflow-hidden">
               <img 
                 src={news.image} 
                 alt={news.title}
