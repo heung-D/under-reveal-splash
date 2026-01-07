@@ -1,49 +1,128 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
 import { ArrowLeft } from "lucide-react";
+import Logo from "@/components/Logo";
+import Footer from "@/components/Footer";
 import { newsData } from "./News";
 
 const NewsDetail = () => {
   const { id } = useParams();
   const news = newsData.find((item) => item.id === Number(id));
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   if (!news) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">News Not Found</h1>
-          <Link to="/news" className="text-blue-400 hover:underline">
-            Back to News
-          </Link>
+      <div className="w-full min-h-screen flex flex-col bg-background">
+        <header className="shrink-0 w-full h-20 px-6 md:px-12 flex justify-between items-center border-b border-border bg-background">
+          <Logo />
+        </header>
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-[39px] lg:text-[44px] font-bold font-rift text-foreground mb-4">
+              NEWS NOT FOUND
+            </h1>
+            <Link 
+              to="/news" 
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-rift"
+            >
+              <ArrowLeft size={20} />
+              <span>BACK TO NEWS</span>
+            </Link>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="container mx-auto px-4 py-12">
-        <Link 
-          to="/news" 
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8"
-        >
-          <ArrowLeft size={20} />
-          <span>Back to News</span>
-        </Link>
+    <div className="w-full min-h-screen flex flex-col bg-background">
+      {/* Header */}
+      <header className="shrink-0 w-full h-20 px-6 md:px-12 flex justify-between items-center border-b border-border bg-background">
+        <Logo />
+      </header>
 
-        <article className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-sm font-semibold text-white/80 bg-white/10 px-4 py-1.5 rounded-full">
-                {news.category}
-              </span>
-              <span className="text-sm text-gray-500">{news.date}</span>
+      {/* Main content */}
+      <main className="flex-1 px-6 md:px-12 py-12">
+        <div ref={sectionRef} className="max-w-4xl mx-auto">
+          {/* Back Button */}
+          <Link 
+            to="/news" 
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12 font-rift text-sm"
+          >
+            <ArrowLeft size={16} />
+            <span>BACK TO NEWS</span>
+          </Link>
+
+          {/* Title Section with Line */}
+          <div className="flex flex-col items-start mb-8">
+            {/* Horizontal line */}
+            <div className="w-full max-w-[150px] overflow-hidden mb-[6px]">
+              <div
+                className={`h-[3px] bg-foreground origin-left transition-all duration-1000 ${
+                  isVisible ? "animate-draw-line" : "w-0"
+                }`}
+              />
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+
+            {/* Category & Date */}
+            <div
+              className={`flex items-center gap-4 mb-4 transition-all duration-1000 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
+            >
+              <span className="text-sm font-bold text-foreground font-rift border border-foreground px-4 py-1">
+                {news.category.toUpperCase()}
+              </span>
+              <span className="text-sm text-muted-foreground">{news.date}</span>
+            </div>
+
+            {/* Title */}
+            <h1 
+              className={`text-2xl md:text-4xl lg:text-[44px] leading-[1.1] font-bold text-foreground transition-all duration-1000 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: isVisible ? "500ms" : "0ms" }}
+            >
               {news.title}
             </h1>
           </div>
 
-          <div className="aspect-video rounded-xl overflow-hidden mb-10">
+          {/* Featured Image */}
+          <div 
+            className={`aspect-video overflow-hidden mb-10 border border-border transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: isVisible ? "700ms" : "0ms" }}
+          >
             <img 
               src={news.image} 
               alt={news.title}
@@ -51,12 +130,18 @@ const NewsDetail = () => {
             />
           </div>
 
-          <div className="prose prose-invert prose-lg max-w-none">
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+          {/* Content */}
+          <div 
+            className={`transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
+          >
+            <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
               {news.summary}
             </p>
             
-            <div className="text-gray-400 space-y-6">
+            <div className="text-muted-foreground space-y-6 text-sm md:text-base leading-[1.6]">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
@@ -71,8 +156,11 @@ const NewsDetail = () => {
               </p>
             </div>
           </div>
-        </article>
-      </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
