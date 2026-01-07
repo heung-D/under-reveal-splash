@@ -66,68 +66,57 @@ const NewsDetail = () => {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 px-6 md:px-12 py-12">
-        <div ref={sectionRef} className="max-w-4xl mx-auto">
+      <main className="flex-1 px-6 md:px-16 lg:px-24 py-16 md:py-24">
+        <div ref={sectionRef} className="max-w-3xl mx-auto">
           {/* Back Button */}
           <Link 
             to="/news" 
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12 font-rift text-sm"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-16 font-rift text-xs tracking-wider"
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={14} />
             <span>BACK TO NEWS</span>
           </Link>
 
-          {/* Title Section with Line */}
-          <div className="flex flex-col items-start mb-8">
-            {/* Horizontal line */}
-            <div className="w-full max-w-[150px] overflow-hidden mb-[6px]">
-              <div
-                className={`h-[3px] bg-foreground origin-left transition-all duration-1000 ${
-                  isVisible ? "animate-draw-line" : "w-0"
-                }`}
-              />
-            </div>
-
-            {/* Category & Date */}
-            <div
-              className={`flex items-center gap-4 mb-4 transition-all duration-1000 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
-            >
-              <span className="text-sm font-bold text-foreground font-rift border border-foreground px-4 py-1">
-                {news.category.toUpperCase()}
-              </span>
-              <span className="text-sm text-muted-foreground">{news.date}</span>
-            </div>
-
-            {/* Title */}
-            <h1 
-              className={`text-2xl md:text-4xl lg:text-[44px] leading-[1.1] font-bold text-foreground transition-all duration-1000 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: isVisible ? "500ms" : "0ms" }}
-            >
-              {news.title}
-            </h1>
+          {/* Category & Date */}
+          <div
+            className={`flex items-center gap-4 mb-6 transition-all duration-1000 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+          >
+            <span className="text-xs font-bold text-primary font-rift tracking-wider">
+              {news.category.toUpperCase()}
+            </span>
+            <span className="text-xs text-muted-foreground">{news.date}</span>
           </div>
 
-          {/* Featured Image */}
+          {/* Title */}
+          <h1 
+            className={`text-xl md:text-2xl lg:text-3xl leading-[1.3] font-bold text-foreground mb-16 transition-all duration-1000 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: isVisible ? "200ms" : "0ms" }}
+          >
+            {news.title}
+          </h1>
+
+          {/* Featured Image - Smaller */}
           <div 
-            className={`aspect-video overflow-hidden mb-10 border border-border transition-all duration-1000 ${
+            className={`max-w-md mx-auto mb-16 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
-            style={{ transitionDelay: isVisible ? "700ms" : "0ms" }}
+            style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
           >
-            <img 
-              src={news.image} 
-              alt={news.title}
-              className="w-full h-full object-cover"
-            />
+            <div className="aspect-[4/3] overflow-hidden">
+              <img 
+                src={news.image} 
+                alt={news.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
           {/* Content */}
@@ -135,13 +124,13 @@ const NewsDetail = () => {
             className={`transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
-            style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
+            style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
           >
-            <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-foreground leading-relaxed mb-12">
               {news.summary}
             </p>
             
-            <div className="text-muted-foreground space-y-6 text-sm md:text-base leading-[1.6]">
+            <div className="text-muted-foreground space-y-8 text-sm leading-[1.8]">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
