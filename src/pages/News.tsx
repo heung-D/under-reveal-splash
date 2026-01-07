@@ -67,6 +67,9 @@ const News = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  const featuredNews = newsData[0];
+  const sideNews = newsData.slice(1, 4);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -101,76 +104,148 @@ const News = () => {
       <main className="flex-1 px-6 md:px-12 py-16">
         <div ref={sectionRef} className="max-w-6xl mx-auto">
           {/* Title Section with Line */}
-          <div className="flex flex-col items-start mb-16">
-            {/* Horizontal line */}
-            <div className="w-full max-w-[200px] overflow-hidden mb-[6px]">
-              <div
-                className={`h-[3px] bg-foreground origin-left transition-all duration-1000 ${
-                  isVisible ? "animate-draw-line" : "w-0"
-                }`}
-              />
-            </div>
-
-            {/* Title */}
+          <div className="flex items-center gap-6 mb-12">
             <div
               className={`transition-all duration-1000 ${
                 isVisible
                   ? "opacity-100 translate-y-0 animate-fade-slide-up"
                   : "opacity-0 translate-y-4"
               }`}
-              style={{ transitionDelay: isVisible ? "500ms" : "0ms" }}
             >
-              <h1 className="text-[39px] lg:text-[44px] leading-[100%] font-bold text-foreground font-rift">
-                NEWS
+              <h1 className="text-[32px] lg:text-[40px] leading-[100%] font-bold text-foreground font-rift whitespace-nowrap">
+                LATEST NEWS
               </h1>
+            </div>
+            
+            {/* Horizontal line */}
+            <div className="flex-1 overflow-hidden">
+              <div
+                className={`h-[2px] bg-foreground origin-left transition-all duration-1000 ${
+                  isVisible ? "animate-draw-line" : "w-0"
+                }`}
+                style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
+              />
             </div>
           </div>
 
-          {/* News List */}
+          {/* Featured + Side News Grid */}
           <div 
-            className={`transition-all duration-1000 ${
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
-            style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
+            style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
           >
-            {newsData.map((news, index) => (
-              <Link 
-                key={news.id} 
-                to={`/news/${news.id}`}
-                className="group block border-t border-border py-8 hover:bg-accent/30 transition-all duration-300"
-              >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  {/* Date - Left */}
-                  <div className="md:w-32 shrink-0">
-                    <span className="text-sm text-muted-foreground">{news.date}</span>
-                  </div>
+            {/* Featured News - Left */}
+            <Link 
+              to={`/news/${featuredNews.id}`}
+              className="group block"
+            >
+              <div className="aspect-[4/3] overflow-hidden mb-4">
+                <img 
+                  src={featuredNews.image} 
+                  alt={featuredNews.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <span className="text-xs font-bold text-primary font-rift tracking-wider mb-2 block">
+                {featuredNews.category.toUpperCase()}
+              </span>
+              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:underline">
+                {featuredNews.title}
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                {featuredNews.date}
+              </p>
+            </Link>
 
-                  {/* Content - Center */}
+            {/* Side News - Right */}
+            <div className="flex flex-col justify-between">
+              {sideNews.map((news) => (
+                <Link 
+                  key={news.id} 
+                  to={`/news/${news.id}`}
+                  className="group flex gap-4 py-4 border-b border-border last:border-b-0"
+                >
+                  {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <span className="text-xs font-bold text-primary font-rift tracking-wider mb-2 block">
+                    <span className="text-xs font-bold text-primary font-rift tracking-wider mb-1 block">
                       {news.category.toUpperCase()}
                     </span>
-                    <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:underline transition-colors">
+                    <h3 className="text-base md:text-lg font-bold text-foreground mb-1 group-hover:underline line-clamp-2">
                       {news.title}
-                    </h2>
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {news.summary}
+                    </h3>
+                    <p className="text-xs text-muted-foreground">
+                      {news.date}
                     </p>
                   </div>
 
-                  {/* Thumbnail - Right */}
-                  <div className="md:w-40 md:h-28 shrink-0 overflow-hidden rounded-lg">
+                  {/* Thumbnail */}
+                  <div className="w-24 h-20 shrink-0 overflow-hidden">
                     <img 
                       src={news.image} 
                       alt={news.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                </div>
-              </Link>
-            ))}
-            {/* Bottom border for last item */}
-            <div className="border-t border-border"></div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* More News Section */}
+          <div 
+            className={`transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
+          >
+            <div className="flex items-center gap-6 mb-8">
+              <h2 className="text-lg font-bold text-foreground font-rift whitespace-nowrap">
+                MORE NEWS
+              </h2>
+              <div className="flex-1 h-[1px] bg-border"></div>
+            </div>
+
+            <div className="space-y-0">
+              {newsData.slice(4).map((news) => (
+                <Link 
+                  key={news.id} 
+                  to={`/news/${news.id}`}
+                  className="group flex gap-4 py-6 border-t border-border"
+                >
+                  {/* Date */}
+                  <div className="w-28 shrink-0 hidden md:block">
+                    <span className="text-sm text-muted-foreground">{news.date}</span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <span className="text-xs font-bold text-primary font-rift tracking-wider mb-1 block">
+                      {news.category.toUpperCase()}
+                    </span>
+                    <h3 className="text-base md:text-lg font-bold text-foreground mb-1 group-hover:underline">
+                      {news.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      {news.summary}
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-2 md:hidden">
+                      {news.date}
+                    </p>
+                  </div>
+
+                  {/* Thumbnail */}
+                  <div className="w-28 h-20 shrink-0 overflow-hidden">
+                    <img 
+                      src={news.image} 
+                      alt={news.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </Link>
+              ))}
+              <div className="border-t border-border"></div>
+            </div>
           </div>
         </div>
       </main>
