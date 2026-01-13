@@ -8,6 +8,7 @@ import { newsData } from "./News";
 const NewsDetail = () => {
   const { id } = useParams();
   const news = newsData.find((item) => item.id === Number(id));
+  const relatedNews = newsData.filter((item) => item.id !== Number(id)).slice(0, 3);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -143,6 +144,45 @@ const NewsDetail = () => {
               <p>
                 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
               </p>
+            </div>
+          </div>
+
+          {/* Related News Section */}
+          <div 
+            className={`mt-24 pt-16 border-t border-border transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
+          >
+            <h2 className="text-lg font-bold text-foreground font-rift mb-10">
+              RELATED NEWS
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedNews.map((item) => (
+                <Link 
+                  key={item.id} 
+                  to={`/news/${item.id}`}
+                  className="group block"
+                >
+                  <div className="aspect-[4/3] overflow-hidden mb-4">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <span className="text-xs font-bold text-primary font-rift tracking-wider mb-2 block">
+                    {item.category.toUpperCase()}
+                  </span>
+                  <h3 className="text-sm font-bold text-foreground mb-2 group-hover:underline line-clamp-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    {item.date}
+                  </p>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
