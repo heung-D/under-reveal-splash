@@ -1,13 +1,16 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight, List } from "lucide-react";
 import Logo from "@/components/Logo";
 import Footer from "@/components/Footer";
 import { newsData } from "./News";
 
 const NewsDetail = () => {
   const { id } = useParams();
-  const news = newsData.find((item) => item.id === Number(id));
+  const currentIndex = newsData.findIndex((item) => item.id === Number(id));
+  const news = newsData[currentIndex];
+  const prevNews = currentIndex > 0 ? newsData[currentIndex - 1] : null;
+  const nextNews = currentIndex < newsData.length - 1 ? newsData[currentIndex + 1] : null;
   const relatedNews = newsData.filter((item) => item.id !== Number(id)).slice(0, 3);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -147,12 +150,63 @@ const NewsDetail = () => {
             </div>
           </div>
 
-          {/* Related News Section */}
+          {/* Navigation Buttons */}
           <div 
-            className={`mt-24 pt-16 border-t border-border transition-all duration-1000 ${
+            className={`mt-16 pt-8 border-t border-border transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
+          >
+            <div className="flex flex-col md:flex-row justify-between items-stretch gap-4">
+              {/* Previous Article */}
+              {prevNews ? (
+                <Link 
+                  to={`/news/${prevNews.id}`}
+                  className="flex-1 group flex items-center gap-4 p-4 border border-border hover:border-foreground transition-colors"
+                >
+                  <ArrowLeft size={20} className="text-muted-foreground group-hover:text-foreground transition-colors shrink-0" />
+                  <div className="min-w-0">
+                    <span className="text-xs text-muted-foreground font-rift tracking-wider block mb-1">PREV</span>
+                    <p className="text-sm font-bold text-foreground truncate group-hover:underline">{prevNews.title}</p>
+                  </div>
+                </Link>
+              ) : (
+                <div className="flex-1" />
+              )}
+              
+              {/* List Button */}
+              <Link 
+                to="/news"
+                className="flex items-center justify-center gap-2 px-8 py-4 border border-border hover:border-foreground hover:bg-foreground hover:text-background transition-all font-rift text-sm tracking-wider"
+              >
+                <List size={18} />
+                <span>LIST</span>
+              </Link>
+              
+              {/* Next Article */}
+              {nextNews ? (
+                <Link 
+                  to={`/news/${nextNews.id}`}
+                  className="flex-1 group flex items-center justify-end gap-4 p-4 border border-border hover:border-foreground transition-colors text-right"
+                >
+                  <div className="min-w-0">
+                    <span className="text-xs text-muted-foreground font-rift tracking-wider block mb-1">NEXT</span>
+                    <p className="text-sm font-bold text-foreground truncate group-hover:underline">{nextNews.title}</p>
+                  </div>
+                  <ArrowRight size={20} className="text-muted-foreground group-hover:text-foreground transition-colors shrink-0" />
+                </Link>
+              ) : (
+                <div className="flex-1" />
+              )}
+            </div>
+          </div>
+
+          {/* Related News Section */}
+          <div 
+            className={`mt-16 pt-16 border-t border-border transition-all duration-1000 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: isVisible ? "1000ms" : "0ms" }}
           >
             <h2 className="text-lg font-bold text-foreground font-rift mb-10">
               RELATED NEWS

@@ -63,12 +63,16 @@ const newsData: NewsItem[] = [
   }
 ];
 
+const ITEMS_PER_PAGE = 6;
+
 const News = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const featuredNews = newsData[0];
-  const sideNews = newsData.slice(1, 4);
+  const totalPages = Math.ceil(newsData.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentNews = newsData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -92,6 +96,11 @@ const News = () => {
       }
     };
   }, []);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="w-full min-h-screen flex flex-col bg-background">
@@ -128,125 +137,78 @@ const News = () => {
             </div>
           </div>
 
-          {/* Featured + Side News Grid */}
+          {/* 3x2 Card Grid */}
           <div 
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 transition-all duration-1000 ${
+            className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
           >
-            {/* Featured News - Left */}
-            <Link 
-              to={`/news/${featuredNews.id}`}
-              className="group block"
+            {currentNews.map((news) => (
+              <Link 
+                key={news.id} 
+                to={`/news/${news.id}`}
+                className="group block"
+              >
+                <div className="aspect-[4/3] overflow-hidden mb-4">
+                  <img 
+                    src={news.image} 
+                    alt={news.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <span className="text-xs font-bold text-primary font-rift tracking-wider mb-2 block">
+                  {news.category.toUpperCase()}
+                </span>
+                <h2 className="text-base font-bold text-foreground mb-2 group-hover:underline line-clamp-2">
+                  {news.title}
+                </h2>
+                <p className="text-xs text-muted-foreground">
+                  {news.date}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div 
+              className={`flex justify-center items-center gap-2 transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
             >
-              <div className="aspect-[4/3] overflow-hidden mb-4">
-                <img 
-                  src={featuredNews.image} 
-                  alt={featuredNews.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <span className="text-xs font-bold text-primary font-rift tracking-wider mb-2 block">
-                {featuredNews.category.toUpperCase()}
-              </span>
-              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:underline">
-                {featuredNews.title}
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                {featuredNews.date}
-              </p>
-            </Link>
-
-            {/* Side News - Right */}
-            <div className="flex flex-col justify-between">
-              {sideNews.map((news) => (
-                <Link 
-                  key={news.id} 
-                  to={`/news/${news.id}`}
-                  className="group flex gap-4 py-4 border-b border-border last:border-b-0"
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="px-4 py-2 text-sm font-rift text-foreground hover:text-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                PREV
+              </button>
+              
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`w-10 h-10 text-sm font-rift transition-colors ${
+                    currentPage === page
+                      ? "bg-foreground text-background"
+                      : "text-foreground hover:text-primary"
+                  }`}
                 >
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    <span className="text-xs font-bold text-primary font-rift tracking-wider mb-1 block">
-                      {news.category.toUpperCase()}
-                    </span>
-                    <h3 className="text-base md:text-lg font-bold text-foreground mb-1 group-hover:underline line-clamp-2">
-                      {news.title}
-                    </h3>
-                    <p className="text-xs text-muted-foreground">
-                      {news.date}
-                    </p>
-                  </div>
-
-                  {/* Thumbnail */}
-                  <div className="w-24 h-20 shrink-0 overflow-hidden">
-                    <img 
-                      src={news.image} 
-                      alt={news.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                </Link>
+                  {page}
+                </button>
               ))}
+              
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="px-4 py-2 text-sm font-rift text-foreground hover:text-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                NEXT
+              </button>
             </div>
-          </div>
-
-          {/* More News Section */}
-          <div 
-            className={`transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-            style={{ transitionDelay: isVisible ? "900ms" : "0ms" }}
-          >
-            <div className="flex items-center gap-6 mb-8">
-              <h2 className="text-lg font-bold text-foreground font-rift whitespace-nowrap">
-                MORE NEWS
-              </h2>
-              <div className="flex-1 h-[1px] bg-border"></div>
-            </div>
-
-            <div className="space-y-0">
-              {newsData.slice(4).map((news) => (
-                <Link 
-                  key={news.id} 
-                  to={`/news/${news.id}`}
-                  className="group flex gap-4 py-6 border-t border-border"
-                >
-                  {/* Date */}
-                  <div className="w-28 shrink-0 hidden md:block">
-                    <span className="text-sm text-muted-foreground">{news.date}</span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    <span className="text-xs font-bold text-primary font-rift tracking-wider mb-1 block">
-                      {news.category.toUpperCase()}
-                    </span>
-                    <h3 className="text-base md:text-lg font-bold text-foreground mb-1 group-hover:underline">
-                      {news.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {news.summary}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-2 md:hidden">
-                      {news.date}
-                    </p>
-                  </div>
-
-                  {/* Thumbnail */}
-                  <div className="w-28 h-20 shrink-0 overflow-hidden">
-                    <img 
-                      src={news.image} 
-                      alt={news.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                </Link>
-              ))}
-              <div className="border-t border-border"></div>
-            </div>
-          </div>
+          )}
         </div>
       </main>
 
