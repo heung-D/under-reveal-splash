@@ -8,6 +8,7 @@ import WhoWeAreSection from "@/components/WhoWeAreSection";
 import SubsidiaryDetailsSection from "@/components/SubsidiaryDetailsSection";
 import BrandMessageSection from "@/components/BrandMessageSection";
 import GlobalNetworkSection from "@/components/GlobalNetworkSection";
+import NewsSection from "@/components/NewsSection";
 import Footer from "@/components/Footer";
 import {
   DropdownMenu,
@@ -75,6 +76,9 @@ const Index = () => {
         </section>
         <section className="snap-section">
           <BrandMessageSection />
+        </section>
+        <section className="snap-section">
+          <NewsSection />
         </section>
         <section className="snap-section">
           <Footer />
