@@ -72,13 +72,13 @@ const Index = () => {
           <SubsidiaryDetailsSection />
         </section>
         <section className="snap-section">
+          <NewsSection />
+        </section>
+        <section className="snap-section">
           <GlobalNetworkSection />
         </section>
         <section className="snap-section">
           <BrandMessageSection />
-        </section>
-        <section className="snap-section">
-          <NewsSection />
         </section>
         <section className="snap-section">
           <Footer />
