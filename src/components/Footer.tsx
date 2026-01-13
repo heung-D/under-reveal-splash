@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="h-full bg-black border-t border-white/20 flex items-center">
+    <footer className="min-h-[400px] h-full bg-black border-t border-white/20 flex items-center py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12 max-w-[1400px] w-full">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_auto_auto] gap-8 md:gap-12 mb-8">
           {/* Company Info */}
